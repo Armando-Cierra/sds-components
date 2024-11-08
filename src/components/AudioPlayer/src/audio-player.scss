@@ -1,0 +1,44 @@
+@use 'node_modules/@sipster/core/tools' as *;
+
+.sds_audioPlayer {
+  display: inline-flex;
+  position: relative;
+  width: 256px;
+  audio {
+    pointer-events: none;
+    position: absolute;
+    opacity: 0;
+  }
+}
+
+.sds_audioPlayer_box {
+  display: flex;
+  align-items: center;
+  gap: sds-spc(12);
+  width: 100%;
+  .sds_button {
+    flex-shrink: 0;
+  }
+  .sds_slider {
+    @include sds-flex(center, center);
+    width: 100%;
+  }
+}
+
+.sds_audioPlayer_time {
+  @include sds-flex(center, center);
+  min-width: 79px;
+  flex-shrink: 0;
+  span {
+    color: var(--sds_theme_text, #{sds-color(black)});
+    @include sds-typeset(mouse);
+  }
+}
+
+.sds_audioPlayer_time span:nth-child(2) {
+  margin: 0 sds-spc(4);
+}
+
+.sds_audioPlayer .sds_slider .sds_slider_box input {
+  margin-left: 0;
+}

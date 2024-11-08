@@ -1,0 +1,60 @@
+@use 'node_modules/@sipster/core/tools' as *;
+@forward 'tokens';
+
+
+.sds_emptyMessage {
+    display: flex;
+    width: 328px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: sds-spc(40);
+    background: transparent;
+    border-radius:  var(--sds_theme_border_radius, 0.5rem);
+    overflow-x: auto;
+}
+
+.sds_emptyMessage--contrast {
+    background: var(--sds_emptyMessage_background_contrast);
+}
+
+.sds_emptyMessage_header {
+    color: var(--sds_emptyMessage_header_text);
+    gap: sds-spc(16);
+    @include sds-typeset(body-lg, semi);
+}
+
+.sds_emptyMessage_header, .sds_emptyMessage_description {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sds_emptyMessage_description {
+    color: var(--sds_emptyMessage_description_text);
+    text-align: center;
+    @include sds-typeset(body, base);
+}
+
+.sds_emptyMessage_actions {
+    width: 100%;
+    margin-top: sds-spc(24);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: sds-spc(8);
+}
+
+.sds_emptyMessage_image {
+    //change to max
+    max-width: sds-spc(64);
+    max-height: sds-spc(64);
+    object-fit: cover;
+    border-radius:  var(--sds_emptyMessage_border_radius);
+}
+
+.sds_emptyMessage_icon {
+    color: var(--sds_emptyMessage_icon);
+}

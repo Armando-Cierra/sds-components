@@ -1,0 +1,6 @@
+@use 'node_modules/@sipster/core/tools' as *;
+
+body {
+  --sds_list_indicator_color: var(--sds_theme_text, #{sds-color(black)});
+  --sds_list_text: var(--sds_theme_text, #{sds-color(black)});
+}

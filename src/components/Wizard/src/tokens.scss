@@ -1,0 +1,105 @@
+body {
+  --sds_wizard_background_color: var(
+    --sds_theme_background,
+    #{sds-color(neutral, 05)}
+  );
+
+  --sds_wizard_header_background_color: var(
+    --sds_theme_background_high,
+    #{sds-color(white)}
+  );
+  --sds_wizard_header_border_color: var(
+    --sds_theme_border,
+    #{sds-color(neutral, 30)}
+  );
+  --sds_wizard_header_text: var(--sds_theme_text, #{sds-color(black)});
+  --sds_wizard_header_button_icon: var(
+    --sds_theme_button_ghost_icon,
+    #{sds-color(neutral, 70)}
+  );
+  --sds_wizard_header_button_interactive_background: var(
+    --sds_theme_button_ghost_interactive_background,
+    #{sds-color(neutral, 20)}
+  );
+  --sds_wizard_header_button_interactive_icon: var(
+    --sds_theme_button_ghost_interactive_icon,
+    #{sds-color(black)}
+  );
+
+  --sds_wizard_navbar_background_color: var(
+    --sds_theme_background_high,
+    #{sds-color(white)}
+  );
+  --sds_wizard_navbar_border_color: var(
+    --sds_theme_border,
+    #{sds-color(neutral, 30)}
+  );
+  --sds_wizard_navbar_text: var(--sds_theme_text, #{sds-color(black)});
+  --sds_wizard_navbar_button_icon: var(
+    --sds_theme_button_ghost_icon,
+    #{sds-color(neutral, 70)}
+  );
+  --sds_wizard_navbar_button_interactive_background: var(
+    --sds_theme_button_ghost_interactive_background,
+    #{sds-color(neutral, 20)}
+  );
+  --sds_wizard_navbar_button_interactive_icon: var(
+    --sds_theme_button_ghost_interactive_icon,
+    #{sds-color(black)}
+  );
+
+  --sds_wizard_navbar_step_background_color: var(
+    --sds_wizard_navbar_background_color
+  );
+  --sds_wizard_navbar_step_border_radius: var(
+    --sds_theme_border_radius,
+    0.5rem
+  );
+  --sds_wizard_navbar_step_text: var(
+    --sds_theme_text_subtle,
+    #{sds-color(neutral, 60)}
+  );
+
+  --sds_wizard_navbar_step_active_background_color: var(
+    --sds_theme_background,
+    #{sds-color(neutral, 05)}
+  );
+  --sds_wizard_navbar_step_active_icon: var(
+    --sds_theme_color_primary,
+    #{sds-color(indigo, 60)}
+  );
+  --sds_wizard_navbar_step_active_text: var(
+    --sds_theme_color_primary_text,
+    #{sds-color(indigo, 70)}
+  );
+
+  --sds_wizard_overlay: var(--sds_theme_background_overlay);
+  --sds_wizard_blurOverlay: var(--sds_theme_background_overlay_blur);
+
+  --sds_wizard_navbar_step_complete_background_color: var(
+    --sds_wizard_navbar_step_background_color
+  );
+
+  --sds_wizard_navbar_step_complete_icon: var(
+    --sds_theme_color_success,
+    #{sds-color(green, 60)}
+  );
+  --sds_wizard_navbar_step_complete_text: var(
+    --sds_theme_text,
+    #{sds-color(black)}
+  );
+
+  --sds_wizard_navbar_step_interactive_background_color: var(
+    --sds_theme_background,
+    #{sds-color(neutral, 05)}
+  );
+
+  --sds_wizard_footer_background_color: var(
+    --sds_theme_background_high,
+    #{sds-color(white)}
+  );
+  --sds_wizard_footer_border_color: var(
+    --sds_theme_border,
+    #{sds-color(neutral, 30)}
+  );
+}

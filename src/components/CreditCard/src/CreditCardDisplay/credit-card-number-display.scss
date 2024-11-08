@@ -1,0 +1,25 @@
+@use 'node_modules/@sipster/core/tools' as *;
+
+.sds_creditCardDisplay {
+  display: inline-flex;
+  flex-direction: column;
+  .sds_creditCard_icon {
+    margin-left: sds-spc(8);
+  }
+  p,
+  span {
+    color: var(--sds_theme_text);
+  }
+}
+
+.sds_creditCardDisplay_title {
+  margin-bottom: sds-spc(8);
+}
+
+.sds_creditCardDisplay_number {
+  @include sds-flex(center, center);
+}
+
+.sds_creditCardDisplay_edit {
+  margin-left: sds-spc(8);
+}

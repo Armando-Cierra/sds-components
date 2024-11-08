@@ -1,0 +1,97 @@
+@use 'node_modules/@sipster/core/tools' as *;
+@forward 'tokens';
+
+.sds_drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--sds_drawer_overlay_background);
+  backdrop-filter: blur(var(--sds_theme_background_overlay_blur, 12px));
+}
+.sds_drawer--noOverlay {
+  background: transparent;
+  backdrop-filter: blur(0);
+}
+
+.sds_drawer_card {
+  position: absolute;
+  top: 0;
+  background: var(--sds_drawer_background_color);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.sds_drawer_card--left {
+  border-right: 1px solid var(--sds_drawer_border_color);
+  left: 0;
+}
+.sds_drawer_card--right {
+  border-left: 1px solid var(--sds_drawer_border_color);
+  right: 0;
+}
+
+.sds_drawer_header {
+  flex-shrink: 0;
+  height: 56px;
+  background: var(--sds_drawer_header_background_color);
+  border-bottom: 1px solid var(--sds_drawer_header_border_color);
+  display: flex;
+  align-items: center;
+  gap: sds-spc(8);
+  padding-left: sds-spc(8);
+  padding-right: sds-spc(16);
+}
+.sds_drawer_header--rightCloseButton {
+  flex-direction: row-reverse;
+  padding-left: sds-spc(16);
+  padding-right: sds-spc(8);
+}
+.sds_drawer_header--noCloseButton {
+  padding-left: sds-spc(16);
+  padding-right: sds-spc(16);
+}
+
+.sds_drawer_header_text {
+  color: var(--sds_drawer_header_text);
+  width: 100%;
+}
+
+.sds_button.sds_button--ghost.sds_drawer_header_button {
+  flex-shrink: 0;
+  --sds_button_icon: var(--sds_drawer_header_button_icon);
+  --sds_button_hover_background: var(
+    --sds_drawer_header_button_interactive_background
+  );
+  --sds_button_hover_icon: var(--sds_drawer_header_button_interactive_icon);
+  --sds_button_focus_background: var(
+    --sds_drawer_header_button_interactive_background
+  );
+  --sds_button_focus_icon: var(--sds_drawer_header_button_interactive_icon);
+  --sds_button_active_background: var(
+    --sds_drawer_header_button_interactive_background
+  );
+  --sds_button_active_icon: var(--sds_drawer_header_button_interactive_icon);
+}
+
+.sds_drawer_content {
+  height: 100%;
+}
+.sds_drawer_content--hasPadding {
+  padding: sds-spc(16);
+}
+
+.sds_drawer_footer {
+  height: 56px;
+  flex-shrink: 0;
+  background: var(--sds_drawer_footer_background_color);
+  border-top: 1px solid var(--sds_drawer_footer_border_color);
+  padding-left: sds-spc(16);
+  padding-right: sds-spc(16);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: sds-spc(4);
+}

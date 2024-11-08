@@ -1,0 +1,195 @@
+@use 'node_modules/@sipster/core/tools' as *;
+@forward 'tokens';
+
+//Mixins
+@mixin transparentTexture {
+  background-image: linear-gradient(
+      45deg,
+      var(--sds_theme_background_accent, #{sds-color(neutral, 20)}) 25%,
+      transparent 25%
+    ),
+    linear-gradient(
+      45deg,
+      transparent 75%,
+      var(--sds_theme_background_accent, #{sds-color(neutral, 20)}) 75%
+    ),
+    linear-gradient(
+      45deg,
+      transparent 75%,
+      var(--sds_theme_background_accent, #{sds-color(neutral, 20)}) 75%
+    ),
+    linear-gradient(
+      45deg,
+      var(--sds_theme_background_accent, #{sds-color(neutral, 20)}) 25%,
+      transparent 25%
+    );
+  background-size: 10px 10px;
+  background-position: 0px 0px, 0px 0px, -5px -5px, 5px 5px;
+}
+
+//Styles
+.sds_colorPicker {
+  width: 256px;
+  display: inline-flex;
+  flex-direction: column;
+  gap: sds-spc(4);
+  .sds_colorPicker_control {
+    width: 100%;
+  }
+}
+
+.sds_colorPicker_control {
+  width: 256px;
+  display: flex;
+  gap: sds-spc(4);
+}
+
+.sds_colorPicker_currentColorBackground {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--sds_button_border_radius);
+  @include transparentTexture();
+}
+.sds_colorPicker_currentColorBackground--error {
+  @include transparentTexture();
+  height: 36px;
+  border-radius: 8px;
+  .sds_button {
+    border: 2px solid var(--sds_theme_color_danger, #{sds-color(red, 60)}) !important;
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      width: calc(100% + 10px);
+      height: 2px;
+      background: var(--sds_theme_color_danger, #{sds-color(red, 60)});
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.sds_button.sds_colorPicker_currentColor {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+}
+
+.sds_colorPicker_control_tools {
+  width: 100%;
+  display: flex;
+}
+
+.sds_button.sds_colorPicker_control_tools_eyePicker {
+  position: relative;
+  flex-shrink: 0;
+  border-radius: var(--sds_button_border_radius) 0 0
+    var(--sds_button_border_radius) !important;
+  z-index: 2;
+}
+
+.sds_textInput.sds_colorPicker_control_tools_input {
+  width: 100%;
+  flex-shrink: 1;
+  flex-grow: 1;
+  .sds_textInput_input {
+    width: 100%;
+    border-radius: 0 var(--sds_textInput_border_radius)
+      var(--sds_textInput_border_radius) 0 !important;
+    padding: sds-spc(8);
+  }
+}
+.sds_textInput.sds_colorPicker_control_tools_input.sds_colorPicker_control_tools_input--noColorPicker {
+  .sds_textInput_input {
+    border-radius: var(--sds_textInput_border_radius) !important;
+  }
+}
+
+.sds_colorPicker_menu {
+  overflow: visible !important;
+  .sds_colorPicker_menu_container {
+    //colorful color picker customization
+    .sds_colorPicker_menu_container_colorpicker {
+      width: 100%;
+      height: auto;
+      .react-colorful__saturation {
+        height: 180px;
+        margin-bottom: sds-spc(16);
+        .react-colorful__interactive {
+          height: 180px;
+        }
+      }
+      .react-colorful__pointer {
+        width: 16px;
+        height: 16px;
+        border: none;
+        box-shadow: 0 0 0 1px black, 0 0 0 3px white, 0 0 0 4px black;
+      }
+      .react-colorful__alpha-pointer {
+        background-color: var(--sds_theme_background_high);
+        @include transparentTexture;
+      }
+      .react-colorful__hue,
+      .react-colorful__alpha {
+        width: calc(100% - 16px);
+        height: 12px;
+        margin-left: sds-spc(8);
+        border-radius: 8px;
+        margin-bottom: sds-spc(12);
+      }
+      .react-colorful__alpha {
+        background-color: transparent;
+        @include transparentTexture;
+      }
+    }
+  }
+}
+
+.sds_colorPicker_menu_container_controls {
+  display: flex;
+  gap: sds-spc(4);
+  padding: 0 sds-spc(8);
+  width: 100%;
+}
+
+.sds_button.sds_colorPicker_menu_container_controls_colorFormat {
+  flex-shrink: 0;
+  text-transform: capitalize;
+}
+.sds_button.sds_colorPicker_menu_container_controls_colorFormat--uppercase {
+  text-transform: uppercase;
+}
+
+.sds_colorPicker_menu_container_controls_inputBox {
+  display: inline-flex;
+  width: 100%;
+  margin-bottom: sds-spc(8);
+  .sds_colorPicker_menu_container_controls_inputBox_input {
+    width: 100%;
+    flex-shrink: 1;
+    flex-grow: 1;
+    .sds_colorPicker_menu_container_controls_inputBox_input_control {
+      border-radius: 0;
+      padding: sds-spc(8);
+    }
+    svg {
+      display: none;
+    }
+    &:first-of-type
+      .sds_colorPicker_menu_container_controls_inputBox_input_control {
+      border-radius: var(--sds_textInput_border_radius) 0 0
+        var(--sds_textInput_border_radius);
+    }
+    &:last-of-type
+      .sds_colorPicker_menu_container_controls_inputBox_input_control {
+      border-radius: 0 var(--sds_textInput_border_radius)
+        var(--sds_textInput_border_radius) 0;
+      padding: sds-spc(8) 6px;
+      padding-left: sds-spc(8);
+    }
+  }
+  .sds_colorPicker_menu_container_controls_inputBox_input--hexOpacity {
+    width: 56px;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+}

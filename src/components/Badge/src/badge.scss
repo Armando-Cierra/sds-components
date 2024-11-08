@@ -1,0 +1,65 @@
+@use 'node_modules/@sipster/core/tools' as *;
+@forward 'tokens';
+
+$colorList: blue, green, yellow, red, indigo, purple, lime, teal, orange, pink;
+
+.sds_badge {
+  display: inline-flex;
+  gap: sds-spc(4);
+  align-items: center;
+  justify-content: center;
+  padding: 0 sds-spc(8);
+  border-radius: var(--sds_theme_border_radius_medium, 0.375rem);
+  background: var(--sds_badge_background);
+  color: var(--sds_badge_text);
+  height: 20px;
+  min-width: 20px;
+  text-align: center;
+  @include sds-typeset(mouse, semi);
+}
+
+.sds_badge--counter {
+  --sds_badge_background: #{sds-color(neutral, 60)};
+  --sds_badge_text: var(--sds_theme_text_inverted, #{sds-color(white)});
+  padding: 0 sds-spc(4);
+  @include sds-typeset(body);
+}
+
+@each $color in $colorList {
+  .sds_badge--#{'' + $color} {
+    --sds_badge_background: #{sds-color($color, 20)};
+    --sds_badge_icon: #{sds-color($color, 60)};
+  }
+
+  .sds_badge--#{'' + $color}.sds_badge--counter {
+    --sds_badge_background: #{sds-color($color, 60)};
+  }
+}
+
+.sds_badge--inverted {
+  --sds_badge_background: var(--sds_theme_background_inverted);
+  --sds_badge_icon: var(--sds_theme_text_inverted);
+  --sds_badge_text: var(--sds_theme_text_inverted);
+}
+.sds_badge--inverted.sds_badge--counter {
+  --sds_badge_background: var(--sds_theme_background_inverted);
+  --sds_badge_icon: var(--sds_theme_text_inverted);
+  --sds_badge_text: var(--sds_theme_text_inverted);
+}
+
+.sds_badge_icon {
+  color: var(--sds_badge_icon);
+}
+
+body[data-sds-colormode='Dark'] {
+  @each $color in $colorList {
+    .sds_badge--#{'' + $color} {
+      --sds_badge_background: #{sds-color($color, 80)};
+      --sds_badge_icon: #{sds-color($color, 40)};
+    }
+
+    .sds_badge--#{'' + $color}.sds_badge--counter {
+      --sds_badge_background: #{sds-color($color, 40)};
+    }
+  }
+}

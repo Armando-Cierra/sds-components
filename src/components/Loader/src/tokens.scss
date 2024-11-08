@@ -1,0 +1,6 @@
+@use 'node_modules/@sipster/core/tools' as *;
+
+body {
+  --sds_loader_color: var(--sds_theme_icon, #{sds-color(neutral, 70)});
+  --sds_loader_size: 1rem;
+}

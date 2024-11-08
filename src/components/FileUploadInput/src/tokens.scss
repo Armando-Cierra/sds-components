@@ -1,0 +1,160 @@
+@use 'node_modules/@sipster/core/tools' as *;
+
+body {
+  --sds_fileUploadInput_action: var(
+    --sds_theme_icon,
+    #{sds-color(neutral, 70)}
+  );
+  --sds_fileUploadInput_background: var(
+    --sds_theme_control_background,
+    #sds-color(white)
+  );
+  --sds_fileUploadInput_border_color: var(
+    --sds_theme_control_border,
+    #(sds-color(neutral, 30))
+  );
+  --sds_fileUploadInput_border_radius: var(--sds_theme_border_radius, 0.5rem);
+  --sds_fileUploadInput_border_style: solid;
+  --sds_fileUploadInput_border_width: 1px;
+  --sds_fileUploadInput_placeholder: var(
+    --sds_theme_control_placeholder,
+    #(sds-color(neutral, 60))
+  );
+  --sds_fileUploadInput_text: var(
+    --sds_theme_control_text,
+    #(sds-color(black))
+  );
+
+  --sds_fileUploadInput_hover_action: var(--sds_fileUploadInput_action);
+  --sds_fileUploadInput_hover_background: var(
+    --sds_theme_control_hover_background,
+    #(sds-color(white))
+  );
+  --sds_fileUploadinput_hover_border_color: var(
+    --sds_theme_control_hover_border,
+    #(sds-color(neutral))
+  );
+  --sds_fileUploadInput_hover_border_radius: var(
+    --sds_fileUploadInput_border_radius
+  );
+  --sds_fileUploadInput_hover_border_style: var(
+    --sds_fileUploadInput_border_style
+  );
+  --sds_fileUploadInput_hover_border_width: var(
+    --sds_fileUploadInput_border_width
+  );
+  --sds_fileUploadInput_hover_placeholder: var(
+    --sds_theme_control_hover_placeholder,
+    #(sds-color(neutral, 60))
+  );
+  --sds_fileUploadInput_hover_text: var(
+    --sds_theme_control_hover_text,
+    #{sds-color(black)}
+  );
+
+  --sds_fileUploadInput_focus_action: var(--sds_fileUploadInput_hover_action);
+  --sds_fileUploadInput_focus_background: var(
+    --sds_theme_control_focus_background,
+    #(sds-color(white))
+  );
+  --sds_fileUploadInput_focus_border_color: var(
+    --sds_theme_focus_border,
+    #(sds-color(indigo, 60))
+  );
+  --sds_fileUploadInput_focus_border_radius: var(
+    --sds_fileUploadInput_hover_border_radius
+  );
+  --sds_fileUploadInput_focus_border_style: var(
+    --sds_fileUploadInput_hover_border_style
+  );
+  --sds_fileUploadInput_focus_border_width: 2px;
+  --sds_fileUploadInput_focus_placeholder: var(
+    --sds_theme_control_focus_placeholder,
+    #{sds-color(neutral, 60)}
+  );
+  --sds_fileUploadInput_focus_text: var(
+    --sds_theme_control_focus_text,
+    #{sds-color(black)}
+  );
+
+  --sds_fileUploadInput_error_action: var(--sds_fileUploadInput_action);
+  --sds_fileUploadInput_error_background: var(
+    --sds_theme_control_error_background,
+    #(sds-color(red, 05))
+  );
+  --sds_fileUploadinput_error_border_color: var(
+    --sds_theme_control_error_border,
+    #(sds-color(red, 60))
+  );
+  --sds_fileUploadInput_error_border_radius: var(
+    --sds_fileUploadInput_border_radius
+  );
+  --sds_fileUploadInput_error_border_style: var(
+    --sds_fileUploadInput_border_style
+  );
+  --sds_fileUploadInput_error_border_width: 2px;
+  --sds_fileUploadInput_error_icon: var(
+    --sds_theme_control_error_icon,
+    #{sds-color(red, 60)}
+  );
+  --sds_fileUploadInput_error_placeholder: var(
+    --sds_theme_control_error_placeholder,
+    #{sds-color(neutral, 60)}
+  );
+  --sds_fileUploadInput_error_text: var(
+    --sds_theme_control_error_text,
+    #(sds-color(red, 70))
+  );
+
+  --sds_fileUploadInput_readOnly_background: var(
+    --sds_theme_background,
+    #{sds-color(neutral, 05)}
+  );
+  --sds_fileUploadInput_readOnly_border_color: var(
+    --sds_fileUploadInput_border_color
+  );
+  --sds_fileUploadInput_readOnly_border_radius: var(
+    --sds_fileUploadInput_border_radius
+  );
+  --sds_fileUploadInput_readOnly_border_style: var(
+    --sds_fileUploadInput_border_style
+  );
+  --sds_fileUploadInput_readOnly_border_width: var(
+    --sds_fileUploadInput_border_width
+  );
+  --sds_fileUploadInput_readOnly_icon: var(
+    --sds_theme_control_icon,
+    #{sds-color(neutral, 40)}
+  );
+  --sds_fileUploadInput_readOnly_text: var(--sds_fileUploadInput_text);
+
+  --sds_fileUploadInput_disabled_background: var(
+    --sds_theme_control_disabled_background,
+    #(sds-color(white))
+  );
+  --sds_fileUploadInput_disabled_border_color: var(
+    --sds_theme_control_disabled_border,
+    #(sds-color(neutral, 30))
+  );
+  --sds_fileUploadInput_disabled_border_radius: var(
+    --sds_fileUploadInput_border_radius
+  );
+  --sds_fileUploadInput_disabled_border_style: var(
+    --sds_fileUploadInput_border_style
+  );
+  --sds_fileUploadInput_disabled_border_width: var(
+    --sds_fileUploadInput_border_width
+  );
+  --sds_fileUploadInput_disabled_opacity: var(
+    --sds_theme_disabled_opacity,
+    48%
+  );
+  --sds_fileUploadinput_disabled_placeholder: var(
+    --sds_theme_control_disabled_placeholder,
+    #(sds-color(neutral, 60))
+  );
+  --sds_fileUploadInput_disabled_text: var(
+    --sds_theme_control_disabled_text,
+    #(sds-color(black))
+  );
+}

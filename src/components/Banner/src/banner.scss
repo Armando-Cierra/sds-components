@@ -1,0 +1,155 @@
+@use 'node_modules/@sipster/core/tools' as *;
+@forward 'tokens';
+
+.sds_banner {
+  display: inline-flex;
+  width: 100%;
+  padding: sds-spc(8) sds-spc(16);
+  background: var(--sds_banner_background_color);
+  color: var(--sds_banner_text);
+  margin-bottom: sds-spc(16);
+  overflow-x: auto;
+}
+
+.sds_banner--overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  @include sds-shadow(sm);
+}
+
+.sds_banner_iconContainer {
+  display: grid;
+  place-items: center;
+  margin-right: sds-spc(12);
+  svg {
+    color: var(--sds-banner_icon);
+  }
+}
+
+.sds_banner_icon {
+  width: sds-spc(16);
+  color: var(--sds_banner_icon);
+}
+
+.sds_banner_container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: sds-spc(16);
+  justify-content: space-between;
+}
+
+.sds_banner_contentBox {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 1;
+
+  div {
+    @include sds-typeset(body);
+    margin-top: sds-spc(4);
+  }
+}
+
+.sds_banner_closeIcon {
+  color: var(--sds_banner_button_icon);
+  &:hover {
+    background-color: var(--sds_banner_button_interactive_background);
+    color: var(--sds_banner_button_interactive_icon);
+  }
+}
+
+.sds_banner_title {
+  @include sds-typeset(body, semi);
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sds_banner_title--noHeading {
+  justify-content: flex-end;
+}
+
+.sds_banner_actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: sds-spc(4);
+  align-items: center;
+  margin-left: sds-spc(16);
+}
+
+.sds_banner--success {
+  background: var(--sds_banner_success_background_color);
+  color: var(--sds_banner_success_text);
+  .sds_banner_icon {
+    color: var(--sds_banner_success_icon);
+  }
+
+  .sds_banner_closeIcon {
+    color: var(--sds_banner_success_button_icon);
+    &:hover {
+      background: var(--sds_banner_success_button_interactive_background);
+      color: var(--sds_banner_success_button_interactive_icon);
+    }
+  }
+}
+
+.sds_banner--warning {
+  background: var(--sds_banner_warning_background_color);
+  color: var(--sds_banner_warning_text);
+
+  .sds_banner_icon {
+    color: var(--sds_banner_warning_icon);
+  }
+
+  .sds_banner_closeIcon {
+    color: var(--sds_banner_warning_button_icon);
+    &:hover {
+      background: var(--sds_banner_warning_button_interactive_background);
+      color: var(--sds_banner_warning_button_interactive_icon);
+    }
+  }
+}
+
+.sds_banner--danger {
+  background: var(--sds_banner_danger_background_color);
+  color: var(--sds_banner_danger_text);
+
+  .sds_banner_icon {
+    color: var(--sds_banner_danger_icon);
+  }
+
+  .sds_banner_closeIcon {
+    color: var(--sds_banner_danger_button_icon);
+    &:hover {
+      background: var(--sds_banner_danger_button_interactive_background);
+      color: var(--sds_banner_danger_button_interactive_icon);
+    }
+  }
+}
+
+@include sds-screen(sm) {
+  .sds_banner_container {
+    flex-direction: column;
+  }
+
+  .sds_banner_actions {
+    margin-left: 0;
+  }
+
+  .sds_banner_container {
+    gap: sds-spc(16);
+  }
+
+  .sds_banner_iconContainer {
+    place-items: start;
+    svg {
+      margin-top: 5px;
+    }
+  }
+
+  .sds_banner_contentBox {
+    width: 100%;
+  }
+}

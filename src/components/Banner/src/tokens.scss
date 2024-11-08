@@ -1,0 +1,88 @@
+@use 'node_modules/@sipster/core/tools' as *;
+
+body {
+  --sds_banner_background_color: var(
+    --sds_theme_background_accent,
+    #{sds-color(neutral, 20)}
+  );
+  --sds-banner_icon: var(--sds_theme_icon, #{sds-color(neutral, 70)});
+  --sds_banner_text: var(--sds_theme_text, #{sds-color(black)});
+  --sds_banner_button_icon: var(
+    --sds_theme_button_ghost_icon,
+    #{sds-color(neutral, 70)}
+  );
+  --sds_banner_button_interactive_background: var(
+    --sds_theme_button_ghost_interactive_background,
+    #{sds-color(neutral, 20)}
+  );
+  --sds_banner_button_interactive_icon: var(
+    --sds_theme_button_ghost_interactive_icon,
+    #{sds-color(black)}
+  );
+
+  --sds_banner_warning_background_color: var(
+    --sds_theme_color_warning_background_2,
+    #{sds-color(yellow, 20)}
+  );
+  --sds_banner_warning_icon: var(
+    --sds_theme_color_warning,
+    #{sds-color(yellow, 40)}
+  );
+  --sds_banner_warning_text: var(--sds_theme_text, #{sds-color(black)});
+  --sds_banner_warning_button_icon: var(
+    --sds_theme_button_ghost_icon,
+    #{sds-color(neutral, 70)}
+  );
+  --sds_banner_warning_button_interactive_background: var(
+    --sds_theme_button_ghost_interactive_background,
+    #{sds-color(neutral, 20)}
+  );
+  --sds_banner_warning_button_interactive_icon: var(
+    --sds_theme_button_ghost_interactive_icon,
+    #{sds-color(black)}
+  );
+
+  --sds_banner_danger_background_color: var(
+    --sds_theme_color_danger_background_2,
+    #{sds-color(red, 20)}
+  );
+  --sds_banner_danger_icon: var(
+    --sds_theme_color_danger,
+    #{sds-color(red, 60)}
+  );
+  --sds_banner_danger_text: var(--sds_theme_text, #{sds-color(black)});
+  --sds_banner_danger_button_icon: var(
+    --sds_theme_button_ghost_icon,
+    #{sds-color(neutral, 70)}
+  );
+  --sds_banner_danger_button_interactive_background: var(
+    --sds_theme_button_ghost_interactive_background,
+    #{sds-color(neutral, 20)}
+  );
+  --sds_banner_danger_button_interactive_icon: var(
+    --sds_theme_button_ghost_interactive_icon,
+    #{sds-color(black)}
+  );
+
+  --sds_banner_success_background_color: var(
+    --sds_theme_color_success_background_2,
+    #{sds-color(green, 20)}
+  );
+  --sds_banner_success_icon: var(
+    --sds_theme_color_success,
+    #{sds-color(green, 60)}
+  );
+  --sds_banner_success_text: var(--sds_theme_text, #{sds-color(black)});
+  --sds_banner_success_button_icon: var(
+    --sds_theme_button_ghost_icon,
+    #{sds-color(neutral, 70)}
+  );
+  --sds_banner_success_button_interactive_background: var(
+    --sds_theme_button_ghost_interactive_background,
+    #{sds-color(neutral, 20)}
+  );
+  --sds_banner_success_button_interactive_icon: var(
+    --sds_theme_button_ghost_interactive_icon,
+    #{sds-color(black)}
+  );
+}

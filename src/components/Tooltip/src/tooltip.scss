@@ -1,0 +1,15 @@
+@use 'node_modules/@sipster/core/tools' as *;
+@forward 'tokens';
+
+.sds_tooltip .TooltipMessage {
+  background: var(--sds_tooltip_background);
+  color: var(--sds_tooltip_text);
+  @include sds-typeset(body);
+  padding: sds-spc(4) sds-spc(8);
+  border-radius: 4px;
+  z-index: 9999;
+}
+
+.sds_tooltip .TooltipArrow {
+  fill: var(--sds_tooltip_background);
+}

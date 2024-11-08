@@ -1,0 +1,134 @@
+@use 'node_modules/@sipster/core/tools' as *;
+@forward 'tokens';
+
+.sds_textarea {
+  width: 256px;
+  display: inline-flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  flex-grow: 0;
+  .sds_helpTextBox {
+    width: 100%;
+  }
+}
+
+.sds_textarea_label {
+  margin-bottom: sds-spc(4);
+}
+
+.sds_helpTextBox {
+  width: 256px;
+  display: flex;
+}
+
+.sds_textarea_textareaBox {
+  position: relative;
+}
+
+.sds_textarea_field {
+  @include sds-flex(center, center);
+  @include sds-typeset(body);
+  width: 100%;
+  width: 100%;
+  min-height: 56px;
+  max-height: 126px;
+  resize: vertical;
+  padding: sds-spc(8) sds-spc(12);
+  background: var(--sds_textarea_background);
+  border-color: var(--sds_textarea_border_color);
+  border-radius: var(--sds_textarea_border_radius);
+  border-style: var(--sds_textarea_border_style);
+  border-width: var(--sds_textarea_border_width);
+  color: var(--sds_textarea_text);
+  outline: none;
+  &::placeholder {
+    color: var(--sds_textarea_placeholder);
+  }
+  &:hover {
+    background: var(--sds_textarea_hover_background);
+    border-color: var(--sds_textarea_hover_border_color);
+    border-radius: var(--sds_textarea_hover_border_radius);
+    border-style: var(--sds_textarea_hover_border_style);
+    border-width: var(--sds_textarea_hover_border_width);
+    color: var(--sds_textarea_hover_text);
+    &::placeholder {
+      color: var(--sds_textarea_hover_placeholder);
+    }
+  }
+  &:focus {
+    background: var(--sds_textarea_focus_background);
+    border-color: var(--sds_textarea_focus_border_color);
+    border-radius: var(--sds_textarea_focus_border_radius);
+    border-style: var(--sds_textarea_focus_border_style);
+    border-width: var(--sds_textarea_focus_border_width);
+    color: var(--sds_textarea_focus_text);
+    &::placeholder {
+      color: var(--sds_textarea_focus_placeholder);
+    }
+  }
+}
+.sds_textarea_field--error,
+.sds_textarea_field--readOnly {
+  padding-right: 36px;
+}
+.sds_textarea_field--error,
+.sds_textarea_field--error:hover,
+.sds_textarea_field--error:focus {
+  background: var(--sds_textarea_error_background);
+  border-color: var(--sds_textarea_error_border_color);
+  border-radius: var(--sds_textarea_error_border_radius);
+  border-style: var(--sds_textarea_error_border_style);
+  border-width: var(--sds_textarea_error_border_width);
+  color: var(--sds_textarea_error_text);
+  &::placeholder {
+    color: var(--sds_textarea_error_placeholder);
+  }
+}
+.sds_textarea_field--readOnly,
+.sds_textarea_field--readOnly:hover,
+.sds_textarea_field--readOnly:focus {
+  background: var(--sds_textarea_readOnly_background);
+  border-color: var(--sds_textarea_readOnly_border_color);
+  border-radius: var(--sds_textarea_readOnly_border_radius);
+  border-style: var(--sds_textarea_readOnly_border_style);
+  border-width: var(--sds_textarea_readOnly_border_width);
+  color: var(--sds_textarea_readOnly_text);
+  &::placeholder {
+    color: var(--sds_textarea_readOnly_placeholder);
+  }
+}
+.sds_textarea_field--disabled,
+.sds_textarea_field--disabled:hover,
+.sds_textarea_field--disabled:focus {
+  cursor: not-allowed;
+  background: var(--sds_textarea_disabled_background);
+  border-color: var(--sds_textarea_disabled_border_color);
+  border-radius: var(--sds_textarea_disabled_border_radius);
+  border-style: var(--sds_textarea_disabled_border_style);
+  border-width: var(--sds_textarea_disabled_border_width);
+  opacity: var(--sds_textarea_disabled_opacity);
+  color: var(--sds_textarea_disabled_text);
+  &::placeholder {
+    color: var(--sds_textarea_disabled_placeholder);
+  }
+}
+
+.sds_textarea_telicon {
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  right: sds-spc(8);
+  bottom: sds-spc(8);
+  color: var(--sds_textarea_readOnly_icon);
+}
+.sds_textarea_icon--error {
+  color: var(--sds_textarea_error_icon);
+}
+
+.sds_textarea_helpText_counter {
+  @include sds-typeset(mouse);
+  color: var(--sds_helptext_text, #{sds-color(neutral, 60)});
+}
+.sds_textarea_helpText_counter--error {
+  color: var(--sds_helptext_error_text, #{sds-color(red, 70)});
+}

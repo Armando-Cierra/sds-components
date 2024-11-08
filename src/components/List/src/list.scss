@@ -1,0 +1,23 @@
+@use 'node_modules/@sipster/core/tools' as *;
+@forward 'tokens';
+
+.sds_list {
+  margin-left: 20px;
+}
+.sds_list--order {
+  .sds_list_item {
+    padding-left: sds-spc(4);
+  }
+}
+
+.sds_list_item {
+  padding-left: sds-spc(12);
+  color: var(--sds_list_text);
+  &::marker {
+    color: var(--sds_list_indicator_color);
+    text-align: right;
+  }
+}
+.sds_list_item.sds_list_item--nativeSymbol {
+  padding-left: 0;
+}

@@ -1,0 +1,24 @@
+body {
+  --sds_table_background_color: var(--sds_theme_background, #f1f1f1);
+  --sds_table_titleBar_text: var(--sds_theme_text, #000000);
+  --sds_table_border_color: var(--sds_theme_border, #ababab);
+  --sds_table_header_background_color: var(--sds_theme_background_low, #e3e3e3);
+  --sds_table_header_text: var(--sds_theme_text_subtle, #5c5c5c);
+  --sds_table_row_background_color: var(--sds_table_background_color);
+  --sds_table_row_interactive_background_color: var(
+    --sds_theme_background_high,
+    #ffffff
+  );
+  --sds_table_row_striped_background_color: var(
+    --sds_theme_background_low,
+    #e3e3e3
+  );
+  --sds_table_row_selected_background_color: var(
+    --sds_theme_color_primary_background,
+    #edeffb
+  );
+  --sds_table_row_error_background_color: var(
+    --sds_theme_color_danger_background,
+    #fee7e7
+  );
+}

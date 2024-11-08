@@ -1,0 +1,291 @@
+@use 'node_modules/@sipster/core/tools' as *;
+@forward './tokens';
+
+.sds_datePicker_calendarBox {
+  @include sds-flex(center, flex-start);
+  background: var(--sds_datePicker_calendar_background);
+  border-radius: var(--sds_theme_border_radius, 0.5rem);
+  border: 1px solid var(--sds_datePicker_calendar_border_color);
+  padding: sds-spc(8) 1px;
+}
+.sds_datePicker_calendarMenu {
+  display: flex;
+  flex-direction: column;
+  width: 144px;
+  padding: sds-spc(8);
+}
+
+.sds_datePicker_calendarMenu_range {
+  @include sds-flex(flex-start, center);
+  width: 100%;
+  height: 36px;
+  border: none;
+  background: var(--sds_datePicker_calendar_predefinedRangeItem_background);
+  color: var(--sds_datePicker_calendar_predefinedRangeItem_text);
+  padding: sds-spc(8);
+  cursor: pointer;
+  &:hover,
+  &:focus-visible {
+    background: var(
+      --sds_datePicker_calendar_predefinedRangeItem_hover_background
+    );
+    color: var(--sds_datePicker_calendar_predefinedRangeItem_hover_text);
+  }
+}
+.sds_datePicker_calendarMenu_range--selected {
+  color: var(--sds_datePicker_calendar_predefinedRangeItem_selected_text);
+  background: var(
+    --sds_datePicker_calendar_predefinedRangeItem_selected_background
+  );
+  &:hover,
+  &:focus-visible {
+    color: var(--sds_datePicker_calendar_predefinedRangeItem_selected_text);
+    background: var(
+      --sds_datePicker_calendar_predefinedRangeItem_selected_background
+    );
+  }
+}
+.sds_datePicker_calendarMenu_range--disabled {
+  opacity: var(--sds_theme_disabled_opacity, 48%);
+  cursor: not-allowed;
+  background: var(--sds_datePicker_calendar_predefinedRangeItem_background);
+  color: var(--sds_datePicker_calendar_predefinedRangeItem_text);
+  &:hover {
+    background: var(--sds_datePicker_calendar_predefinedRangeItem_background);
+    color: var(--sds_datePicker_calendar_predefinedRangeItem_text);
+  }
+}
+
+.sds_datePicker_calendar {
+  width: 256px;
+}
+
+.sds_datePicker_calendar--selectionMenu {
+  border-left: 1px solid var(--sds_datePicker_calendar_border_color);
+  padding-left: sds-spc(8);
+  width: 264px;
+}
+
+.sds_datePicker_calendar_header {
+  @include sds-flex(space-between, center);
+  padding: sds-spc(4);
+  padding-top: sds-spc(0);
+  position: relative;
+}
+
+.sds_datePicker_calendar_header_info {
+  @include sds-flex(center, center);
+  gap: 2px;
+  .sds_button {
+    font-weight: 600;
+  }
+}
+
+.sds_datePicker_calendar_header_fakeButton {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none !important;
+}
+
+.sds_datePicker_calendar_baseIndex {
+  display: flex;
+  flex-direction: column;
+}
+
+.sds_datePicker_calendar_baseIndex_daysOfWeek {
+  display: flex;
+}
+
+.sds_datePicker_calendar_baseIndex_daysOfWeek_day {
+  @include sds-flex(center, center);
+  font-weight: 600;
+  width: 36px;
+  height: 36px;
+  background: var(--sds_datePicker_calendar_weekDaysRow_background);
+  color: var(--sds_datePicker_calendar_weekDaysRow_text);
+}
+
+.sds_datePicker_calendar_baseIndex_daysOfMonth {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.sds_datePicker_calendar_baseIndex_daysOfMonth_day {
+  height: 32px;
+  border: none;
+  color: var(--sds_datePicker_calendar_day_text);
+  background: var(--sds_datePicker_calendar_day_background);
+  border: 2px solid var(--sds_datePicker_calendar_day_background);
+  @include sds-flex(center, center);
+  cursor: pointer;
+  &:hover,
+  &:focus-visible {
+    border-color: var(--sds_datePicker_calendar_day_accentColor);
+  }
+}
+.sds_datePicker_calendar_baseIndex_daysOfMonth_day--currentDate {
+  background: var(--sds_datePicker_calendar_currentDay_background);
+  border-bottom: 2px solid
+    var(--sds_datePicker_calendar_currentDay_borderAccentColor) !important;
+  color: var(--sds_datePicker_calendar_currentDay_text);
+}
+.sds_datePicker_calendar_baseIndex_daysOfMonth_day--notCurrentMonth {
+  background: var(--sds_datePicker_calendar_outOfMonthDay_background);
+  border: 2px solid var(--sds_datePicker_calendar_outOfMonthDay_background);
+  color: var(--sds_datePicker_calendar_outOfMonthDay_text);
+  &:hover,
+  &:focus-visible {
+    border-color: var(--sds_theme_color_primary);
+  }
+}
+.sds_datePicker_calendar_baseIndex_daysOfMonth_day--range,
+.sds_datePicker_calendar_baseIndex_daysOfMonth_day--hoveredRange {
+  background: var(--sds_datePicker_calendar_rangeInnerDay_background);
+  border-color: var(--sds_datePicker_calendar_rangeInnerDay_background);
+}
+.sds_datePicker_calendar_baseIndex_daysOfMonth_day--selectedDate,
+.sds_datePicker_calendar_baseIndex_daysOfMonth_day--selectedStartDate,
+.sds_datePicker_calendar_baseIndex_daysOfMonth_day--selectedEndDate {
+  background: var(--sds_datePicker_calendar_selectedDay_background);
+  border-color: var(--sds_datePicker_calendar_selectedDay_background);
+  color: var(--sds_datePicker_calendar_selectedDay_text);
+}
+.sds_datePicker_calendar_baseIndex_daysOfMonth_day--selectedStartDate {
+  border-radius: var(--sds_theme_border_radius, 0.5rem) 0 0
+    var(--sds_theme_border_radius, 0.5rem);
+}
+.sds_datePicker_calendar_baseIndex_daysOfMonth_day--selectedEndDate {
+  border-radius: 0 var(--sds_theme_border_radius, 0.5rem)
+    var(--sds_theme_border_radius, 0.5rem) 0;
+}
+.sds_datePicker_calendar_baseIndex_daysOfMonth_day--selectedStartDate.sds_datePicker_calendar_baseIndex_daysOfMonth_day--selectedEndDate {
+  border-radius: var(--sds_theme_border_radius, 0.5rem);
+}
+
+.sds_datePicker_calendar_baseIndex_daysOfMonth_day--disabled {
+  opacity: var(--sds_theme_disabled_opacity, 48%);
+  cursor: not-allowed;
+}
+
+.sds_datePicker_calendar_monthsIndex {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.sds_datePicker_calendar_monthsIndex_month {
+  height: 32px;
+  @include sds-flex(center, center);
+  cursor: pointer;
+  border: none;
+  background: var(--sds_datePicker_calendar_month_background);
+  border: 2px solid var(--sds_datePicker_calendar_month_background);
+  color: var(--sds_datePicker_calendar_month_text);
+  &:hover,
+  &:focus-visible {
+    border-color: var(--sds_datePicker_calendar_month_hover_background);
+    background: var(--sds_datePicker_calendar_month_hover_background);
+    color: var(--sds_datePicker_calendar_month_hover_text);
+  }
+}
+.sds_datePicker_calendar_monthsIndex_month--current {
+  color: var(--sds_datePicker_calendar_month_current_text);
+  font-weight: bold;
+  &:hover {
+    color: var(--sds_datePicker_calendar_month_current_text);
+  }
+}
+.sds_datePicker_calendar_monthsIndex_month--active {
+  color: var(--sds_datePicker_calendar_month_selected_text);
+  font-weight: 600;
+  background: var(--sds_datePicker_calendar_month_selected_background);
+  border-color: var(--sds_datePicker_calendar_month_selected_background);
+  cursor: auto;
+  &:hover,
+  &:focus-visible {
+    color: var(--sds_datePicker_calendar_month_selected_text);
+    font-weight: 600;
+    background: var(--sds_datePicker_calendar_month_selected_background);
+    border-color: var(--sds_datePicker_calendar_month_selected_background);
+    cursor: auto;
+  }
+}
+.sds_datePicker_calendar_monthsIndex_month--disabled {
+  opacity: var(--sds_theme_disabled_opacity, 48%);
+  cursor: not-allowed;
+  &:hover {
+    border: none;
+    background: var(--sds_datePicker_calendar_month_background);
+    border: 2px solid var(--sds_datePicker_calendar_month_background);
+    color: var(--sds_datePicker_calendar_month_text);
+  }
+}
+.sds_datePicker_calendarMenu_range--disabled.sds_datePicker_calendar_monthsIndex_month--current {
+  color: var(--sds_datePicker_calendar_month_current_text);
+  font-weight: bold;
+  &:hover {
+    color: var(--sds_datePicker_calendar_month_current_text);
+  }
+}
+
+.sds_datePicker_calendar_yearsIndex {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.sds_datePicker_calendar_yearsIndex_year {
+  height: 32px;
+  @include sds-flex(center, center);
+  color: var(--sds_datePicker_calendar_year_text);
+  background: var(--sds_datePicker_calendar_year_background);
+  border: 2px solid var(--sds_datePicker_calendar_year_background);
+  cursor: pointer;
+  &:hover,
+  &:focus-visible {
+    background: var(--sds_datePicker_calendar_year_hover_background);
+    border-color: var(--sds_datePicker_calendar_year_hover_background);
+    color: var(--sds_datePicker_calendar_year_hover_text);
+  }
+}
+.sds_datePicker_calendar_yearsIndex_year--current {
+  color: var(--sds_datePicker_calendar_year_current_text);
+  font-weight: bold;
+  &:hover {
+    color: var(--sds_datePicker_calendar_year_current_text);
+  }
+}
+.sds_datePicker_calendar_yearsIndex_year--active {
+  color: var(--sds_datePicker_calendar_year_selected_text);
+  font-weight: 600;
+  background: var(--sds_datePicker_calendar_year_selected_background);
+  border-color: var(--sds_datePicker_calendar_year_selected_background);
+  cursor: auto;
+  &:hover,
+  &:focus-visible {
+    color: var(--sds_datePicker_calendar_year_selected_text);
+    font-weight: 600;
+    background: var(--sds_datePicker_calendar_year_selected_background);
+    border-color: var(--sds_datePicker_calendar_year_selected_background);
+    cursor: auto;
+  }
+}
+.sds_datePicker_calendar_yearsIndex_year--disabled {
+  opacity: var(--sds_theme_disabled_opacity, 48%);
+  cursor: not-allowed;
+  &:hover {
+    color: var(--sds_datePicker_calendar_year_text);
+    background: var(--sds_datePicker_calendar_year_background);
+    border-color: var(--sds_datePicker_calendar_year_background);
+  }
+}
+.sds_datePicker_calendar_yearsIndex_year--disabled.sds_datePicker_calendar_yearsIndex_year--current {
+  color: var(--sds_datePicker_calendar_year_current_text);
+  font-weight: bold;
+  &:hover {
+    color: var(--sds_datePicker_calendar_year_current_text);
+  }
+}
+
+.sds_button.sds_datePicker_calendar_navigationButton--hidden {
+  opacity: 0;
+  pointer-events: none;
+}

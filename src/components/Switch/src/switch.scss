@@ -1,0 +1,117 @@
+@use 'node_modules/@sipster/core/tools' as *;
+@forward 'tokens';
+
+.sds_switch {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: sds-spc(16);
+  position: relative;
+  &.sds_switch_label--left {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.sds_switch_input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  &:focus-visible + .sds_switch_control {
+    box-shadow: var(--sds_switch_focus_shadow);
+    background: var(--sds_switch_focus_container_background);
+    border-color: var(--sds_switch_focus_container_border_color);
+    border-radius: var(--sds_switch_focus_container_border_radius);
+    border-style: var(--sds_switch_focus_container_border_style);
+    border-width: var(--sds_switch_focus_container_border_width);
+
+    .sds_switch_knob {
+      background: var(--sds_switch_focus_knob_background);
+      border-color: var(--sds_switch_focus_knob_border_color);
+      border-radius: var(--sds_switch_focus_knob_border_radius);
+      border-style: var(--sds_switch_focus_knob_border_style);
+      border-width: var(--sds_switch_focus_knob_border_width);
+    }
+  }
+  &:checked + .sds_switch_control {
+    background: var(--sds_switch_checked_container_background);
+    border-color: var(--sds_switch_checked_container_border_color);
+    border-radius: var(--sds_switch_checked_container_border_radius);
+    border-style: var(--sds_switch_checked_container_border_style);
+    border-width: var(--sds_switch_checked_container_border_width);
+
+    .sds_switch_knob {
+      background: var(--sds_switch_checked_knob_background);
+      border-color: var(--sds_switch_checked_knob_border_color);
+      border-radius: var(--sds_switch_checked_knob_border_radius);
+      border-style: var(--sds_switch_checked_knob_border_style);
+      border-width: var(--sds_switch_checked_knob_border_width);
+      left: calc(100% - 20px);
+    }
+  }
+}
+
+.sds_switch_control {
+  left: 0;
+  width: 50px;
+  height: 24px;
+  border-color: var(--sds_switch_container_border_color);
+  border-radius: var(--sds_switch_container_border_radius);
+  border-style: var(--sds_switch_container_border_style);
+  border-width: var(--sds_switch_container_border_width);
+  background: var(--sds_switch_container_background);
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  transition: sds-transition(standard, interactive);
+  &:hover {
+    background: var(--sds_switch_hover_container_background);
+    border-color: var(--sds_switch_hover_container_border_color);
+    border-radius: var(--sds_switch_hover_container_border_radius);
+    border-style: var(--sds_switch_hover_container_border_style);
+    border-width: var(--sds_switch_hover_container_border_width);
+
+    .sds_switch_knob {
+      background: var(--sds_switch_hover_knob_background);
+      border-color: var(--sds_switch_hover_knob_border_color);
+      border-radius: var(--sds_switch_hover_knob_border_radius);
+      border-style: var(--sds_switch_hover_knob_border_style);
+      border-width: var(--sds_switch_hover_knob_border_width);
+    }
+  }
+  &.sds_switch_control--disabled {
+    cursor: not-allowed;
+    opacity: var(--sds_switch_disabled_opacity);
+    background: var(--sds_switch_disabled_container_background);
+    border-color: var(--sds_switch_disabled_container_border_color);
+    border-radius: var(--sds_switch_disabled_container_border_radius);
+    border-style: var(--sds_switch_disabled_container_border_style);
+    border-width: var(--sds_switch_disabled_container_border_width);
+    .sds_switch_knob {
+      background: var(--sds_switch_disabled_knob_background);
+      border-color: var(--sds_switch_disabled_knob_border_color);
+      border-radius: var(--sds_switch_disabled_knob_border_radius);
+      border-style: var(--sds_switch_disabled_knob_border_style);
+      border-width: var(--sds_switch_disabled_knob_border_width);
+    }
+  }
+  .sds_switch_knob {
+    position: absolute;
+    @include sds-flex(center, center);
+    left: 4px;
+    width: 16px;
+    height: 16px;
+    background: var(--sds_switch_knob_background);
+    border-style: var(--sds_switch_knob_border_style);
+    border-width: var(--sds_switch_knob_border_width);
+    border-color: var(--sds_switch_knob_border_color);
+    border-radius: var(--sds_switch_knob_border_radius);
+    transition: sds-transition(standard, interactive);
+  }
+}

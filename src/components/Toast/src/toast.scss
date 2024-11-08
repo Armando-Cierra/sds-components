@@ -1,0 +1,78 @@
+@use 'node_modules/@sipster/core/tools' as *;
+@forward 'tokens';
+
+//Overwriting react-toastify tokens
+body .Toastify__toast {
+  min-height: auto;
+  padding: sds-spc(4) sds-spc(4) sds-spc(16) sds-spc(12);
+  --toastify-color-light: var(--sds_toast_background_color);
+  --toastify-color-progress-info: var(--sds_toast_progressbar);
+  --toastify-color-progress-success: var(--sds_toast_success_progressbar);
+  --toastify-color-progress-warning: var(--sds_toast_warning_progressbar);
+  --toastify-color-progress-error: var(--sds_toast_danger_progressbar);
+  --toastify-font-family: sans-serif;
+  --toastify-z-index: 9999;
+  --toastify-text-color-light: var(--sds_toast_text);
+  .Toastify__toast-body {
+    margin: 0;
+    padding: 0;
+    .sds_toast_container {
+      padding-top: sds-spc(4);
+      display: flex;
+      align-items: flex-start;
+      gap: sds-spc(8);
+    }
+  }
+  .Toastify__close-button {
+    width: 24px;
+    height: 24px;
+    color: var(--sds_toast_close_icon);
+    opacity: 0.8;
+  }
+
+  .Toastify__progress-bar--bg {
+    opacity: 0;
+  }
+  .Toastify__progress-bar {
+    opacity: 1;
+  }
+  .Toastify__progress-bar {
+    height: 4px !important;
+  }
+}
+
+.sds_telicon.sds_toast_container_icon {
+  transform: translateY(sds-spc(2));
+  color: var(--sds_toast_icon);
+}
+.sds_telicon.sds_toast_container_icon--success {
+  color: var(--sds_toast_success_icon);
+}
+.sds_telicon.sds_toast_container_icon--warning {
+  color: var(--sds_toast_warning_icon);
+}
+.sds_telicon.sds_toast_container_icon--danger {
+  color: var(--sds_toast_danger_icon);
+}
+
+//Specificity needed to overwrite correctly the tokens for subtle variant
+.sds_toast--subtle {
+  --toastify-color-light: var(--sds_toast_subtle_background_color);
+  --toastify-text-color-light: var(--sds_toast_subtle_text);
+  --toastify-toast-width: fit-content;
+  --toastify-toast-min-height: 36px;
+
+  .Toastify__toast {
+    margin-bottom: 0;
+    padding: sds-spc(8) sds-spc(12);
+    .Toastify__toast-body {
+      .sds_toast_container {
+        padding-top: 0;
+      }
+    }
+  }
+
+  .sds_telicon.sds_toast_container_icon {
+    color: var(--sds_toast_subtle_icon);
+  }
+}

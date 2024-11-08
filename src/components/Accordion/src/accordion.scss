@@ -1,0 +1,213 @@
+@use "node_modules/@sipster/core/tools" as *;
+@forward "tokens";
+
+.sds_accordionGroup {
+  display: inline-flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.sds_accordionGroup_title {
+  height: 56px;
+  @include sds-typeset(body-lg, semi);
+  padding-top: sds-spc(16);
+  padding-bottom: sds-spc(16);
+  display: flex;
+  flex-direction: row;  
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  gap: sds-spc(8);
+}
+
+.sds_accordionGroup_accordion_content {
+  @include sds-typeset(body, base);
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: sds-transition(standard, interactive);
+  transition-property: grid-template-rows;
+}
+
+.sds_accordionGroup_accordion_contentText {
+  min-height: 0;
+}
+
+.sds_accordion--expanded {
+  grid-template-rows: 1fr;
+
+  .sds_accordionGroup_accordion_contentText {
+    padding-top: sds-spc(8);
+    padding-bottom: sds-spc(16);
+  }
+}
+
+.sds_accordionGroup_accordion_titleContent {
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  flex-direction: row;
+  flex-shrink: 1;
+  flex-grow: 1;
+}
+
+
+.sds_accordionGroup_accordion {
+  width: 100%;
+  transition: sds-transition(standard, interactive);
+  padding: 0 sds-spc(8);
+  background-color: var(--sds_accordion_background_color);
+  color: var(--sds_accordion_text);
+  border-bottom: 1px solid var(--sds_accordion_border_color);
+  border-top: 1px solid var(--sds_accordion_border_color);
+
+  .sds_accordionIndicator {
+    fill: var(--sds_accordion_indicator);
+  }
+
+  &:hover {
+    background-color: var(--sds_accordion_hover_background_color);
+    color: var(--sds_accordion_hover_text);
+    border-color: var(--sds_accordion_hover_border_color);
+    .sds_accordionIndicator {
+      fill: var(--sds_accordion_hover_indicator);
+    }
+  }
+
+}
+
+.sds_accordionGroup_accordion--expanded {
+  background-color: var(--sds_accordion_expanded_background_color);
+  color: var(--sds_accordion_expanded_text);
+  border-bottom: 1px solid var(--sds_accordion_expanded_border_color);
+  border-top: 1px solid var(--sds_accordion_expanded_border_color);
+
+  .sds_accordionIndicator--expanded {
+    fill: var(--sds_accordion_expanded_indicator);
+  }
+
+  &:hover {
+    background-color: var(--sds_accordion_expanded_hover_background_color);
+    color: var(--sds_accordion_expanded_hover_text);
+    border-color: var(--sds_accordion_expanded_hover_border_color);
+
+    .sds_accordionIndicator {
+      fill: var(--sds_accordion_expanded_hover_indicator);
+    }
+  }
+
+  
+}
+
+
+.sds_accordionGroup_accordion--contained {
+  @include sds-shadow(sm);
+  padding: 0 sds-spc(16);
+  margin-bottom: sds-spc(8);
+
+  background-color: var(--sds_accordion_container_background_color);
+  border-radius: var(--sds_accordion_container_border_radius);
+  border: 1px solid var(--sds_accordion_container_border_color);
+  color: var(--sds_accordion_container_text);
+
+  .sds_accordionIndicator {
+    fill: var(--sds_accordion_container_indicator);
+  }
+
+  &:hover {
+    border-radius: var(--sds_accordion_container_hover_border_radius);
+    border-color: var(--sds_accordion_container_hover_border_color);
+    background-color: var(--sds_accordion_container_hover_background_color);
+    color: var(--sds_accordion_container_hover_text);
+    .sds_accordionIndicator {
+      fill: var(--sds_accordion_container_hover_indicator);
+    }
+  }
+
+}
+
+.sds_accordionGroup_accordion--contained.sds_accordionGroup_accordion--expanded {
+  background-color: var(--sds_accordion_container_expanded_background_color);
+  color: var(--sds_accordion_container_expanded_text);
+  border-bottom: 1px solid var(--sds_accordion_container_expanded_border_color);
+  border-top: 1px solid var(--sds_accordion_container_expanded_border_color);
+  border-radius: var(--sds_accordion_container_expanded_border_radius);
+  
+  .sds_accordionIndicator--expanded {
+    fill: var(--sds_accordion_container_expanded_indicator);
+  }
+
+  &:hover {
+    border-radius: var(--sds_accordion_container_expanded_hover_border_radius);
+    background-color: var(--sds_accordion_container_expanded_hover_background_color);
+    color: var(--sds_accordion_container_expanded_hover_text);
+    border-color: var(--sds_accordion_container_expanded_hover_border_color);
+    .sds_accordionIndicator {
+      fill: var(--sds_accordion_container_expanded_hover_indicator);
+    }
+  }
+
+}
+
+.sds_accordion_item_control {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+
+.sds_accordion_item_control:focus-visible + .sds_accordionGroup_accordion { 
+    background-color: var(--sds_accordion_focus_background_color);
+    color: var(--sds_accordion_focus_text);
+    border: 2px solid var(--sds_accordion_focus_border_color);
+
+    .sds_accordionIndicator {
+      fill: var(--sds_accordion_focus_indicator);
+  }
+}
+
+
+.sds_accordion_item_control:focus-visible + .sds_accordionGroup_accordion--expanded { 
+  background-color: var(--sds_accordion_expanded_focus_background_color);
+  color: var(--sds_accordion_expanded_focus_text);
+  border: 2px solid var(--sds_accordion_expanded_focus_border_color);
+
+  .sds_accordionIndicator {
+    fill: var(--sds_accordion_expanded_focus_indicator);
+ }
+}
+
+
+
+.sds_accordion_item_control:focus-visible + .sds_accordionGroup_accordion--contained { 
+    background-color: var(--sds_accordion_container_focus_background_color);
+    color: var(--sds_accordion_container_focus_text);
+    border-color: var(--sds_accordion_container_focus_border_color);
+    border-radius: var(--sds_accordion_container_focus_border_radius);
+    .sds_accordionIndicator {
+    fill: var(--sds_accordion_container_focus_indicator);
+    }
+}
+
+
+.sds_accordion_item_control:focus-visible + .sds_accordionGroup_accordion--expanded.sds_accordionGroup_accordion--contained { 
+  color: var(--sds_accordion_container_expanded_focus_text);
+  background-color: var(--sds_accordion_container_expanded_focus_background_color);
+  border-color: var(--sds_accordion_container_expanded_focus_border_color);
+  border-radius: var(--sds_accordion_container_expanded_focus_border_radius);
+  
+  .sds_accordionIndicator {
+    fill: var(--sds_accordion_container_expanded_focus_indicator);
+  }
+}
+
+
+.sds_accordionGroup_accordion:not(:first-of-type, .sds_accordionGroup_accordion--contained) {
+  border-top: none;
+}

@@ -1,0 +1,901 @@
+@use 'node_modules/@sipster/core/tools' as *;
+@forward 'tokens';
+
+.sds_button_icon.sds_telicon,
+.sds_button_loader {
+  flex-shrink: 0;
+  color: var(--sds_button_icon);
+  pointer-events: none;
+}
+
+// Base Styles
+.sds_button {
+  background: var(--sds_button_background);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  flex-wrap: 0;
+  cursor: pointer;
+  transition-property: border-color, color, background-color, box-shadow;
+  transition: cubic-bezier(0.25, 0, 0, 1) 0.2s;
+  @include sds-typeset(body);
+  background: var(--sds_button_background);
+  border-color: var(--sds_button_border_color);
+  border-style: var(--sds_button_border_style);
+  border-width: var(--sds_button_border_width);
+  border-radius: var(--sds_button_border_radius);
+  color: var(--sds_button_text);
+  padding: var(--sds_button_padding_y) var(--sds_button_padding_x);
+  height: 36px;
+  &:hover {
+    background: var(--sds_button_hover_background);
+    border-color: var(--sds_button_hover_border_color);
+    border-radius: var(--sds_button_hover_border_radius);
+    border-style: var(--sds_button_hover_border_style);
+    border-width: var(--sds_button_hover_border_width);
+    color: var(--sds_button_hover_text);
+    .sds_button_icon.sds_telicon,
+    .sds_button_loader {
+      color: var(--sds_button_hover_icon);
+    }
+  }
+  &:focus-visible {
+    background: var(--sds_button_focus_background);
+    border-color: var(--sds_button_focus_border_color);
+    border-radius: var(--sds_button_focus_border_radius);
+    border-style: var(--sds_button_focus_border_style);
+    border-width: var(--sds_button_focus_border_width);
+    color: var(--sds_button_focus_text);
+    box-shadow: var(
+      --sds_theme_focus_shadow,
+      0 0 0 4px rgba(77, 95, 214, 0.64)
+    );
+    .sds_button_icon.sds_telicon,
+    .sds_button_loader {
+      color: var(--sds_button_focus_icon);
+    }
+    &.sds_button--iconOnly {
+      min-width: 36px;
+      max-width: 36px;
+    }
+  }
+  &:active {
+    background: var(--sds_button_active_background);
+    border-color: var(--sds_button_active_border_color);
+    border-radius: var(--sds_button_active_border_radius);
+    border-style: var(--sds_button_active_border_style);
+    border-width: var(--sds_button_active_border_width);
+    color: var(--sds_button_active_text);
+    transform: scale(var(--sds_button_active_scale));
+    .sds_button_icon.sds_telicon,
+    .sds_button_loader {
+      color: var(--sds_button_active_icon);
+    }
+  }
+}
+
+//States
+.sds_button--disabled:active {
+  transform: scale(1);
+}
+.sds_button--disabled,
+.sds_button--disabled:hover,
+.sds_button--disabled:focus-visible,
+.sds_button--disabled:active {
+  background: var(--sds_button_disabled_background);
+  border-color: var(--sds_button_disabled_border_color);
+  border-radius: var(--sds_button_disabled_border_radius);
+  border-style: var(--sds_button_disabled_border_style);
+  border-width: var(--sds_button_disabled_border_width);
+  color: var(--sds_button_disabled_text);
+  opacity: var(--sds_button_disabled_opacity);
+  cursor: not-allowed;
+  .sds_button_icon.sds_telicon,
+  .sds_button_loader {
+    color: var(--sds_button_disabled_icon);
+  }
+}
+
+.sds_button--selected,
+.sds_button--selected:hover,
+.sds_button--selected:focus-visible,
+.sds_button--selected:active {
+  background: var(--sds_button_selected_background);
+  border-color: var(--sds_button_selected_border_color);
+  border-radius: var(--sds_button_selected_border_radius);
+  border-style: var(--sds_button_selected_border_style);
+  border-width: var(--sds_button_selected_border_width);
+  color: var(--sds_button_selected_text);
+  .sds_button_icon.sds_telicon,
+  .sds_button_loader {
+    color: var(--sds_button_selected_icon);
+  }
+}
+
+.sds_button--scaleWhileActiveDeactivated {
+  &:active {
+    transform: scale(1);
+  }
+}
+
+.sds_button--iconOnly {
+  width: 36px;
+}
+
+//Sizes
+.sds_button--small {
+  height: 24px;
+  --sds_button_padding_y: 2px;
+  --sds_button_padding_x: 8px;
+  --sds_button_border_radius: 6px;
+  --sds_button_hover_border_radius: 6px;
+  --sds_button_active_border_radius: 6px;
+  --sds_button_disabled_border_radius: 6px;
+  &.sds_button--iconOnly {
+    --sds_button_padding_y: 4px;
+    --sds_button_padding_x: 4px;
+    min-width: 24px !important;
+    max-width: 24px !important;
+  }
+}
+
+.sds_button--large {
+  --sds_button_padding_y: 10px;
+  --sds_button_padding_x: 16px;
+  height: 48px;
+  @include sds-typeset(heading-2);
+  &.sds_button--iconOnly {
+    --sds_button_padding_y: 12px;
+    --sds_button_padding_x: 12px;
+    min-width: 48px;
+    max-width: 48px;
+  }
+}
+
+//Vartiants
+.sds_button--primary {
+  --sds_button_background: var(
+    --sds_theme_button_primary_background,
+    #{sds-color(indigo, 60)}
+  );
+  --sds_button_border_color: var(
+    --sds_theme_button_primary_border,
+    #{sds-color(indigo, 70)}
+  );
+  --sds_button_text: var(--sds_theme_button_primary_text, #{sds-color(white)});
+  --sds_button_icon: var(--sds_theme_button_primary_icon, #{sds-color(white)});
+
+  //Hover
+  --sds_button_hover_background: var(
+    --sds_theme_button_primary_interactive_background,
+    #{sds-color(indigo, 70)}
+  );
+  --sds_button_hover_border_color: var(
+    --sds_theme_button_primary_interactive_border,
+    #{sds-color(indigo, 70)}
+  );
+  --sds_button_hover_text: var(
+    --sds_theme_button_primary_interactive_text,
+    #{sds-color(white)}
+  );
+  --sds_button_hover_icon: var(
+    --sds_theme_button_primary_interactive_icon,
+    #{sds-color(white)}
+  );
+
+  //Focus
+  --sds_button_focus_background: var(
+    --sds_theme_button_primary_interactive_background,
+    #{sds-color(indigo, 70)}
+  );
+  --sds_button_focus_border_color: var(
+    --sds_theme_button_primary_interactive_border,
+    #{sds-color(indigo, 70)}
+  );
+  --sds_button_focus_text: var(
+    --sds_theme_button_primary_interactive_text,
+    #{sds-color(white)}
+  );
+  --sds_button_focus_icon: var(
+    --sds_theme_button_primary_interactive_icon,
+    #{sds-color(white)}
+  );
+
+  //Active
+  --sds_button_active_background: var(
+    --sds_theme_button_primary_interactive_background,
+    #{sds-color(indigo, 70)}
+  );
+  --sds_button_active_border_color: var(
+    --sds_theme_button_primary_interactive_border,
+    #{sds-color(indigo, 70)}
+  );
+  --sds_button_active_text: var(
+    --sds_theme_button_primary_interactive_text,
+    #{sds-color(white)}
+  );
+  --sds_button_active_icon: var(
+    --sds_theme_button_primary_interactive_icon,
+    #{sds-color(white)}
+  );
+
+  //Disabled
+  --sds_button_disabled_background: var(
+    --sds_theme_button_primary_background,
+    #{sds-color(indigo, 60)}
+  );
+  --sds_button_disabled_border_color: var(
+    --sds_theme_button_primary_border,
+    #{sds-color(indigo, 70)}
+  );
+  --sds_button_disabled_text: var(
+    --sds_theme_button_primary_text,
+    #{sds-color(white)}
+  );
+
+  --sds_button_disabled_icon: var(
+    --sds_theme_button_primary_icon,
+    #{sds-color(white)}
+  );
+
+  //Selected
+  --sds_button_selected_background: var(
+    --sds_theme_button_primary_interactive_background,
+    #{sds-color(indigo, 70)}
+  );
+  --sds_button_selected_border_color: var(
+    --sds_theme_button_primary_interactive_border,
+    #{sds-color(indigo, 70)}
+  );
+  --sds_button_selected_text: var(
+    --sds_theme_button_primary_interactive_text,
+    #{sds-color(white)}
+  );
+  --sds_button_selected_icon: var(
+    --sds_theme_button_primary_interactive_icon,
+    #{sds-color(white)}
+  );
+}
+
+.sds_button--secondary {
+  --sds_button_background: var(
+    --sds_theme_button_secondary_background,
+    linear-gradient(
+      to bottom,
+      #{sds-color(white)} 0%,
+      #{sds-color(neutral, 05)} 100%
+    )
+  );
+  --sds_button_border_color: var(
+    --sds_theme_button_secondary_border,
+    #{sds-color(neutral, 30)}
+  );
+  --sds_button_text: var(
+    --sds_theme_button_secondary_text,
+    #{sds-color(indigo, 70)}
+  );
+  --sds_button_icon: var(
+    --sds_theme_button_secondary_icon,
+    #{sds-color(indigo, 60)}
+  );
+
+  //Hover
+  --sds_button_hover_background: var(
+    --sds_theme_button_secondary_interactive_background,
+    #{sds-color(indigo, 70)}
+  );
+  --sds_button_hover_border_color: var(
+    --sds_theme_button_secondary_interactive_border,
+    #{sds-color(indigo, 70)}
+  );
+  --sds_button_hover_text: var(
+    --sds_theme_button_secondary_interactive_text,
+    #{sds-color(white)}
+  );
+  --sds_button_hover_icon: var(
+    --sds_theme_button_secondary_interactive_icon,
+    #{sds-color(white)}
+  );
+
+  //Focus
+  --sds_button_focus_background: var(
+    --sds_theme_button_secondary_interactive_background,
+    #{sds-color(indigo, 70)}
+  );
+  --sds_button_focus_border_color: var(
+    --sds_theme_button_secondary_interactive_border,
+    #{sds-color(indigo, 70)}
+  );
+  --sds_button_focus_text: var(
+    --sds_theme_button_secondary_interactive_text,
+    #{sds-color(white)}
+  );
+  --sds_button_focus_icon: var(
+    --sds_theme_button_secondary_interactive_icon,
+    #{sds-color(white)}
+  );
+
+  //Active
+  --sds_button_active_background: var(
+    --sds_theme_button_secondary_interactive_background,
+    #{sds-color(indigo, 70)}
+  );
+  --sds_button_active_border_color: var(
+    --sds_theme_button_secondary_interactive_border,
+    #{sds-color(indigo, 70)}
+  );
+  --sds_button_active_text: var(
+    --sds_theme_button_secondary_interactive_text,
+    #{sds-color(white)}
+  );
+  --sds_button_active_icon: var(
+    --sds_theme_button_secondary_interactive_icon,
+    #{sds-color(white)}
+  );
+
+  //Disabled
+  --sds_button_disabled_background: var(
+    --sds_theme_button_secondary_background,
+    linear-gradient(
+      to bottom,
+      #{sds-color(white)} 0%,
+      #{sds-color(neutral, 05)} 100%
+    )
+  );
+  --sds_button_disabled_border_color: var(
+    --sds_theme_button_secondary_border,
+    #{sds-color(neutral, 30)}
+  );
+  --sds_button_disabled_text: var(
+    --sds_theme_button_secondary_text,
+    #{sds-color(indigo, 70)}
+  );
+
+  --sds_button_disabled_icon: var(
+    --sds_theme_button_secondary_icon,
+    #{sds-color(indigo, 60)}
+  );
+
+  //Selected
+  --sds_button_selected_background: var(
+    --sds_theme_button_secondary_interactive_background,
+    #{sds-color(indigo, 70)}
+  );
+  --sds_button_selected_border_color: var(
+    --sds_theme_button_secondary_interactive_border,
+    #{sds-color(indigo, 70)}
+  );
+  --sds_button_selected_text: var(
+    --sds_theme_button_secondary_interactive_text,
+    #{sds-color(white)}
+  );
+  --sds_button_selected_icon: var(
+    --sds_theme_button_secondary_interactive_icon,
+    #{sds-color(white)}
+  );
+}
+
+.sds_button--ghost {
+  --sds_button_background: var(
+    --sds_theme_button_ghost_background,
+    transparent
+  );
+  border: none;
+  --sds_button_text: var(--sds_theme_button_ghost_text, #{sds-color(black)});
+  --sds_button_icon: var(
+    --sds_theme_button_ghost_icon,
+    #{sds-color(neutral, 70)}
+  );
+  &:hover,
+  &:active,
+  &:focus-visible {
+    border: none;
+  }
+
+  //Hover
+  --sds_button_hover_background: var(
+    --sds_theme_button_ghost_interactive_background,
+    #{sds-color(neutral, 10)}
+  );
+  --sds_button_hover_text: var(
+    --sds_theme_button_ghost_interactive_text,
+    #{sds-color(black)}
+  );
+  --sds_button_hover_icon: var(
+    --sds_theme_button_ghost_interactive_icon,
+    #{sds-color(neutral, 70)}
+  );
+
+  //Focus
+  --sds_button_focus_background: var(
+    --sds_theme_button_ghost_interactive_background,
+    #{sds-color(neutral, 10)}
+  );
+  --sds_button_focus_text: var(
+    --sds_theme_button_ghost_interactive_text,
+    #{sds-color(black)}
+  );
+  --sds_button_focus_icon: var(
+    --sds_theme_button_ghost_interactive_icon,
+    #{sds-color(neutral, 70)}
+  );
+
+  //Active
+  --sds_button_active_background: var(
+    --sds_theme_button_ghost_interactive_background,
+    #{sds-color(neutral, 10)}
+  );
+  --sds_button_active_text: var(
+    --sds_theme_button_ghost_interactive_text,
+    #{sds-color(black)}
+  );
+  --sds_button_active_icon: var(
+    --sds_theme_button_ghost_interactive_icon,
+    #{sds-color(neutral, 70)}
+  );
+  //Disabled
+  --sds_button_disabled_background: var(
+    --sds_theme_button_ghost_background,
+    transparent
+  );
+  --sds_button_disabled_text: var(
+    --sds_theme_button_ghost_text,
+    #{sds-color(black)}
+  );
+
+  --sds_button_disabled_icon: var(
+    --sds_theme_button_ghost_icon,
+    #{sds-color(neutral, 70)}
+  );
+
+  //Selected
+  --sds_button_selected_background: var(
+    --sds_theme_button_ghost_interactive_background,
+    #{sds-color(neutral, 10)}
+  );
+  --sds_button_selected_text: var(
+    --sds_theme_button_ghost_interactive_text,
+    #{sds-color(black)}
+  );
+  --sds_button_selected_icon: var(
+    --sds_theme_button_ghost_interactive_icon,
+    #{sds-color(neutral, 70)}
+  );
+}
+
+.sds_button--danger {
+  --sds_button_background: var(
+    --sds_theme_button_danger_background,
+    #{sds-color(red, 60)}
+  );
+  --sds_button_border_color: var(
+    --sds_theme_button_danger_border,
+    #{sds-color(red, 70)}
+  );
+  --sds_button_text: var(--sds_theme_button_danger_text, #{sds-color(white)});
+  --sds_button_icon: var(--sds_theme_button_danger_icon, #{sds-color(white)});
+
+  //Hover
+  --sds_button_hover_background: var(
+    --sds_theme_button_danger_interactive_background,
+    #{sds-color(red, 70)}
+  );
+  --sds_button_hover_border_color: var(
+    --sds_theme_button_danger_interactive_border,
+    #{sds-color(red, 70)}
+  );
+  --sds_button_hover_text: var(
+    --sds_theme_button_primary_interactive_text,
+    #{sds-color(white)}
+  );
+  --sds_button_hover_icon: var(
+    --sds_theme_button_primary_interactive_icon,
+    #{sds-color(white)}
+  );
+
+  //Focus
+  --sds_button_focus_background: var(
+    --sds_theme_button_danger_interactive_background,
+    #{sds-color(red, 70)}
+  );
+  --sds_button_focus_border_color: var(
+    --sds_theme_button_danger_interactive_border,
+    #{sds-color(red, 70)}
+  );
+  --sds_button_focus_text: var(
+    --sds_theme_button_primary_interactive_text,
+    #{sds-color(white)}
+  );
+  --sds_button_focus_icon: var(
+    --sds_theme_button_primary_interactive_icon,
+    #{sds-color(white)}
+  );
+
+  //Active
+  --sds_button_active_background: var(
+    --sds_theme_button_danger_interactive_background,
+    #{sds-color(red, 70)}
+  );
+  --sds_button_active_border_color: var(
+    --sds_theme_button_danger_interactive_border,
+    #{sds-color(red, 70)}
+  );
+  --sds_button_active_text: var(
+    --sds_theme_button_primary_interactive_text,
+    #{sds-color(white)}
+  );
+  --sds_button_active_icon: var(
+    --sds_theme_button_primary_interactive_icon,
+    #{sds-color(white)}
+  );
+
+  //Disabled
+  --sds_button_disabled_background: var(
+    --sds_theme_button_danger_background,
+    #{sds-color(red, 60)}
+  );
+  --sds_button_disabled_border_color: var(
+    --sds_theme_button_danger_border,
+    #{sds-color(red, 70)}
+  );
+  --sds_button_disabled_text: var(
+    --sds_theme_button_danger_text,
+    #{sds-color(white)}
+  );
+
+  --sds_button_disabled_icon: var(
+    --sds_theme_button_danger_icon,
+    #{sds-color(white)}
+  );
+
+  //Selected
+  --sds_button_selected_background: var(
+    --sds_theme_button_danger_interactive_background,
+    #{sds-color(red, 70)}
+  );
+  --sds_button_selected_border_color: var(
+    --sds_theme_button_danger_interactive_border,
+    #{sds-color(red, 70)}
+  );
+  --sds_button_selected_text: var(
+    --sds_theme_button_primary_interactive_text,
+    #{sds-color(white)}
+  );
+  --sds_button_selected_icon: var(
+    --sds_theme_button_primary_interactive_icon,
+    #{sds-color(white)}
+  );
+}
+
+.sds_button--dangerAlt {
+  --sds_button_background: var(
+    --sds_theme_button_danger_alt_background,
+    linear-gradient(
+      to bottom,
+      #{sds-color(white)} 0%,
+      #{sds-color(neutral, 05)} 100%
+    )
+  );
+  --sds_button_border_color: var(
+    --sds_theme_button_danger_alt_border,
+    #{sds-color(neutral, 30)}
+  );
+  --sds_button_text: var(
+    --sds_theme_button_danger_alt_text,
+    #{sds-color(red, 70)}
+  );
+  --sds_button_icon: var(
+    --sds_theme_button_danger_alt_icon,
+    #{sds-color(red, 60)}
+  );
+
+  //Hover
+  --sds_button_hover_background: var(
+    --sds_theme_button_danger_alt_interactive_background,
+    #{sds-color(red, 70)}
+  );
+  --sds_button_hover_border_color: var(
+    --sds_theme_button_danger_alt_interactive_border,
+    #{sds-color(red, 70)}
+  );
+  --sds_button_hover_text: var(
+    --sds_theme_button_danger_alt_interactive_text,
+    #{sds-color(white)}
+  );
+  --sds_button_hover_icon: var(
+    --sds_theme_button_danger_alt_interactive_icon,
+    #{sds-color(white)}
+  );
+
+  //Focus
+  --sds_button_focus_background: var(
+    --sds_theme_button_danger_alt_interactive_background,
+    #{sds-color(red, 70)}
+  );
+  --sds_button_focus_border_color: var(
+    --sds_theme_button_danger_alt_interactive_border,
+    #{sds-color(red, 70)}
+  );
+  --sds_button_focus_text: var(
+    --sds_theme_button_danger_alt_interactive_text,
+    #{sds-color(white)}
+  );
+  --sds_button_focus_icon: var(
+    --sds_theme_button_danger_alt_interactive_icon,
+    #{sds-color(white)}
+  );
+
+  //Active
+  --sds_button_active_background: var(
+    --sds_theme_button_danger_alt_interactive_background,
+    #{sds-color(red, 60)}
+  );
+  --sds_button_active_border_color: var(
+    --sds_theme_button_danger_alt_interactive_border,
+    #{sds-color(red, 70)}
+  );
+  --sds_button_active_text: var(
+    --sds_theme_button_danger_alt_interactive_text,
+    #{sds-color(white)}
+  );
+  --sds_button_active_icon: var(
+    --sds_theme_button_danger_alt_interactive_icon,
+    #{sds-color(white)}
+  );
+
+  //Disabled
+  --sds_button_disabled_background: var(
+    --sds_theme_button_danger_alt_background,
+    linear-gradient(
+      to bottom,
+      #{sds-color(white)} 0%,
+      #{sds-color(neutral, 05)} 100%
+    )
+  );
+  --sds_button_disabled_border_color: var(
+    --sds_theme_button_danger_alt_border,
+    #{sds-color(neutral, 30)}
+  );
+  --sds_button_disabled_text: var(
+    --sds_theme_button_danger_alt_text,
+    #{sds-color(red, 70)}
+  );
+
+  --sds_button_disabled_icon: var(
+    --sds_theme_button_danger_alt_icon,
+    #{sds-color(red, 60)}
+  );
+
+  //Selected
+  --sds_button_selected_background: var(
+    --sds_theme_button_danger_alt_interactive_background,
+    #{sds-color(red, 70)}
+  );
+  --sds_button_selected_border_color: var(
+    --sds_theme_button_danger_alt_interactive_border,
+    #{sds-color(red, 70)}
+  );
+  --sds_button_selected_text: var(
+    --sds_theme_button_danger_alt_interactive_text,
+    #{sds-color(white)}
+  );
+  --sds_button_selected_icon: var(
+    --sds_theme_button_danger_alt_interactive_icon,
+    #{sds-color(white)}
+  );
+}
+
+.sds_button--inverted {
+  --sds_button_background: var(
+    --sds_theme_button_inverted_background,
+    #{sds-color(neutral, 90)}
+  );
+  --sds_button_border_color: var(
+    --sds_theme_button_inverted_border,
+    #{sds-color(neutral, 90)}
+  );
+  --sds_button_text: var(--sds_theme_button_inverted_text, #{sds-color(white)});
+  --sds_button_icon: var(--sds_theme_button_inverted_icon, #{sds-color(white)});
+
+  //Hover
+  --sds_button_hover_background: var(
+    --sds_theme_button_inverted_interactive_background,
+    #{sds-color(black)}
+  );
+  --sds_button_hover_border_color: var(
+    --sds_theme_button_inverted_interactive_border,
+    #{sds-color(black)}
+  );
+  --sds_button_hover_text: var(
+    --sds_theme_button_inverted_interactive_text,
+    #{sds-color(white)}
+  );
+  --sds_button_hover_icon: var(
+    --sds_theme_button_inverted_interactive_icon,
+    #{sds-color(white)}
+  );
+
+  //Focus
+  --sds_button_focus_background: var(
+    --sds_theme_button_inverted_interactive_background,
+    #{sds-color(black)}
+  );
+  --sds_button_focus_border_color: var(
+    --sds_theme_button_inverted_interactive_border,
+    #{sds-color(black)}
+  );
+  --sds_button_focus_text: var(
+    --sds_theme_button_inverted_interactive_text,
+    #{sds-color(white)}
+  );
+  --sds_button_focus_icon: var(
+    --sds_theme_button_inverted_interactive_icon,
+    #{sds-color(white)}
+  );
+
+  //Active
+  --sds_button_active_background: var(
+    --sds_theme_button_inverted_interactive_background,
+    #{sds-color(black)}
+  );
+  --sds_button_active_border_color: var(
+    --sds_theme_button_inverted_interactive_border,
+    #{sds-color(black)}
+  );
+  --sds_button_active_text: var(
+    --sds_theme_button_inverted_interactive_text,
+    #{sds-color(white)}
+  );
+  --sds_button_active_icon: var(
+    --sds_theme_button_inverted_interactive_icon,
+    #{sds-color(white)}
+  );
+
+  //Disabled
+  --sds_button_disabled_background: var(
+    --sds_theme_button_inverted_background,
+    #{sds-color(neutral, 90)}
+  );
+  --sds_button_disabled_border_color: var(
+    --sds_theme_button_inverted_border,
+    #{sds-color(neutral, 90)}
+  );
+  --sds_button_disabled_text: var(
+    --sds_theme_button_inverted_text,
+    #{sds-color(white)}
+  );
+
+  --sds_button_disabled_icon: var(
+    --sds_theme_button_inverted_icon,
+    #{sds-color(white)}
+  );
+
+  //Selected
+  --sds_button_selected_background: var(
+    --sds_theme_button_inverted_interactive_background,
+    #{sds-color(black)}
+  );
+  --sds_button_selected_border_color: var(
+    --sds_theme_button_inverted_interactive_border,
+    #{sds-color(black)}
+  );
+  --sds_button_selected_text: var(
+    --sds_theme_button_inverted_interactive_text,
+    #{sds-color(white)}
+  );
+  --sds_button_selected_icon: var(
+    --sds_theme_button_inverted_interactive_icon,
+    #{sds-color(white)}
+  );
+}
+
+.sds_button--invertedAlt {
+  --sds_button_background: var(
+    --sds_theme_button_inverted_alt_background,
+    none
+  );
+  --sds_button_border_color: var(
+    --sds_theme_button_inverted_alt_border,
+    #{sds-color(black)}
+  );
+  --sds_button_text: var(
+    --sds_theme_button_inverted_alt_text,
+    #{sds-color(black)}
+  );
+  --sds_button_icon: var(
+    --sds_theme_button_inverted_alt_icon,
+    #{sds-color(black)}
+  );
+
+  //Hover
+  --sds_button_hover_background: var(
+    --sds_theme_button_inverted_alt_interactive_background,
+    #{sds-color(black)}
+  );
+  --sds_button_hover_border_color: var(
+    --sds_theme_button_inverted_alt_interactive_border,
+    #{sds-color(black)}
+  );
+  --sds_button_hover_text: var(
+    --sds_theme_button_danger_alt_interactive_text,
+    #{sds-color(white)}
+  );
+  --sds_button_hover_icon: var(
+    --sds_theme_button_danger_alt_interactive_icon,
+    #{sds-color(white)}
+  );
+
+  //Focus
+  --sds_button_focus_background: var(
+    --sds_theme_button_inverted_alt_interactive_background,
+    #{sds-color(black)}
+  );
+  --sds_button_focus_border_color: var(
+    --sds_theme_button_inverted_alt_interactive_border,
+    #{sds-color(black)}
+  );
+  --sds_button_focus_text: var(
+    --sds_theme_button_danger_alt_interactive_text,
+    #{sds-color(white)}
+  );
+  --sds_button_focus_icon: var(
+    --sds_theme_button_danger_alt_interactive_icon,
+    #{sds-color(white)}
+  );
+
+  //Active
+  --sds_button_active_background: var(
+    --sds_theme_button_inverted_alt_interactive_background,
+    #{sds-color(black)}
+  );
+  --sds_button_active_border_color: var(
+    --sds_theme_button_inverted_alt_interactive_border,
+    #{sds-color(black)}
+  );
+  --sds_button_active_text: var(
+    --sds_theme_button_danger_alt_interactive_text,
+    #{sds-color(white)}
+  );
+  --sds_button_active_icon: var(
+    --sds_theme_button_danger_alt_interactive_icon,
+    #{sds-color(white)}
+  );
+
+  //Disabled
+  --sds_button_disabled_background: var(
+    --sds_theme_button_inverted_alt_background,
+    none
+  );
+  --sds_button_disabled_border_color: var(
+    --sds_theme_button_inverted_alt_border,
+    #{sds-color(black)}
+  );
+  --sds_button_disabled_text: var(
+    --sds_theme_button_inverted_alt_text,
+    #{sds-color(black)}
+  );
+
+  --sds_button_disabled_icon: var(
+    --sds_theme_button_inverted_alt_icon,
+    #{sds-color(black)}
+  );
+
+  //Selected
+  --sds_button_selected_background: var(
+    --sds_theme_button_inverted_alt_interactive_background,
+    #{sds-color(black)}
+  );
+  --sds_button_selected_border_color: var(
+    --sds_theme_button_inverted_alt_interactive_border,
+    #{sds-color(black)}
+  );
+  --sds_button_selected_text: var(
+    --sds_theme_button_danger_alt_interactive_text,
+    #{sds-color(white)}
+  );
+  --sds_button_selected_icon: var(
+    --sds_theme_button_danger_alt_interactive_icon,
+    #{sds-color(white)}
+  );
+}

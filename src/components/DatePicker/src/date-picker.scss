@@ -1,0 +1,133 @@
+@use 'node_modules/@sipster/core/tools' as *;
+@forward './tokens';
+
+.sds_datePicker {
+  display: inline-flex;
+  flex-direction: column;
+  width: 256px;
+  .sds_datePicker_control {
+    width: 100%;
+  }
+}
+
+.sds_datePicker_label {
+  margin-bottom: sds-spc(4);
+}
+
+.sds_datePicker_control {
+  width: 256px;
+  @include sds-flex(flex-start, center);
+}
+
+.sds_datePicker_control_box.radix_trigger {
+  position: relative;
+  box-sizing: border-box;
+  @include sds-flex(flex-start, center);
+  width: 100%;
+  height: 36px;
+  background: var(--sds_datePicker_background);
+  border: var(--sds_datePicker_border_width) var(--sds_datePicker_border_style)
+    var(--sds_datePicker_border_color);
+  border-radius: var(--sds_datePicker_border_radius);
+  padding: sds-spc(8) sds-spc(12);
+  padding-left: 36px;
+  color: var(--sds_datePicker_text);
+  user-select: none;
+  cursor: pointer;
+  svg {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+  }
+  .sds_datePicker_control_icon--calendar {
+    left: sds-spc(12);
+    color: var(--sds_datePicker_baseIcon);
+  }
+  .sds_datePicker_control_icon--error {
+    color: var(--sds_datePicker_error_icon);
+  }
+  .sds_datePicker_control_icon--readOnly {
+    color: var(--sds_datePicker_readOnly_icon);
+  }
+  .sds_datePicker_control_icon--error,
+  .sds_datePicker_control_icon--readOnly {
+    right: sds-spc(8);
+  }
+
+  &:hover {
+    background: var(--sds_datePicker_hover_background);
+    border-color: var(--sds_datePicker_hover_border_color);
+    border-width: var(--sds_datePicker_hover_border_width);
+    border-radius: var(--sds_datePicker_hover_border_radius);
+    border-style: var(--sds_datePicker_hover_border_style);
+    color: var(--sds_datePicker_hover_text);
+    .sds_datePicker_control_icon--calendar {
+      color: var(--sds_datePicker_hover_baseIcon);
+    }
+  }
+  &:focus {
+    background: var(--sds_datePicker_focus_background);
+    border-color: var(--sds_datePicker_focus_border_color);
+    border-width: var(--sds_datePicker_focus_border_width);
+    border-radius: var(--sds_datePicker_focus_border_radius);
+    border-style: var(--sds_datePicker_focus_border_style);
+    color: var(--sds_datePicker_focus_text);
+    .sds_datePicker_control_icon--calendar {
+      color: var(--sds_datePicker_focus_baseIcon);
+    }
+  }
+}
+.sds_datePicker_control_box--error.radix_trigger,
+.sds_datePicker_control_box--error.radix_trigger:hover,
+.sds_datePicker_control_box--error.radix_trigger:focus {
+  background: var(--sds_datePicker_error_background);
+  border-color: var(--sds_datePicker_error_border_color);
+  border-width: var(--sds_datePicker_error_border_width);
+  color: var(--sds_datePicker_error_text);
+  border-radius: var(--sds_datePicker_error_border_radius);
+  border-style: var(--sds_datePicker_error_border_style);
+  .sds_datePicker_control_icon--calendar {
+    color: var(--sds_datePicker_error_baseIcon);
+  }
+}
+
+.sds_datePicker_control_box--readOnly.radix_trigger,
+.sds_datePicker_control_box--readOnly.radix_trigger:hover,
+.sds_datePicker_control_box--readOnly.radix_trigger:focus {
+  background: var(--sds_datePicker_readOnly_background);
+  border-color: var(--sds_datePicker_readOnly_border_color);
+  border-width: var(--sds_datePicker_readOnly_border_width);
+  color: var(--sds_datePicker_readOnly_text);
+  border-radius: var(--sds_datePicker_readOnly_border_radius);
+  border-style: var(--sds_datePicker_readOnly_border_style);
+  .sds_datePicker_control_icon--calendar {
+    color: var(--sds_datePicker_readOnly_baseIcon);
+  }
+}
+
+.sds_datePicker_control_box--disabled.radix_trigger,
+.sds_datePicker_control_box--disabled.radix_trigger:hover,
+.sds_datePicker_control_box--disabled.radix_trigger:focus {
+  background: var(--sds_datePicker_disabled_background);
+  border-color: var(--sds_datePicker_disabled_border_color);
+  border-width: var(--sds_datePicker_disabled_border_width);
+  border-radius: var(--sds_datePicker_disabled_border_radius);
+  border-style: var(--sds_datePicker_disabled_border_style);
+  color: var(--sds_datePicker_disabled_text);
+  opacity: var(--sds_datePicker_disabled_opacity);
+  height: 36px;
+  cursor: not-allowed;
+  .sds_datePicker_control_icon--calendar {
+    color: var(--sds_datePicker_disabled_baseIcon);
+  }
+}
+
+.sds_datePicker_control_box_placeholder {
+  color: var(--sds_datePicker_placeholder);
+}
+.sds_datePicker_control_box_placeholder--error {
+  color: var(--sds_datePicker_error_placeholder);
+}
+.sds_datePicker_control_box_placeholder--disabled {
+  color: var(--sds_datePicker_disabled_placeholder);
+}

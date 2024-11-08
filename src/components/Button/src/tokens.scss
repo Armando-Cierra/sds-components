@@ -1,0 +1,106 @@
+@use 'node_modules/@sipster/core/tools' as *;
+
+body {
+  --sds_button_background: var(
+    --sds_theme_button_background,
+    linear-gradient(
+      to bottom,
+      #{sds-color(white)} 0%,
+      #{sds-color(neutral, 05)} 100%
+    )
+  );
+  --sds_button_border_color: var(
+    --sds_theme_button_border,
+    #{sds-color(neutral, 30)}
+  );
+  --sds_button_border_radius: var(--sds_theme_border_radius, #{sds-spc(8)});
+  --sds_button_border_style: solid;
+  --sds_button_border_width: 1px;
+  --sds_button_icon: var(--sds_theme_button_icon, #{sds-color(neutral, 70)});
+  --sds_button_text: var(--sds_theme_button_text, #{sds-color(black)});
+  --sds_button_padding_x: #{sds-spc(12)};
+  --sds_button_padding_y: #{sds-spc(8)};
+
+  --sds_button_hover_background: var(
+    --sds_theme_button_interactive_background,
+    #{sds-color(neutral, 05)}
+  );
+  --sds_button_hover_border_color: var(
+    --sds_theme_button_interactive_border,
+    #{sds-color(neutral)}
+  );
+  --sds_button_hover_border_radius: var(--sds_button_border_radius, 0.5rem);
+  --sds_button_hover_border_style: var(--sds_button_border_style);
+  --sds_button_hover_border_width: var(--sds_button_border_width);
+  --sds_button_hover_icon: var(
+    --sds_theme_button_interactive_icon,
+    #{sds-color(black)}
+  );
+  --sds_button_hover_text: var(
+    --sds_theme_button_interactive_text,
+    #{sds-color(black)}
+  );
+  --sds_button_focus_background: var(
+    --sds_theme_button_interactive_background,
+    #{sds-color(neutral, 05)}
+  );
+  --sds_button_focus_border_color: var(
+    --sds_theme_button_interactive_border,
+    #{sds-color(neutral)}
+  );
+  --sds_button_focus_border_radius: var(--sds_button_border_radius, 0.5rem);
+  --sds_button_focus_border_style: var(--sds_button_border_style);
+  --sds_button_focus_border_width: var(--sds_button_border_width);
+  --sds_button_focus_icon: var(
+    --sds_theme_button_interactive_icon,
+    #{sds-color(black)}
+  );
+  --sds_button_focus_text: var(
+    --sds_theme_button_interactive_text,
+    #{sds-color(black)}
+  );
+
+  --sds_button_disabled_background: var(--sds_theme_button_background);
+  --sds_button_disabled_border_color: var(
+    --sds_theme_button_border,
+    #{sds-color(neutral, 30)}
+  );
+  --sds_button_disabled_border_radius: var(
+    --sds_theme_border_radius,
+    #{sds-spc(8)}
+  );
+  --sds_button_disabled_border_style: solid;
+  --sds_button_disabled_border_width: 1px;
+  --sds_button_disabled_icon: var(--sds_theme_button_icon);
+  --sds_button_disabled_text: var(--sds_theme_button_text);
+  --sds_button_disabled_opacity: var(--sds_theme_disabled_opacity, 48%);
+
+  --sds_button_active_background: var(--sds_button_hover_background);
+  --sds_button_active_border_color: var(--sds_button_hover_border_color);
+  --sds_button_active_border_radius: var(--sds_button_hover_border_radius);
+  --sds_button_active_border_style: var(--sds_button_hover_border_style);
+  --sds_button_active_border_width: var(--sds_button_hover_border_width);
+  --sds_button_active_icon: var(--sds_button_hover_icon);
+  --sds_button_active_text: var(--sds_button_hover_text);
+  --sds_button_active_scale: 1.03;
+
+  --sds_button_selected_background: var(
+    --sds_theme_button_selected_background,
+    #{sds-color(neutral, 20)}
+  );
+  --sds_button_selected_border_color: var(
+    --sds_theme_button_selected_border,
+    #{sds-color(neutral)}
+  );
+  --sds_button_selected_border_radius: var(--sds_button_border_radius);
+  --sds_button_selected_border_style: var(--sds_button_border_style);
+  --sds_button_selected_border_width: var(--sds_button_border_width);
+  --sds_button_selected_icon: var(
+    --sds_theme_button_selected_icon,
+    #{sds-color(black)}
+  );
+  --sds_button_selected_text: var(
+    --sds_theme_button_selected_text,
+    #{sds-color(black)}
+  );
+}

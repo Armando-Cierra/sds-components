@@ -1,0 +1,67 @@
+@use 'node_modules/@sipster/core/tools' as *;
+@forward 'tokens';
+
+$textAlignments: left, center, right, justify;
+$textFormats: mouse, 'sm-caps', body, 'body-lg', heading-2, heading-1, title-2,
+  title-1;
+
+@each $align in $textAlignments {
+  .sds_text--#{$align} {
+    text-align: #{$align};
+  }
+}
+
+//Typesets
+.sds_text {
+  @include sds-typeset(body);
+}
+.sds_text--mouse {
+  @include sds-typeset(mouse);
+}
+.sds_text--smCaps {
+  @include sds-typeset(sm-caps);
+}
+.sds_text--bodyLg {
+  @include sds-typeset(body-lg);
+}
+.sds_text--heading2 {
+  @include sds-typeset(heading-2);
+}
+.sds_text--heading1 {
+  @include sds-typeset(heading-1);
+}
+.sds_text--title2 {
+  @include sds-typeset(title-2);
+}
+.sds_text--title1 {
+  @include sds-typeset(title-1);
+}
+
+//Colors
+.sds_text {
+  color: var(--sds_theme_text);
+}
+.sds_text--base {
+  color: var(--sds_theme_text);
+}
+.sds_text--primary {
+  color: var(--sds_theme_color_primary_text);
+}
+.sds_text--danger {
+  color: var(--sds_theme_color_danger_text);
+}
+.sds_text--warning {
+  color: var(--sds_theme_color_warning_text);
+}
+.sds_text--success {
+  color: var(--sds_theme_color_success_text);
+}
+.sds_text--subtle {
+  color: var(--sds_theme_text_subtle);
+}
+.sds_text--inverted {
+  color: var(--sds_theme_text_inverted);
+}
+.sds_text--invertedSubtle {
+  color: var(--sds_theme_text_inverted_subtle);
+}

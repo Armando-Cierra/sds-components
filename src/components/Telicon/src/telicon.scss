@@ -1,0 +1,28 @@
+@use 'node_modules/@sipster/core/tools' as *;
+
+.sds_telicon {
+  color: var(--sds_theme_icon, #{sds-color(neutral, 70)});
+  flex-shrink: 0;
+  flex-grow: 0;
+  @include sds-flex(center, center);
+}
+
+use {
+  pointer-events: none;
+}
+
+.sds_telicon--default {
+  outline: none;
+  width: 16px;
+  height: 16px;
+}
+
+.sds_telicon--medium {
+  width: 24px;
+  height: 24px;
+}
+
+.sds_telicon--large {
+  width: 32px;
+  height: 32px;
+}

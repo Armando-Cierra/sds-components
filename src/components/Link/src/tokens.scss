@@ -1,0 +1,27 @@
+@use 'node_modules/@sipster/core/tools' as *;
+
+body {
+  --sds_link_background: transparent;
+  --sds_link_icon: var(--sds_theme_color_primary, #{sds-color(indigo, 60)});
+  --sds_link_text: var(
+    --sds_theme_color_primary_interactive,
+    #{sds-color(indigo, 70)}
+  );
+  --sds_link_text_decoration: none;
+
+  --sds_link_interactive_background: transparent;
+  --sds_link_interactive_icon: var(--sds_link_icon);
+  --sds_link_interactive_text: var(--sds_link_text);
+  --sds_link_interactive_text_decoration: underline;
+
+  --sds_link_focus_background: transparent;
+  --sds_link_focus_icon: var(--sds_link_interactive_icon);
+  --sds_link_focus_text: var(--sds_link_interactive_text);
+  --sds_link_focus_text_decoration: none;
+
+  --sds_link_disabled_background: var(--sds_link_background);
+  --sds_link_disabled_icon: var(--sds_link_icon);
+  --sds_link_disabled_text: var(--sds_link_text);
+  --sds_link_disabled_text_decoration: var(--sds_link_text_decoration);
+  --sds_link_disabled_opacity: var(--sds_theme_disabled_opacity, 48%);
+}

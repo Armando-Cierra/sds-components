@@ -1,0 +1,10 @@
+LocalDependencies
+telicon
+button
+
+ExternalDependencies
+react-spring@^9.6.1
+@react-spring/web@^9.7.3
+
+DevDependencies
+

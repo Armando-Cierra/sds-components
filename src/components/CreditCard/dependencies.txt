@@ -1,0 +1,15 @@
+LocalDependencies
+textInput
+numberInput
+label
+helpText
+button
+
+ExternalDependencies
+react-credit-cards@^0.8.3
+credit-card-type@^9.1.0
+prop-types@^15.8.1
+
+DevDependencies
+@types/react-credit-cards@^0.8.1
+parcel-plugin-svg-react@^1.0.4

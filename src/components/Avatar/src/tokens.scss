@@ -1,0 +1,21 @@
+@use 'node_modules/@sipster/core/tools' as *;
+
+body {
+  --sds_avatar_background: #{sds-color(neutral, 70)};
+  --sds_avatar_icon: #{sds-color(white)};
+  --sds_avatar_size: 32px;
+  --sds_avatar_text: #{sds-color(white)};
+  //Status
+  --sds_avatar_status_online: #{sds-color(green, 60)};
+  --sds_avatar_status_busy: #{sds-color(red, 60)};
+  --sds_avatar_status_away: #{sds-color(yellow, 60)};
+  --sds_avatar_status_ringing: #{sds-color(blue, 60)};
+  --sds_avatar_status_onCall: #{sds-color(yellow, 60)};
+  --sds_avatar_status_onExternalCall: #{sds-color(yellow, 60)};
+  --sds_avatar_status_recovery: #{sds-color(purple, 60)};
+  --sds_avatar_status_offline: #{sds-color(neutral, 60)};
+  --sds_avatar_status_border_color: var(
+    --sds_theme_background,
+    #{sds-color(neutral, 05)}
+  );
+}

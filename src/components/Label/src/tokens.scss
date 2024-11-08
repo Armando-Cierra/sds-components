@@ -1,0 +1,10 @@
+@use 'node_modules/@sipster/core/tools' as *;
+
+body {
+  --sds_label_text: var(--sds_theme_text, #{sds-color(black)});
+  --sds_label_icon: var(--sds_theme_control_icon, #{sds-color(neutral, 40)});
+  --sds_label_indicator: var(
+    --sds_theme_color_danger_interactive,
+    #{sds-color(red, 70)}
+  );
+}

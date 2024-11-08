@@ -1,0 +1,115 @@
+body {
+  --sds_multiselect_arrow: var(--sds_theme_icon, #{sds-color(neutral, 70)});
+  --sds_multiselect_background: var(
+    --sds_theme_control_background,
+    #{sds-color(white)}
+  );
+  --sds_multiselect_tag_background: var(
+    --sds_theme_background,
+    #{sds-color(neutral, 05)}
+  );
+  --sds_multiselect_border_color: var(
+    --sds_theme_control_border,
+    #{sds-color(neutral, 30)}
+  );
+  --sds_multiselect_border_radius: var(--sds_theme_border_radius, 0.5rem);
+  --sds_multiselect_border_style: solid;
+  --sds_multiselect_border_width: 1px;
+  --sds_multiselect_text: var(--sds_theme_control_text, #{sds-color(black)});
+
+  --sds_multiselect_hover_arrow: var(--sds_multiselect_arrow);
+  --sds_multiselect_hover_background: var(
+    --sds_theme_control_hover_background,
+    #{sds-color(white)}
+  );
+  --sds_multiselect_hover_border_color: var(
+    --sds_theme_control_hover_border,
+    #{sds-color(neutral)}
+  );
+  --sds_multiselect_hover_border_radius: var(--sds_multiselect_border_radius);
+  --sds_multiselect_hover_border_style: var(--sds_multiselect_border_style);
+  --sds_multiselect_hover_border_width: var(--sds_multiselect_border_width);
+  --sds_multiselect_hover_text: var(
+    --sds_theme_control_hover_text,
+    #{sds-color(black)}
+  );
+
+  --sds_multiselect_focus_arrow: var(--sds_multiselect_hover_arrow);
+  --sds_multiselect_focus_background: var(
+    --sds_theme_control_focus_background,
+    #{sds-color(white)}
+  );
+  --sds_multiselect_focus_border_color: var(
+    --sds_theme_focus_border,
+    #{sds-color(indigo, 60)}
+  );
+  --sds_multiselect_focus_border_radius: var(
+    --sds_multiselect_hover_border_radius
+  );
+  --sds_multiselect_focus_border_style: var(
+    --sds_multiselect_hover_border_style
+  );
+  --sds_multiselect_focus_border_width: 2px;
+  --sds_multiselect_focus_text: var(
+    --sds_theme_control_focus_text,
+    #{sds-color(black)}
+  );
+
+  --sds_multiselect_error_arrow: var(--sds_multiselect_arrow);
+  --sds_multiselect_error_background: var(
+    --sds_theme_control_error_background,
+    #{sds-color(red, 05)}
+  );
+  --sds_multiselect_error_border_color: var(
+    --sds_theme_control_error_border,
+    #{sds-color(red, 60)}
+  );
+  --sds_multiselect_error_border_radius: var(--sds_multiselect_border_radius);
+  --sds_multiselect_error_border_style: var(--sds_multiselect_border_style);
+  --sds_multiselect_error_border_width: 2px;
+  --sds_multiselect_error_icon: var(
+    --sds_theme_control_error_icon,
+    #{sds-color(red, 60)}
+  );
+  --sds_multiselect_error_text: var(
+    --sds_theme_control_error_text,
+    #{sds-color(red, 70)}
+  );
+
+  --sds_multiselect_readOnly_arrow: var(--sds_multiselect_arrow);
+  --sds_multiselect_readOnly_background: var(
+    --sds_theme_background,
+    #{sds-color(neutral, 05)}
+  );
+  --sds_multiselect_readOnly_border_color: var(--sds_multiselect_border_color);
+  --sds_multiselect_readOnly_border_radius: var(
+    --sds_multiselect_border_radius
+  );
+  --sds_multiselect_readOnly_border_style: var(--sds_multiselect_border_style);
+  --sds_multiselect_readOnly_border_width: var(--sds_multiselect_border_width);
+  --sds_multiselect_readOnly_icon: var(
+    --sds_theme_control_icon,
+    #{sds-color(neutral, 40)}
+  );
+  --sds_multiselect_readOnly_text: var(--sds_multiselect_text);
+
+  --sds_multiselect_disabled_arrow: var(--sds_multiselect_arrow);
+  --sds_multiselect_disabled_background: var(
+    --sds_theme_control_disabled_background,
+    #{sds-color(white)}
+  );
+  --sds_multiselect_disabled_border_color: var(
+    --sds_theme_control_disabled_border,
+    #{sds-color(neutral, 30)}
+  );
+  --sds_multiselect_disabled_border_radius: var(
+    --sds_multiselect_border_radius
+  );
+  --sds_multiselect_disabled_border_style: var(--sds_multiselect_border_style);
+  --sds_multiselect_disabled_border_width: var(--sds_multiselect_border_width);
+  --sds_multiselect_disabled_opacity: var(--sds_theme_disabled_opacity, 48%);
+  --sds_multiselect_disabled_text: var(
+    --sds_theme_control_disabled_text,
+    #{sds-color(black)}
+  );
+}

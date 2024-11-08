@@ -1,0 +1,59 @@
+@use 'node_modules/@sipster/core/tools' as *;
+@forward 'tokens';
+
+.sds_link {
+  @include sds_typeset(body);
+  background: var(--sds_link_background);
+  color: var(--sds_link_text);
+  text-decoration: var(--sds_link_text_decoration);
+  display: inline-flex;
+  flex-shrink: 0;
+  gap: sds-spc(8);
+  align-items: center;
+  height: sds-spc(16);
+  padding: 0 sds-spc(4);
+  outline: none;
+  border-radius: 2px;
+  transition: sds-transition(standard, interactive);
+  .sds_link_icon {
+    color: var(--sds_link_icon);
+  }
+  &:hover {
+    background: var(--sds_link_interactive_background);
+    color: var(--sds_link_interactive_text);
+    text-decoration: var(--sds_link_interactive_text_decoration);
+    .sds_link_icon {
+      color: var(--sds_link_interactive_icon);
+    }
+  }
+  &:focus-visible {
+    background: var(--sds_link_focus_background);
+    color: var(--sds_link_focus_text);
+    text-decoration: var(--sds_link_focus_text_decoration);
+    box-shadow: var(
+      --sds_theme_focus_shadow,
+      0 0 0 4px rgba(77, 95, 214, 0.64)
+    );
+    .sds_link_icon {
+      color: var(--sds_link_focus_icon);
+    }
+  }
+}
+
+.sds_link--disabled,
+.sds_link--disabled:hover,
+.sds_link--disabled:focus-visible {
+  background: var(--sds_link_disabled_background);
+  color: var(--sds_link_disabled_text);
+  text-decoration: var(--sds_link_disabled_text_decoration);
+  opacity: var(--sds_link_disabled_opacity);
+  cursor: not-allowed;
+  box-shadow: none;
+  .sds_link_icon {
+    color: var(--sds_link_disabled_icon);
+  }
+}
+
+.sds_link--underlined {
+  text-decoration: var(--sds_link_interactive_text_decoration);
+}

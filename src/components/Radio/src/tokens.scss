@@ -1,0 +1,87 @@
+body {
+  --sds_radio_background: var(
+    --sds_theme_control_background,
+    #{sds-color(white)}
+  );
+  --sds_radio_border_color: var(
+    --sds_theme_control_border,
+    #{sds-color(neutral, 30)}
+  );
+  --sds_radio_border_radius: 50%;
+  --sds_radio_border_style: solid;
+  --sds_radio_border_width: 1px;
+  --sds_radio_text: var(--sds_theme_control_text, #{sds-color(black)});
+
+  --sds_radio_hover_background: var(
+    --sds_theme_control_hover_background,
+    #{sds-color(white)}
+  );
+  --sds_radio_hover_border_style: var(--sds_radio_border_style);
+  --sds_radio_hover_border_color: var(
+    --sds_theme_control_hover_border,
+    #{sds-color(neutral)}
+  );
+  --sds_radio_hover_border_width: 1px;
+
+  --sds_radio_focus_background: var(
+    --sds_theme_control_focus_background,
+    #{sds-color(white)}
+  );
+  --sds_radio_focus_border_style: var(--sds_radio_border_style);
+  --sds_radio_focus_border_color: var(
+    --sds_theme_control_focus_border,
+    #{sds-color(neutral)}
+  );
+  --sds_radio_focus_border_width: 1px;
+  --sds_radio_focus_shadow: var(
+    --sds_theme_focus_shadow,
+    0 0 0 4px rgba(77, 95, 214, 0.64)
+  );
+
+  --sds_radio_checked_background: var(
+    --sds_theme_color_primary,
+    #{sds-color(indigo, 60)}
+  );
+  --sds_radio_checked_border_style: var(--sds_radio_border_style);
+  --sds_radio_checked_border_color: var(
+    --sds_theme_color_primary_interactive,
+    #{sds-color(indigo, 70)}
+  );
+  --sds_radio_checked_border_width: 1px;
+
+  --sds_radio_error_background: var(
+    --sds_theme_control_error_background,
+    #{sds-color(red, 05)}
+  );
+  --sds_radio_error_border_style: var(--sds_radio_border_style);
+  --sds_radio_error_border_color: var(
+    --sds_theme_control_error_border,
+    #{sds-color(red, 60)}
+  );
+  --sds_radio_error_border_width: 1px;
+  --sds_radio_error_text: var(
+    --sds_theme_control_error_text,
+    #{sds-color(red, 70)}
+  );
+
+  --sds_radio_disabled_background: var(
+    --sds_theme_control_disabled_background,
+    #{sds-color(white)}
+  );
+  --sds_radio_disabled_border_style: var(--sds_radio_border_style);
+  --sds_radio_disabled_border_color: var(
+    --sds_theme_control_disabled_border,
+    #{sds-color(neutral, 30)}
+  );
+  --sds_radio_disabled_border_width: 1px;
+  --sds_radio_disabled_opacity: var(--sds_theme_disabled_opacity, 48%);
+  --sds_radio_disabled_text: var(
+    --sds_theme_control_disabled_text,
+    #{sds-color(black)}
+  );
+
+  --sds_radio_indicator: var(
+    --sds_theme_control_checked_indicator,
+    #{sds-color(white)}
+  );
+}

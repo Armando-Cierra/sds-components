@@ -1,0 +1,10 @@
+@use 'node_modules/@sipster/core/tools' as *;
+
+body {
+  --sds_sectionHeading_background_color: var(
+    --sds_theme_background_low,
+    #e3e3e3
+  );
+  --sds_sectionHeading_border: var(--sds_theme_border, #ababab);
+  --sds_sectionHeading_text: var(--sds_theme_text, #000000);
+}

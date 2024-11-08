@@ -1,0 +1,49 @@
+@use 'node_modules/@sipster/core/tools' as *;
+
+body {
+  --sds_toast_background_color: var(
+    --sds_theme_background_inverted,
+    #{sds-color(black)}
+  );
+  --sds_toast_close_icon: var(
+    --sds_theme_icon_subtle,
+    #{sds-color(neutral, 40)}
+  );
+  --sds_toast_text: var(--sds_theme_text_inverted, #{sds-color(white)});
+  --sds_toast_icon: var(--sds_theme_icon_subtle, #{sds-color(neutral, 40)});
+  --sds_toast_progressbar: var(
+    --sds_theme_border_interactive,
+    #{sds-color(neutral, 70)}
+  );
+
+  --sds_toast_success_icon: var(
+    --sds_theme_color_success,
+    #{sds-color(green, 60)}
+  );
+  --sds_toast_success_progressbar: var(
+    --sds_theme_color_success,
+    #{sds-color(green, 60)}
+  );
+
+  --sds_toast_warning_icon: var(
+    --sds_theme_color_warning,
+    #{sds-color(yellow, 60)}
+  );
+  --sds_toast_warning_progressbar: var(
+    --sds_theme_color_warning,
+    #{sds-color(yellow, 60)}
+  );
+
+  --sds_toast_danger_icon: var(--sds_theme_color_danger, #{sds-color(red, 60)});
+  --sds_toast_danger_progressbar: var(
+    --sds_theme_color_danger,
+    #{sds-color(red, 60)}
+  );
+
+  --sds_toast_subtle_background_color: var(
+    --sds_theme_background_inverted,
+    #{sds-color(black)}
+  );
+  --sds_toast_subtle_icon: var(--sds_theme_icon_inverted, #{sds-color(white)});
+  --sds_toast_subtle_text: var(--sds_theme_text_inverted, #{sds-color(white)});
+}

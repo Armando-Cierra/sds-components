@@ -1,0 +1,18 @@
+body {
+  --sds_containerList_border: var(
+    --sds_theme_border,
+    #{sds-color(neutral, 30)}
+  );
+  --sds_containerList_item_background_color: var(
+    --sds_theme_background,
+    #{sds-color(neutral, 05)}
+  );
+  --sds_containerList_item_hover_background_color: var(
+    --sds_theme_background_high,
+    #{sds-color(white)}
+  );
+  --sds_containerList_background_color: var(
+    --sds_theme_background_low,
+    #{sds-color(neutral, 10)}
+  );
+}

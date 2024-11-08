@@ -1,0 +1,12 @@
+
+
+body {
+    --sds_meter_track_background_color: var(--sds_theme_border);
+    --sds_meter_range_background_color: var(--sds_theme_background_inverted);
+    --sds_meter_text: var(--sds_theme_text);
+    --sds_meter_border_radius:  var(--sds_theme_border_radius);
+    --sds_meter_primary_range_background_color: var(--sds_theme_color_primary);
+    --sds_meter_scaled_range_safe_background_color: var(--sds_theme_color_success);
+    --sds_meter_scaled_range_warning_background_color: var(--sds_theme_color_warning);
+    --sds_meter_scaled_range_danger_background_color: var(--sds_theme_color_danger);
+}   

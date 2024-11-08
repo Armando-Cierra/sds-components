@@ -1,0 +1,22 @@
+@use 'node_modules/@sipster/core/tools' as *;
+@forward 'tokens';
+
+.sds_sectionHeading {
+  width: 100%;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  padding: sds-spc(8) sds-spc(16);
+  gap: sds-spc(8);
+  color: var(--sds_sectionHeading_text);
+  @include sds-typeset(body-lg, semi);
+  background: var(--sds_sectionHeading_background_color);
+  margin-bottom: sds-spc(16);
+}
+.sds_sectionHeading--ruled {
+  background: none;
+  border-bottom: 1px solid var(--sds_sectionHeading_border);
+}
+.sds_sectionHeading--flat {
+  background: none;
+}

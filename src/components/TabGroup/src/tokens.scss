@@ -1,0 +1,62 @@
+body {
+  --sds_tabGroup_background_color: var(
+    --sds_theme_background,
+    #{sds-color(neutral, 05)}
+  );
+  --sds_tabGroup_border_color: var(
+    --sds_theme_border,
+    #{sds-color(neutral, 30)}
+  );
+
+  --sds_tabGroup_tab_background_color: var(--sds_tabGroup_background_color);
+  --sds_tabGroup_tab_border_color: var(--sds_tabGroup_border_color);
+  --sds_tabGroup_tab_icon: var(--sds_theme_icon, #{sds-color(neutral, 70)});
+  --sds_tabGroup_tab_text: var(--sds_theme_text, #{sds-color(black)});
+
+  --sds_tabGroup_tab_hover_background_color: var(
+    --sds_theme_background_low,
+    #{sds-color(neutral, 20)}
+  );
+  --sds_tabGroup_tab_hover_border_color: var(--sds_tabGroup_tab_border_color);
+  --sds_tabGroup_tab_hover_icon: var(
+    --sds_theme_icon_interactive,
+    #{sds-color(black)}
+  );
+  --sds_tabGroup_tab_hover_text: var(--sds_tabGroup_tab_text);
+
+  --sds_tabGroup_tab_focus_background_color: var(
+    --sds_tabGroup_tab_hover_background_color
+  );
+  --sds_tabGroup_tab_focus_border_color: var(
+    --sds_tabGroup_tab_hover_border_color
+  );
+  --sds_tabGroup_tab_focus_icon: var(--sds_tabGroup_tab_hover_icon);
+  --sds_tabGroup_tab_focus_text: var(--sds_tabGroup_tab_hover_text);
+
+  --sds_tabGroup_tab_active_background_color: var(
+    --sds_tabGroup_tab_background_color
+  );
+  --sds_tabGroup_tab_active_border_color: var(--sds_tabGroup_tab_border_color);
+  --sds_tabGroup_tab_active_icon: var(
+    --sds_theme_color_primary,
+    #{sds-color(indigo, 60)}
+  );
+  --sds_tabGroup_tab_active_indicator: var(
+    --sds_theme_color_primary,
+    #{sds-color(indigo, 60)}
+  );
+  --sds_tabGroup_tab_active_text: var(
+    --sds_theme_color_primary_text,
+    #{sds-color(indigo, 70)}
+  );
+
+  --sds_tabGroup_tab_disabled_background_color: var(
+    --sds_tabGroup_tab_background_color
+  );
+  --sds_tabGroup_tab_disabled_border_color: var(
+    --sds_tabGroup_tab_border_color
+  );
+  --sds_tabGroup_tab_disabled_icon: var(--sds_tabGroup_tab_icon);
+  --sds_tabGroup_tab_disabled_opacity: var(--sds_theme_disabled_opacity, 48%);
+  --sds_tabGroup_tab_disabled_text: var(--sds_tabGroup_tab_text);
+}

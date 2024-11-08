@@ -1,0 +1,97 @@
+@use 'node_modules/@sipster/core/tools' as *;
+@forward 'tokens';
+
+$statusList: online, busy, away, ringing, onCall, onExternalCall, recovery,
+  offline;
+
+$colorList: blue, green, yellow, red, indigo, purple, lime, teal, orange, pink;
+
+.sds_avatar {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  @include sds-typeset(body-lg, semi);
+  position: relative;
+  width: var(--sds_avatar_size);
+  height: var(--sds_avatar_size);
+  color: var(--sds_avatar_text);
+  background-color: var(--sds_avatar_background);
+  background-size: cover !important;
+  background-position: center !important;
+  position: relative;
+}
+.sds_avatar--circle {
+  border-radius: 50%;
+}
+.sds_avatar--square {
+  border-radius: var(--sds_theme_border_radius, 0.5rem);
+}
+
+.sds_avatar_profilePic {
+  position: absolute;
+  object-fit: cover;
+  width: calc(100%);
+  height: calc(100%);
+}
+.sds_avatar_profilePic--circle {
+  border-radius: 50%;
+}
+.sds_avatar_profilePic--square {
+  border-radius: var(--sds_theme_border_radius_small, 0.25rem);
+}
+
+.sds_telicon.sds_avatar_icon {
+  color: var(--sds_avatar_icon);
+}
+
+.sds_telicon.sds_avatar_statusIcon {
+  margin: 0;
+  color: var(--sds_avatar_icon);
+  width: 10px;
+  height: 10px;
+}
+
+.sds_avatar_status {
+  @include sds-flex(center, center);
+  position: absolute;
+  border-radius: 50%;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid var(--sds_avatar_status_border_color);
+  width: sds-spc(16);
+  height: sds-spc(16);
+  background: sds-color(neutral, 60);
+}
+
+@each $status in $statusList {
+  .sds_avatar_status--#{'' + $status} {
+    background: var(--sds_avatar_status_#{$status});
+  }
+}
+
+.sds_avatar--small {
+  --sds_avatar_size: 24px;
+  @include sds-typeset(body, semi);
+}
+.sds_avatar--small.sds_avatar--square {
+  border-radius: var(--sds_theme_border_radius_small, 0.25rem);
+}
+
+.sds_avatar--large {
+  @include sds-typeset(title-2);
+  --sds_avatar_size: 64px;
+  .sds_avatar_status {
+    right: 0;
+    bottom: 0;
+  }
+}
+
+@each $color in $colorList {
+  .sds_avatar--#{'' + $color} {
+    --sds_avatar_background: var(
+      --sds_theme_color_#{$color}_interactive,
+      #{sds-color($color, 70)}
+    );
+  }
+}

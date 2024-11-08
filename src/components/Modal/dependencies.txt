@@ -1,0 +1,7 @@
+LocalDependencies
+
+ExternalDependencies
+@radix-ui/react-portal@^1.0.4
+@react-spring/web@^9.7.3
+
+DevDependencies

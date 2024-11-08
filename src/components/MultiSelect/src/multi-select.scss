@@ -1,0 +1,114 @@
+@use 'node_modules/@sipster/core/tools' as *;
+@forward 'tokens.scss';
+
+.sds_multiSelect {
+  width: 512px;
+  display: inline-flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.sds_multiSelect_label {
+  margin-bottom: sds-spc(4);
+}
+
+.sds_multiSelect_tagBox {
+  @include sds-flex(flex-start, center);
+  gap: sds-spc(4);
+  flex-wrap: wrap;
+  min-height: 45px;
+  border-radius: var(--sds_theme_border_radius, 0.5rem)
+    var(--sds_theme_border_radius, 0.5rem) 0 0;
+  border: var(--sds_multiselect_border_width) solid
+    var(--sds_multiselect_border_color, #{sds-color(neutral, 30)});
+  border-bottom: none;
+  padding: sds-spc(8) sds-spc(12);
+  background: var(--sds_multiselect_tag_background);
+  transition: sds-transition(standard, interactive);
+  &.sds_multiSelect_tagBox--hidden {
+    display: none;
+  }
+}
+
+.sds_multiSelect_dropdown {
+  &.sds_multiSelect--disabled {
+    cursor: not-allowed;
+    .radix_trigger {
+      pointer-events: none;
+    }
+  }
+}
+
+.sds_multiSelect_control {
+  position: relative;
+  cursor: pointer;
+  border: var(--sds_multiselect_border_width) solid
+    var(--sds_multiselect_border_color);
+  background: var(--sds_multiselect_background);
+  @include sds-flex(space-between, center);
+  padding: sds-spc(8) sds-spc(12);
+  border-radius: 0 0 var(--sds_multiselect_border_radius)
+    var(--sds_multiselect_border_radius);
+  transition: sds-transition(standard, interactive);
+  color: var(--sds_multiselect_text);
+  cursor: pointer;
+  &:hover {
+    background: var(--sds_multiselect_focus_background);
+    border-color: var(--sds_multiselect_hover_border_color);
+    border-radius: 0 0 var(--sds_multiselect_hover_border_radius)
+      var(--sds_multiselect_hover_border_radius);
+    border-style: var(--sds_multiselect_hover_border_style);
+    .sds_multiSelect_icon {
+      color: var(--sds_multiselect_hover_arrow);
+    }
+  }
+  &:focus-visible {
+    background: var(--sds_multiselect_focus_background);
+    border-width: var(--sds_multiselect_focus_border_width);
+    border-color: var(--sds_multiselect_focus_border_color);
+    border-radius: 0 0 var(--sds_multiselect_focus_border_radius)
+      var(--sds_multiselect_focus_border_radius);
+    border-style: var(--sds_multiselect_focus_border_style);
+    .sds_multiSelect_icon {
+      color: var(--sds_multiselect_focus_arrow);
+    }
+  }
+  &.sds_multiSelect_tagBox--selection {
+    border-radius: sds-spc(8);
+  }
+  &.sds_multiSelect--disabled {
+    background-color: var(--sds_multiselect_disabled_background);
+    opacity: var(--sds_multiselect_disabled_opacity, 48%);
+    border-color: var(--sds_multiselect_disabled_border_color);
+    border-radius: 0 0 var(--sds_multiselect_disabled_border_radius)
+      var(--sds_multiselect_disabled_border_radius);
+    border-style: var(--sds_multiselect_disabled_border_style);
+    border-width: var(--sds_multiselect_disabled_border_width);
+    color: var(--sds_multiselect_disabled_text);
+    .sds_multiSelect_icon {
+      color: var(--sds_multiselect_disabled_arrow);
+    }
+  }
+  &.sds_multiSelect--error {
+    background: var(--sds_multiselect_error_background);
+    color: var(--sds_multiselect_error_text);
+    border: var(--sds_multiselect_border_width)
+      var(--sds_multiselect_error_border_style)
+      var(--sds_multiselect_error_border_color);
+    border-radius: 0 0 var(--sds_multiselect_error_border_radius)
+      var(--sds_multiselect_error_border_radius);
+    box-shadow: inset 0 0 0 1px var(--sds_multiselect_error_border_color);
+    .sds_multiSelect_icon:not(.sds_multiSelect_icon--error) {
+      color: var(--sds_multiselect_error_arrow);
+    }
+  }
+  .sds_multiSelect_icon {
+    width: 16px;
+    color: var(--sds_multiselect_arrow);
+  }
+  .sds_multiSelect_icon--error {
+    color: var(--sds_multiselect_error_icon);
+    position: absolute;
+    right: 30px;
+  }
+}

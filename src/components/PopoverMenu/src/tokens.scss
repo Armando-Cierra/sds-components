@@ -1,0 +1,38 @@
+@use 'node_modules/@sipster/core/tools' as *;
+
+body {
+  --sds_popoverMenu_background_color: var(--sds_theme_background_high, #{sds-color(white)});
+  --sds_popoverMenu_border_color: var(--sds_theme_border, #{sds-color(neutral, 30)});
+  --sds_popoverMenu_border_radius: var(--sds_theme_border_radius, 0.5rem);
+  
+  --sds_popoverMenu_sectionHeader_background_color: var(--sds_popoverMenu_background_color);
+  --sds_popoverMenu_sectionHeader_text: var(--sds_theme_text_subtle, #{sds-color(neutral, 60)});
+  
+  --sds_popoverMenu_divider: var(--sds_theme_border, #{sds-color(neutral, 30)});
+  
+  --sds_popoverMenu_option_background_color: var(--sds_popoverMenu_background_color);
+  --sds_popoverMenu_option_icon: var(--sds_theme_icon, #{sds-color(neutral, 70)});
+  --sds_popoverMenu_option_text: var(--sds_theme_text, #{sds-color(black)});
+  
+  --sds_popoverMenu_option_interactive_background_color: var(--sds_theme_background, #{sds-color(neutral, 05)});
+  --sds_popoverMenu_option_interactive_icon: var(--sds_theme_icon_interactive, #{sds-color(black)});
+  --sds_popoverMenu_option_interactive_text: var(--sds_popoverMenu_option_text);
+  
+  --sds_popoverMenu_option_selected_background_color: var(--sds_theme_background_low, #{sds-color(neutral, 10)});
+  --sds_popoverMenu_option_selected_icon: var(--sds_popoverMenu_option_interactive_icon);
+  --sds_popoverMenu_option_selected_text: var(--sds_popoverMenu_option_interactive_text);
+  
+  --sds_popoverMenu_option_danger_background_color: var(--sds_popoverMenu_option_background_color);
+  --sds_popoverMenu_option_danger_icon: var(--sds_popoverMenu_option_icon);
+  --sds_popoverMenu_option_danger_text: var(--sds_popoverMenu_option_text);
+  
+  --sds_popoverMenu_option_danger_interactive_background_color: var(--sds_theme_color_danger, #{sds-color(red, 60)});
+  --sds_popoverMenu_option_danger_interactive_icon: var(--sds_theme_icon_inverted, #{sds-color(white)});
+  --sds_popoverMenu_option_danger_interactive_text: var(--sds_theme_text_inverted, #{sds-color(white)});
+  
+  --sds_popoverMenu_option_disabled_background_color: var(--sds_popoverMenu_option_background_color);
+  --sds_popoverMenu_option_disabled_icon: var(--sds_popoverMenu_option_icon);
+  --sds_popoverMenu_option_disabled_text: var(--sds_popoverMenu_option_text);
+  --sds_popoverMenu_option_disabled_opacity: var(--sds_theme_disabled_opacity, 48%);
+}
+

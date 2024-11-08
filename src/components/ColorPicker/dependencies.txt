@@ -1,0 +1,14 @@
+LocalDependencies
+label
+button
+popoverMenu
+textInput
+numberInput
+helpText
+
+ExternalDependencies
+chroma-js@^2.4.2
+react-colorful@^5.6.1
+
+DevDependencies
+@types/chroma-js@^2.4.4

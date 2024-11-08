@@ -1,0 +1,15 @@
+@use 'node_modules/@sipster/core/tools' as *;
+@forward 'tokens.scss';
+
+.sds_helpText {
+  display: inline-flex;
+  @include sds-typeset(mouse);
+  color: var(--sds_helptext_text, #{sds-color(neutral, 70)});
+}
+.sds_helpText--disabled {
+  opacity: var(--sds_helptext_disabled_opacity);
+}
+
+.sds_helpText--error {
+  color: var(--sds_helptext_error_text);
+}

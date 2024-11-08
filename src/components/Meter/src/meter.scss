@@ -1,0 +1,53 @@
+@use 'node_modules/@sipster/core/tools' as *;
+@forward 'tokens';
+
+.sds_meter_bar {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--sds_meter_track_background_color);
+  width: 256px;
+  height: 8px;
+  border-radius: var(--sds_meter_border_radius);
+  overflow: hidden;
+}
+
+.sds_meter_progressBar {
+  height: 8px;
+  background-color: var(--sds_meter_range_background_color);
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+.sds_meter_bar--variant_primary {
+  background-color: var(--sds_meter_primary_range_background_color);
+}
+
+.sds_meter_bar--variant_safe {
+  background-color: var(--sds_meter_scaled_range_safe_background_color);
+}
+
+.sds_meter_bar--variant_warning {
+  background-color: var(--sds_meter_scaled_range_warning_background_color);
+}
+
+.sds_meter_bar--variant_danger {
+  background-color: var(--sds_meter_scaled_range_danger_background_color);
+}
+
+.sds_meter_label {
+  @include sds-typeset(body, base);
+  color: var(--sds_meter_text);
+}
+
+$labelPositions: (
+  after: padding-left,
+  before: padding-right,
+  below: padding-top,
+  above: padding-bottom,
+);
+
+@each $position, $property in $labelPositions {
+  .sds_meter_label--#{$position} {
+    #{$property}: sds-spc(8);
+  }
+}

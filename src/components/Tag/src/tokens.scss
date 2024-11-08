@@ -1,0 +1,47 @@
+@use 'node_modules/@sipster/core/tools' as *;
+
+body {
+  --sds_tag_background: var(
+    --sds_theme_background_gradient,
+    linear-gradient(
+      to bottom,
+      #{sds-color(white)} 0%,
+      #{sds-color(neutral, 05)} 100%
+    )
+  );
+  --sds_tag_border_color: var(--sds_theme_border, #{sds-color(neutral, 30)});
+  --sds_tag_text: var(--sds_theme_text, #{sds-color(black)});
+  --sds_tag_border_radius: 28px;
+
+  --sds_tag_hover_background: var(
+    --sds_theme_background_low,
+    #{sds-color(neutral, 10)}
+  );
+  --sds_tag_hover_border_color: #{sds-color(neutral)};
+  --sds_tag_hover_text: var(--sds_tag_text, #{sds-color(black)});
+
+  --sds_tag_focus_background_color: var(--sds_tag_hover_background);
+  --sds_tag_focus_border_color: var(--sds_theme_control_focus_border);
+  --sds_tag_focus_text: var(--sds_tag_hover_text);
+  --sds_tag_focus_shadow: var(
+    --sds_theme_focus_shadow,
+    0 0 0 4px rgba(77, 95, 214, 0.64)
+  );
+
+  --sds_tag_selected_background: var(
+    --sds_theme_background_low,
+    #{sds-color(neutral, 10)}
+  );
+  --sds_tag_selected_border_color: var(
+    --sds_theme_color_neutral,
+    #{sds-color(neutral)}
+  );
+  --sds_tag_selected_text: var(--sds_tag_text, #{sds-color(black)});
+
+  --sds_tag_action_background: transparent;
+  --sds_tag_action_icon: var(--sds_theme_button_ghost_icon);
+  --sds_tag_action_hover_background: var(
+    --sds_theme_button_ghost_interactive_background
+  );
+  --sds_tag_action_hover_icon: var(--sds_theme_button_ghost_interactive_icon);
+}

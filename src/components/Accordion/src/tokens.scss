@@ -1,0 +1,164 @@
+body {
+  //normal accordion
+  --sds_accordion_background_color: var(
+    --sds_theme_background,
+    #{sds-color(neutral, 05)}
+  );
+  --sds_accordion_border_color: var(
+    --sds_theme_border,
+    #{sds-color(neutral, 30)}
+  );
+  --sds_accordion_indicator: var(--sds_theme_icon, #{sds-color(neutral, 70)});
+  --sds_accordion_text: var(--sds_theme_text, #{sds-color(black)});
+
+  //normal accordion expanded
+  --sds_accordion_expanded_background_color: var(
+    --sds_accordion_background_color
+  );
+  --sds_accordion_expanded_border_color: var(--sds_accordion_border_color);
+  --sds_accordion_expanded_indicator: var(--sds_accordion_indicator);
+  --sds_accordion_expanded_text: var(--sds_accordion_text);
+
+  //normal accordion hover
+  --sds_accordion_hover_background_color: var(
+    --sds_theme_background_high,
+    #{sds-color(white)}
+  );
+  --sds_accordion_hover_border_color: var(--sds_accordion_border_color);
+  --sds_accordion_hover_indicator: var(--sds_accordion_indicator);
+  --sds_accordion_hover_text: var(--sds_accordion_text);
+
+  //normal accordion hover expanded
+  --sds_accordion_expanded_hover_background_color: var(
+    --sds_accordion_hover_background_color
+  );
+  --sds_accordion_expanded_hover_border_color: var(
+    --sds_accordion_hover_border_color
+  );
+  --sds_accordion_expanded_hover_indicator: var(
+    --sds_accordion_hover_indicator
+  );
+  --sds_accordion_expanded_hover_text: var(--sds_accordion_hover_text);
+
+  //normal accordion focus
+  --sds_accordion_focus_background_color: var(
+    --sds_accordion_hover_background_color
+  );
+  --sds_accordion_focus_border_color: var(
+    --sds_theme_focus_border,
+    var(--sds_theme_color_primary)
+  );
+  --sds_accordion_focus_indicator: var(--sds_accordion_hover_indicator);
+  --sds_accordion_focus_text: var(--sds_accordion_hover_text);
+
+  //normal accordion focus expanded
+  --sds_accordion_expanded_focus_background_color: var(
+    --sds_accordion_focus_background_color
+  );
+  --sds_accordion_expanded_focus_border_color: var(
+    --sds_accordion_focus_border_color
+  );
+  --sds_accordion_expanded_focus_indicator: var(
+    --sds_accordion_focus_indicator
+  );
+  --sds_accordion_expanded_focus_text: var(--sds_accordion_focus_text);
+
+  //container accordion
+  --sds_accordion_container_background_color: var(
+    --sds_theme_background_high,
+    #{sds-color(white)}
+  );
+  --sds_accordion_container_border_color: transparent;
+  --sds_accordion_container_border_radius: var(
+    --sds_theme_border_radius,
+    0.5rem
+  );
+  --sds_accordion_container_indicator: var(
+    --sds_theme_icon,
+    #{sds-color(neutral, 70)}
+  );
+  --sds_accordion_container_text: var(--sds_theme_text, #{sds-color(black)});
+
+  //container accordion expanded
+  --sds_accordion_container_expanded_background_color: var(
+    --sds_accordion_container_background_color
+  );
+  --sds_accordion_container_expanded_border_color: var(
+    --sds_accordion_container_border_color
+  );
+  --sds_accordion_container_expanded_border_radius: var(
+    --sds_accordion_container_border_radius
+  );
+  --sds_accordion_container_expanded_indicator: var(
+    --sds_accordion_container_indicator
+  );
+  --sds_accordion_container_expanded_text: var(--sds_accordion_container_text);
+
+  //container accordion hover
+  --sds_accordion_container_hover_background_color: var(
+    --sds_accordion_container_background_color
+  );
+  --sds_accordion_container_hover_border_color: var(
+    --sds_theme_border,
+    #{sds-color(neutral, 30)}
+  );
+  --sds_accordion_container_hover_border_radius: var(
+    --sds_accordion_container_border_radius
+  );
+  --sds_accordion_container_hover_indicator: var(
+    --sds_accordion_container_indicator
+  );
+  --sds_accordion_container_hover_text: var(--sds_accordion_container_text);
+
+  //container accordion expanded hover
+  --sds_accordion_container_expanded_hover_background_color: var(
+    --sds_accordion_container_hover_background_color
+  );
+  --sds_accordion_container_expanded_hover_border_color: var(
+    --sds_accordion_container_hover_border_color
+  );
+  --sds_accordion_container_expanded_hover_border_radius: var(
+    --sds_accordion_container_hover_border_radius
+  );
+  --sds_accordion_container_expanded_hover_indicator: var(
+    --sds_accordion_container_hover_indicator
+  );
+  --sds_accordion_container_expanded_hover_text: var(
+    --sds_accordion_container_hover_text
+  );
+
+  //container accordion focus
+  --sds_accordion_container_focus_background_color: var(
+    --sds_accordion_container_hover_background_color
+  );
+  --sds_accordion_container_focus_border_color: var(
+    --sds_theme_focus_border,
+    var(--sds_theme_color_primary)
+  );
+  --sds_accordion_container_focus_border_radius: var(
+    --sds_accordion_container_hover_border_radius
+  );
+  --sds_accordion_container_focus_indicator: var(
+    --sds_accordion_container_hover_indicator
+  );
+  --sds_accordion_container_focus_text: var(
+    --sds_accordion_container_hover_text
+  );
+
+  //container accordion expanded focus
+  --sds_accordion_container_expanded_focus_background_color: var(
+    --sds_accordion_container_focus_background_color
+  );
+  --sds_accordion_container_expanded_focus_border_color: var(
+    --sds_accordion_container_focus_border_color
+  );
+  --sds_accordion_container_expanded_focus_border_radius: var(
+    --sds_accordion_container_focus_border_radius
+  );
+  --sds_accordion_container_expanded_focus_indicator: var(
+    --sds_accordion_container_focus_indicator
+  );
+  --sds_accordion_container_expanded_focus_text: var(
+    --sds_accordion_container_focus_text
+  );
+}

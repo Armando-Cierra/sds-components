@@ -1,0 +1,13 @@
+LocalDependencies
+label
+helpText
+menu
+telicon
+avatar
+
+ExternalDependencies
+uniqid@^5.4.0
+@radix-ui/react-dropdown-menu@^2.0.6
+
+DevDependencies
+@types/uniqid@^5.3.2

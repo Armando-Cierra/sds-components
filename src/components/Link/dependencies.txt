@@ -1,0 +1,6 @@
+LocalDependencies
+telicon
+
+ExternalDependencies
+
+DevDependencies

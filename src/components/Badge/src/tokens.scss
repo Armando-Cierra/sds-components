@@ -1,0 +1,10 @@
+@use 'node_modules/@sipster/core/tools' as *;
+
+body {
+  --sds_badge_background: var(
+    --sds_theme_background_accent,
+    #{sds-color(neutral, 20)}
+  );
+  --sds_badge_icon: var(--sds_theme_icon, #{sds-color(neutral, 70)});
+  --sds_badge_text: var(--sds_theme_text, #{sds-color(black)});
+}

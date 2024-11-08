@@ -1,0 +1,26 @@
+@import 'node_modules/@sipster/core/tools';
+
+.sds_menu_header {
+  --sds_menu_divider_header: var(--sds_theme_text, #{sds-color(neutral, 70)});
+}
+
+.sds_menu_header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: sds-spc(8) sds-spc(12);
+}
+
+.sds_menu_actions {
+  display: flex;
+  flex-direction: row;
+  gap: sds-spc(4);
+}
+
+.sds_menu_title {
+  @include sds-typeset(mouse);
+  color: var(--sds_menu_divider_header);
+  margin-right: sds-spc(8);
+  flex-shrink: 0;
+}

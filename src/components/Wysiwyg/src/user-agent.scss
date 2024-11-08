@@ -1,0 +1,93 @@
+@use 'node_modules/@sipster/core/tools' as *;
+
+.sds_wysiwyg {
+  code {
+    background-color: var(--sds_theme_background_low);
+    color: var(--sds_theme_text_subtle);
+    font-family: Consolas, Monaco, Lucida Console, Liberation Mono,
+      DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New;
+  }
+
+  pre {
+    background: #0d0d0d;
+    color: #fff;
+    font-family: 'JetBrainsMono', monospace;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+
+    code {
+      color: inherit;
+      padding: 0;
+      background: none;
+      font-size: 0.8rem;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  hr {
+    border: none;
+    border-top: 2px solid rgba(#0d0d0d, 0.1);
+    margin: 2rem 0;
+  }
+  ul {
+    display: block;
+    list-style-type: disc;
+    padding-inline-start: 40px;
+  }
+  ol {
+    display: block;
+    padding-inline-start: 40px;
+  }
+  li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+  }
+  ul ul,
+  ol ul {
+    list-style-type: circle;
+  }
+  ol ol ul,
+  ol ul ul,
+  ul ol ul,
+  ul ul ul {
+    list-style-type: square;
+  }
+}
+
+.sds_wysiwyg,
+.sds_menu_content {
+  h1 {
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  h2 {
+    display: block;
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  h3 {
+    display: block;
+    font-size: 1.17em;
+    font-weight: bold;
+  }
+  h4 {
+    display: block;
+    font-weight: bold;
+  }
+  h5 {
+    display: block;
+    font-size: 0.83em;
+    font-weight: bold;
+  }
+  h6 {
+    display: block;
+    font-size: 0.67em;
+    font-weight: bold;
+  }
+}

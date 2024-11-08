@@ -1,0 +1,18 @@
+@use 'node_modules/@sipster/core/tools' as *;
+
+body {
+  --sds_inlineNotification_background_color: var(
+    --sds_theme_background_accent,
+    #{sds-color(neutral, 20)}
+  );
+  --sds_inlineNotification_icon: var(
+    --sds_theme_icon,
+    #{sds-color(neutral, 70)}
+  );
+  --sds_inlineNotification_title: var(--sds_theme_text, #{sds-color(black)});
+  --sds_inlineNotification_border_radius: var(
+    --sds_theme_border_radius,
+    0.5rem
+  );
+  --sds_inlineNotification_text: var(--sds_theme_text, #{sds-color(black)});
+}

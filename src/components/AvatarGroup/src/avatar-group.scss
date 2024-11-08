@@ -1,0 +1,26 @@
+@use 'node_modules/@sipster/core/tools' as *;
+@forward 'tokens';
+
+.sds_avatar_group {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 8px;
+  .sds_avatar {
+    margin-left: -8px;
+    box-shadow: 0 0 0 2px var(--sds_avatarGroup_divider_color);
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        z-index: #{10 - $i};
+      }
+    }
+    img {
+      box-shadow: 0 0 0 2px var(--sds_avatarGroup_divider_color);
+    }
+  }
+}
+
+.sds_avatar_overcount {
+  margin-left: 6px;
+  color: var(--sds_avatarGroup_text);
+}

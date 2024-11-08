@@ -1,0 +1,211 @@
+@use 'node_modules/@sipster/core/tools' as *;
+@forward 'tokens';
+
+.sds_fileUploadRegion {
+  display: inline-flex;
+  flex-direction: column;
+  width: 256px;
+}
+
+.sds_fileUploadRegion_dropRegion {
+  @include sds-flex(center, center, column);
+  padding: sds-spc(40) sds-spc(16);
+  border-radius: var(--sds_fileUploadRegion_border_radius);
+  background: var(--sds_fileUploadRegion_background);
+  border: var(--sds_fileUploadRegion_border_width)
+    var(--sds_fileUploadRegion_border_style)
+    var(--sds_fileUploadRegion_border_color);
+  position: relative;
+  transition: sds-transition(standard, interactive);
+  &:hover {
+    background-color: var(--sds_fileUploadRegion_hover_background);
+    border-color: var(--sds_fileUploadRegion_hover_border_color);
+    border-radius: var(--sds_fileUploadRegion_hover_border_radius);
+    border-style: var(--sds_fileUploadRegion_hover_border_style);
+    border-width: var(--sds_fileUploadRegion_hover_border_width);
+  }
+}
+
+.sds_fileUploadRegion--disabled,
+.sds_fileUploadRegion_fileList--disabled {
+  opacity: var(--sds_fileUploadRegion_disabled_opacity);
+  color: var(--sds_fileUploadRegion_disabled_text);
+  background: var(--sds_fileUploadRegion_disabled_background);
+  border: var(--sds_fileUploadRegion_disabled_border_width)
+    var(--sds_fileUploadRegion_disabled_border_style)
+    var(--sds_fileUploadRegion_disabled_border_color);
+  border-radius: var(--sds_fileUploadRegion_disabled_border_radius);
+  pointer-events: none;
+  .sds_fileUpload_uploadIcon {
+    color: var(--sds_fileUploadRegion_disabled_icon);
+  }
+}
+
+.sds_fileUploadRegion
+  .sds_fileUploadRegion--disabled
+  .sds_fileUploadRegion_dropRegionAction {
+  color: var(--sds_fileUploadRegion_disabled_link_text);
+}
+
+.sds_fileUploadRegion--error {
+  &:not(.sds_fileUploadRegion:hover) {
+    background: var(--sds_fileUploadRegion_error_background);
+    border: var(--sds_fileUploadRegion_error_border_width)
+      var(--sds_fileUploadRegion_error_border_style)
+      var(--sds_fileUploadRegion_error_border_color);
+    border-radius: var(--sds_fileUploadRegion_error_border_radius);
+    .sds_fileUpload_uploadIcon {
+      color: var(--sds_fileUploadRegion_error_icon);
+    }
+  }
+}
+
+.sds_fileUploadRegion_errorIcon {
+  color: var(--sds_fileUploadRegion_error_icon);
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 1rem;
+  height: 1rem;
+  outline: none;
+}
+
+.sds_fileUploadRegion--dragOver {
+  background: var(--sds_fileUploadRegion_drag_background);
+  border: var(--sds_fileUploadRegion_drag_border_width)
+    var(--sds_fileUploadRegion_drag_border_style)
+    var(--sds_fileUploadRegion_drag_border_color);
+  border-radius: var(--sds_fileUploadRegion_drag_border_radius);
+  .sds_fileUpload_uploadIcon {
+    color: var(--sds_fileUploadRegion_drag_icon);
+  }
+  &.sds_fileUploadRegion_dropRegion span {
+    color: var(--sds_fileUploadRegion_drag_text);
+  }
+  &.sds_fileUploadRegion_dropRegionAction span {
+    color: var(--sds_fileUploadRegion_drag_link_text);
+  }
+}
+
+.sds_fileUploadRegion_box--disabled {
+  cursor: not-allowed;
+}
+
+.sds_fileUploadRegion_fileList--disabled {
+  cursor: not-allowed;
+}
+
+.sds_fileUploadRegion_filesList_fileName {
+  max-width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sds_fileUploadRegion_dropRegion span {
+  @include sds-typeset(body);
+  color: var(--sds_fileUploadRegion_text);
+  margin-bottom: sds-spc(4);
+
+  &:hover {
+    color: var(--sds_fileUploadRegion_hover_text);
+  }
+}
+
+.sds_fileUpload_uploadIcon {
+  margin-bottom: 1rem;
+  color: var(--sds_fileUploadRegion_icon);
+  width: 2rem;
+  height: 2rem;
+  transition: cubic-bezier(0.25, 0, 0, 1) 0.24s;
+
+  &:hover {
+    color: var(--sds_fileUploadRegion_hover_icon);
+  }
+}
+
+span.sds_fileUploadRegion_dropRegionAction {
+  cursor: pointer;
+  color: var(--sds_fileUploadRegion_link_text);
+  &:hover {
+    text-decoration: underline;
+    color: var(--sds_fileUploadRegion_hover_link_text);
+  }
+}
+
+.sds_fileUploadRegion_warningIcon {
+  width: 1rem;
+  height: 1rem;
+  outline: none;
+  color: var(--sds_theme_color_warning, #{sds-color(yellow, 60)});
+  flex-direction: row;
+  flex-grow: 0;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.sds_fileUploadRegion_fileList {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--sds_fileUploadRegion_border_radius);
+  border: solid 1px var(--sds_fileUploadRegion_border_color);
+  background: var(--sds_fileUploadRegion_background);
+  max-height: 180px;
+  overflow-y: auto;
+  margin-top: sds-spc(8);
+  color: var(--sds_fileUploadRegion_text);
+  transition: all 0.24s cubic-bezier(0.25, 0, 0, 1);
+}
+
+.sds_fileUploadRegion_files {
+  @include sds-typeset(body);
+  @include sds-flex(space-between, center);
+  height: 36px;
+  padding: 8px 8px 8px 12px;
+  border-bottom: solid 1px var(--sds_fileUploadRegion_border_color);
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+
+.sds_fileUploadRegion_fileDetails {
+  @include sds-flex(end, center);
+  gap: sds-spc(8);
+  span {
+    @include sds-typeset(mouse);
+    color: var(--sds_theme_text_subtle, #{sds-color(neutral, 70)});
+  }
+}
+
+.sds_fileUploadRegion .sds_fileUploadRegion--error {
+  span {
+    color: var(--sds_fileUploadRegion_error_text);
+  }
+}
+
+.sds_fileUploadRegion
+  .sds_fileUploadRegion--error
+  .sds_fileUploadRegion_dropRegionAction {
+  color: var(--sds_fileUploadRegion_error_link_text);
+}
+
+.sds_fileUploadRegion_helpText {
+  margin-top: sds-spc(4);
+}
+
+.sds_fileUploadRegion_label {
+  margin-bottom: sds-spc(4);
+}
+
+.sds_fileUploadRegion_error {
+  display: flex;
+  gap: sds-spc(8);
+  margin-top: sds-spc(4);
+}
+
+.sds_fileUploadRegion_error_message {
+  color: var(--sds_helptext_text, #{sds-color(neutral, 60)});
+  @include sds-typeset(mouse);
+}

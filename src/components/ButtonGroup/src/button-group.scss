@@ -1,0 +1,114 @@
+@use 'node_modules/@sipster/core/tools' as *;
+
+@mixin buttonGroupStyles {
+  z-index: 1;
+  margin-left: -1px;
+  border-radius: 0;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-radius: 0;
+  }
+  &:focus-visible {
+    z-index: 4;
+  }
+  &:hover {
+    z-index: 2;
+    border-radius: 0;
+  }
+
+  &.sds_button--selected {
+    z-index: 3;
+    &:focus-visible {
+      z-index: 4;
+    }
+  }
+}
+
+@mixin buttonGroupStyles--first {
+  &:hover,
+  &:focus,
+  &:active {
+    border-radius: var(--sds_button_border_radius) 0 0
+      var(--sds_button_border_radius);
+  }
+  border-radius: var(--sds_button_border_radius) 0 0
+    var(--sds_button_border_radius);
+  transform: translate(0);
+  margin-left: 0;
+}
+
+@mixin buttonGroupStyles--last {
+  border-radius: 0 var(--sds_button_border_radius)
+    var(--sds_button_border_radius) 0;
+  &:hover,
+  &:focus,
+  &:active {
+    border-radius: 0 var(--sds_button_border_radius)
+      var(--sds_button_border_radius) 0;
+  }
+}
+
+.sds_buttonGroup {
+  display: inline-flex;
+  position: relative;
+  .sds_buttonGroup_button {
+    @include buttonGroupStyles();
+    &:first-of-type {
+      @include buttonGroupStyles--first();
+    }
+    &:last-of-type {
+      @include buttonGroupStyles--last();
+    }
+  }
+  div {
+    div .sds_buttonGroup_button.sds_button {
+      @include buttonGroupStyles();
+    }
+
+    &:first-child {
+      div .sds_buttonGroup_button.sds_button {
+        @include buttonGroupStyles--first();
+      }
+    }
+
+    &:last-child {
+      div .sds_buttonGroup_button.sds_button {
+        @include buttonGroupStyles--last();
+      }
+    }
+
+    &:has(div .sds_buttonGroup_button.sds_button:focus-visible) {
+      z-index: 4;
+    }
+    &:has(div .sds_buttonGroup_button.sds_button.sds_button--selected) {
+      z-index: 3;
+    }
+    &:has(
+        div
+          .sds_buttonGroup_button.sds_button.sds_button--selected:focus-visible
+      ) {
+      z-index: 4;
+    }
+  }
+}
+
+.sds_buttonGroup.sds_buttonGroup--individualButton {
+  .sds_buttonGroup_button {
+    border-radius: var(--sds_button_border_radius);
+    &:hover,
+    &:focus,
+    &:active {
+      border-radius: var(--sds_button_border_radius);
+    }
+  }
+  div div .sds_buttonGroup_button.sds_button {
+    border-radius: var(--sds_button_border_radius);
+    &:hover,
+    &:focus,
+    &:active {
+      border-radius: var(--sds_button_border_radius);
+    }
+  }
+}

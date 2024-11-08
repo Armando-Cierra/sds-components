@@ -1,0 +1,62 @@
+@use 'node_modules/@sipster/core/tools' as *;
+@forward 'tokens';
+
+.sds_tag {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: sds-spc(8);
+  background: var(--sds_tag_background);
+  color: var(--sds_tag_text);
+  border: 1px solid var(--sds_tag_border_color);
+  border-radius: var(--sds_tag_border_radius);
+  user-select: none;
+  transition: sds-transition(standard, interactive);
+  padding: 0 sds-spc(12);
+  height: 28px;
+  @include sds-typeset(body);
+}
+
+.sds_tag--selectable {
+  cursor: pointer;
+  &:hover {
+    background: var(--sds_tag_hover_background);
+    border-color: var(--sds_tag_hover_border_color);
+    color: var(--sds_tag_hover_text);
+  }
+  &:focus-visible {
+    background: var(--sds_tag_focus_background_color);
+    border-color: var(--sds_tag_focus_border_color);
+    color: var(--sds_tag_focus_text);
+    box-shadow: var(--sds_tag_focus_shadow);
+  }
+}
+
+.sds_tag--checked {
+  background: var(--sds_tag_selected_background);
+  border-color: var(--sds_tag_selected_border_color);
+  color: var(--sds_tag_selected_text);
+}
+
+.sds_tag--removable {
+  padding-right: 1px;
+}
+
+.sds_tag--avatar {
+  padding-left: 1px;
+}
+
+.sds_tag_action {
+  @include sds-flex(center, center);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--sds_tag_action_background);
+  color: var(--sds_tag_action_icon);
+  cursor: pointer;
+  transition: sds-transition(standard, interactive);
+  &:hover {
+    background: var(--sds_tag_action_hover_background);
+    color: var(--sds_tag_action_hover_icon);
+  }
+}

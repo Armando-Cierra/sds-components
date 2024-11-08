@@ -1,0 +1,8 @@
+LocalDependencies
+label
+
+ExternalDependencies
+uniqid@^5.4.0
+
+DevDependencies
+@types/uniqid@^5.3.2

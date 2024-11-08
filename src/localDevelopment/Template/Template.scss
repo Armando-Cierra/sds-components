@@ -1,0 +1,35 @@
+@use 'node_modules/@sipster/core/tools' as *;
+
+main {
+  width: 100%;
+  height: 100dvh;
+  background: var(--sds_theme_background_high);
+  @include sds-flex(center, center, column);
+  .container {
+    width: 100%;
+    height: 100%;
+    @include sds-flex(center, center, column);
+  }
+  .themesBar {
+    flex-shrink: 0;
+    padding-right: 1.5rem;
+    width: 100%;
+    height: 56px;
+    background: var(--sds_theme_background_high);
+    border-top: 1px solid var(--sds_theme_border);
+    @include sds-flex(center, center);
+    gap: sds-spc(8);
+  }
+  .sds_appTemplate {
+    height: 100%;
+  }
+}
+
+.customContent {
+  background: var(--sds_theme_background);
+  border-top: 1px solid var(--sds_theme_border);
+  height: 100%;
+  color: var(--sds_theme_text_subtle);
+  @include sds-flex(center, center);
+  margin-top: sds-spc(16);
+}

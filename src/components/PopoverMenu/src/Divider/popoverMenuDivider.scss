@@ -1,0 +1,15 @@
+@use 'node_modules/@sipster/core/tools' as *;
+
+.sds_popoverMenu_divider {
+  --sds_popoverMenu_divider: var(--sds_theme_border, #{sds-color(neutral, 30)});
+}
+
+.sds_popoverMenu_divider {
+  padding: sds-spc(8) 0;
+  width: 100%;
+  div {
+    width: 100%;
+    height: 1px;
+    background: var(--sds_popoverMenu_divider);
+  }
+}

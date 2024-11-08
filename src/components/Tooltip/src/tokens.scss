@@ -1,0 +1,9 @@
+@use 'node_modules/@sipster/core/tools' as *;
+
+body {
+  --sds_tooltip_background: var(
+    --sds_theme_background_inverted,
+    #{sds-color(black)}
+  );
+  --sds_tooltip_text: var(--sds_theme_text_inverted, #{sds-color(white)});
+}

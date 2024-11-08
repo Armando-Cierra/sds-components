@@ -1,0 +1,10 @@
+@use 'node_modules/@sipster/core/tools' as *;
+
+body {
+  --sds_alert_overlay_background: var(
+    --sds_theme_background_overlay,
+    rgba(0, 0, 0, 0.24)
+  );
+  --sds_alert_background: var(--sds_theme_background_high, #{sds-color(white)});
+  --sds_alert_text: var(--sds_theme_text, #{sds-color(black)});
+}

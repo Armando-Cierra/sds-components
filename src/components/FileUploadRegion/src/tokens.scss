@@ -1,0 +1,138 @@
+body {
+  --sds_fileUploadRegion_background: var(
+    --sds_theme_control_background,
+    #{sds-color(white)}
+  );
+  --sds_fileUploadRegion_border_color: var(
+    --sds_theme_control_border,
+    #{sds-color(neutral, 30)}
+  );
+  --sds_fileUploadRegion_border_radius: var(--sds_theme_border_radius, 0.5rem);
+  --sds_fileUploadRegion_border_style: dashed;
+  --sds_fileUploadRegion_border_width: 2px;
+  --sds_fileUploadRegion_icon: var(
+    --sds_theme_control_icon,
+    #{sds-color(neutral, 40)}
+  );
+  --sds_fileUploadRegion_text: var(
+    --sds_theme_control_text,
+    #{sds-color(black)}
+  );
+
+  --sds_fileUploadRegion_link_text: var(
+    --sds_theme_color_primary_interactive,
+    #{sds-color(indigo, 70)}
+  );
+
+  --sds_fileUploadRegion_hover_background: var(
+    --sds_theme_control_hover_background,
+    #{sds-color(white)}
+  );
+  --sds_fileUploadRegion_hover_border_color: var(
+    --sds_theme_control_hover_border,
+    #{sds-color(neutral)}
+  );
+  --sds_fileUploadRegion_hover_border_radius: var(
+    --sds_fileUploadRegion_border_radius
+  );
+  --sds_fileUploadRegion_hover_border_style: var(
+    --sds_fileUploadRegion_border_style
+  );
+  --sds_fileUploadRegion_hover_border_width: var(
+    --sds_fileUploadRegion_border_width
+  );
+  --sds_fileUploadRegion_hover_icon: var(
+    --sds_theme_control_hover_icon,
+    #{sds-color(neutral, 40)}
+  );
+  --sds_fileUploadRegion_hover_text: var(
+    --sds_theme_control_hover_text,
+    #{sds-color(black)}
+  );
+  --sds_fileUploadRegion_hover_link_text: var(--sds_fileUploadRegion_link_text);
+
+  --sds_fileUploadRegion_drag_background: var(
+    --sds_theme_color_primary_background,
+    #{sds-color(indigo, 05)}
+  );
+  --sds_fileUploadRegion_drag_border_color: var(
+    --sds_theme_focus_border,
+    #{sds-color(indigo, 60)}
+  );
+  --sds_fileUploadRegion_drag_border_radius: var(
+    --sds_fileUploadRegion_hover_border_radius
+  );
+  --sds_fileUploadRegion_drag_border_style: solid;
+  --sds_fileUploadRegion_drag_border_width: var(
+    --sds_fileUploadRegion_hover_border_width
+  );
+  --sds_fileUploadRegion_drag_icon: var(
+    --sds_theme_color_primary,
+    #{sds-color(indigo, 60)}
+  );
+  --sds_fileUploadRegion_drag_text: var(
+    --sds_theme_control_hover_text,
+    #{sds-color(black)}
+  );
+  --sds_fileUploadRegion_drag_link_text: var(--sds_fileUploadRegion_link_text);
+
+  --sds_fileUploadRegion_error_background: var(
+    --sds_theme_control_error_background,
+    #{sds-color(red, 05)}
+  );
+  --sds_fileUploadRegion_error_border_color: var(
+    --sds_theme_control_error_border,
+    #{sds-color(red, 60)}
+  );
+  --sds_fileUploadRegion_error_border_radius: var(
+    --sds_fileUploadRegion_border_radius
+  );
+  --sds_fileUploadRegion_error_border_style: solid;
+  --sds_fileUploadRegion_error_border_width: var(
+    --sds_fileUploadRegion_border_width
+  );
+  --sds_fileUploadRegion_error_icon: var(
+    --sds_theme_control_error_icon,
+    #{sds-color(red, 60)}
+  );
+  --sds_fileUploadRegion_error_text: var(
+    --sds_theme_control_error_text,
+    #{sds-color(red, 70)}
+  );
+
+  --sds_fileUploadRegion_error_link_text: var(--sds_fileUploadRegion_link_text);
+
+  --sds_fileUploadRegion_disabled_background: var(
+    --sds_theme_control_disabled_background,
+    #{sds-color(white)}
+  );
+  --sds_fileUploadRegion_disabled_border_color: var(
+    --sds_theme_control_disabled_border,
+    #{sds-color(neutral, 30)}
+  );
+  --sds_fileUploadRegion_disabled_border_radius: var(
+    --sds_fileUploadRegion_border_radius
+  );
+  --sds_fileUploadRegion_disabled_border_style: var(
+    --sds_fileUploadRegion_border_style
+  );
+  --sds_fileUploadRegion_disabled_border_width: var(
+    --sds_fileUploadRegion_border_width
+  );
+  --sds_fileUploadRegion_disabled_icon: var(
+    --sds_theme_control_disabled_icon,
+    #{sds-color(netural, 40)}
+  );
+  --sds_fileUploadRegion_disabled_opacity: var(
+    --sds_theme_disabled_opacity,
+    48%
+  );
+  --sds_fileUploadRegion_disabled_text: var(
+    --sds_theme_control_disabled_text,
+    #{sds-color(black)}
+  );
+
+  --sds_fileUploadRegion_disabled_link_text: var(
+    --sds_fileUploadRegion_link_text
+  );
+}

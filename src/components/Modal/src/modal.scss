@@ -1,0 +1,131 @@
+@use 'node_modules/@sipster/core/tools' as *;
+@forward 'tokens';
+
+.sds_modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 100vh;
+  background: var(--sds_modal_overlay_background);
+  backdrop-filter: blur(var(--sds_theme_background_overlay_blur, 12px));
+  @include sds-flex(center, center);
+  transition: sds-transition(standard, interactive);
+}
+
+.sds_modal_card {
+  @include sds-shadow(lg);
+  position: absolute;
+  top: 30px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: calc(100% - 48px);
+  background: var(--sds_modal_body_background);
+  border-radius: var(--sds_theme_border_radius, 0.5rem);
+  transition: sds-transition(standard, enviromental);
+}
+.sds_modal_card--center {
+  top: auto;
+}
+
+//Header
+.sds_modal_header {
+  background: var(--sds_modal_header_background);
+  color: var(--sds_modal_header_text);
+  @include sds-typeset(heading-2);
+  border-radius: var(--sds_theme_border_radius, 0.5rem)
+    var(--sds_theme_border_radius, 0.5rem) 0 0;
+  padding: sds-spc(16);
+  height: 56px;
+  width: 100%;
+  display: flex;
+  flex-shrink: 0;
+  flex-grow: 0;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  .sds_text {
+    color: var(--sds_modal_header_text);
+    @include sds-typeset(heading-2);
+  }
+}
+.sds_modal_header_closeButton {
+  background: var(--sds_modal_header_button_background);
+  border-radius: var(--sds_theme_border, 0.5rem);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    .sds_modal_header_closeButton_icon {
+      color: var(--sds_modal_header_button_hover_icon);
+    }
+  }
+}
+.sds_modal_header_closeButton_icon {
+  width: 16px;
+  height: 16px;
+  color: var(--sds_modal_header_button_icon);
+  transition: sds-transition(standard, interactive);
+}
+
+//Content
+.sds_modal_content {
+  height: inherit;
+  color: var(--sds_theme_text, #{sds-color(black)});
+  overflow-y: auto;
+}
+.sds_modal_content--hasPadding {
+  padding: sds-spc(16);
+}
+
+//Footer
+.sds_modal_footer {
+  @include sds-flex(flex-end, center);
+  width: 100%;
+  padding: 8px 16px;
+  border-top: 1px solid var(--sds_modal_footer_border);
+  background: var(--sds_modal_footer_background);
+  border-radius: 0 0 var(--sds_theme_border_radius, 0.5rem)
+    var(--sds_theme_border_radius, 0.5rem);
+  flex-shrink: 0;
+  flex-grow: 0;
+  gap: 8px;
+}
+
+//Media Queries
+@include sds-screen(sm) {
+  .sds_modal_card {
+    border-radius: 0;
+    top: 0;
+    width: 100%;
+    //These important are to overwrite the inline styles passed as props for desktop version. Do not remove them
+    max-width: 100% !important;
+    height: 100% !important;
+    max-height: 100%;
+    box-shadow: none;
+  }
+
+  .sds_modal_header {
+    border-radius: 0;
+  }
+
+  .sds_modal_content {
+    height: 100%;
+  }
+
+  .sds_modal_footer {
+    border-radius: 0;
+    padding: 10px sds-spc(16);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    > * {
+      width: 100%;
+    }
+  }
+}

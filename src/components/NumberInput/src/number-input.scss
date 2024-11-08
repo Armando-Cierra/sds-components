@@ -1,0 +1,147 @@
+@use 'node_modules/@sipster/core/tools' as *;
+@forward 'tokens';
+
+.sds_numberInput {
+  width: 256px;
+  display: inline-flex;
+  flex-shrink: 0;
+  flex-grow: 0;
+  flex-direction: column;
+  .sds_numberInput_box {
+    width: 100%;
+  }
+}
+
+.sds_numberInput_label {
+  margin-bottom: sds-spc(4);
+}
+
+.sds_numberInput_box {
+  width: 256px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.sds_numberInput_box--showButtons {
+  .sds_numberInput_icon {
+    right: sds-spc(80);
+  }
+}
+
+.sds_numberInput_inputBox {
+  width: 100%;
+  position: relative;
+  @include sds-flex(center, center);
+}
+.sds_numberInput_input {
+  width: 100%;
+  height: 36px;
+  padding: sds-spc(8) sds-spc(12);
+  padding-right: sds-spc(8);
+  -moz-appearance: textfield;
+  appearance: textfield;
+  background: var(--sds_numberInput_background);
+  border-color: var(--sds_numberInput_border_color);
+  border-style: var(--sds_numberInput_border_style);
+  border-width: var(--sds_numberInput_border_width);
+  border-radius: var(--sds_numberInput_border_radius);
+  color: var(--sds_numberInput_text);
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  &::placeholder {
+    color: var(--sds_numberInput_placeholder);
+  }
+  &:hover {
+    background: var(--sds_numberInput_hover_background);
+    border-color: var(--sds_numberInput_hover_border_color);
+    border-radius: var(--sds_numberInput_hover_border_radius);
+    border-style: var(--sds_numberInput_hover_border_style);
+    border-width: var(--sds_numberInput_hover_border_width);
+    color: var(--sds_numberInput_hover_text);
+    &::placeholder {
+      color: var(--sds_numberInput_hover_placeholder);
+    }
+  }
+  &:focus {
+    background: var(--sds_numberInput_focus_background);
+    border-color: var(--sds_numberInput_focus_border_color);
+    border-radius: var(--sds_numberInput_focus_border_radius);
+    border-style: var(--sds_numberInput_focus_border_style);
+    border-width: var(--sds_numberInput_focus_border_width);
+    color: var(--sds_numberInput_focus_text);
+    &::placeholder {
+      color: var(--sds_numberInput_focus_placeholder);
+    }
+  }
+}
+.sds_numberInput_input--error,
+.sds_numberInput_input--error:hover,
+.sds_numberInput_input--error:focus {
+  background: var(--sds_numberInput_error_background);
+  border-color: var(--sds_numberInput_error_border_color);
+  border-radius: var(--sds_numberInput_error_border_radius);
+  border-style: var(--sds_numberInput_error_border_style);
+  border-width: var(--sds_numberInput_error_border_width);
+  color: var(--sds_numberInput_error_text);
+  padding-right: 36px;
+  &::placeholder {
+    color: var(--sds_numberInput_error_placeholder);
+  }
+}
+.sds_numberInput_input--disabled,
+.sds_numberInput_input--disabled:hover,
+.sds_numberInput_input--disabled:focus {
+  background: var(--sds_numberInput_disabled_background);
+  border-color: var(--sds_numberInput_disabled_border_color);
+  border-radius: var(--sds_numberInput_disabled_border_radius);
+  border-style: var(--sds_numberInput_disabled_border_style);
+  border-width: var(--sds_numberInput_disabled_border_width);
+  color: var(--sds_numberInput_disabled_text);
+  opacity: var(--sds_numberInput_disabled_opacity);
+  cursor: not-allowed;
+  &::placeholder {
+    color: var(--sds_numberInput_disabled_placeholder);
+  }
+}
+.sds_numberInput_input--readOnly,
+.sds_numberInput_input--readOnly:hover,
+.sds_numberInput_input--readOnly:focus {
+  padding-right: 36px;
+  background: var(--sds_numberInput_readOnly_background);
+  border-color: var(--sds_numberInput_readOnly_border_color);
+  border-radius: var(--sds_numberInput_readOnly_border_radius);
+  border-style: var(--sds_numberInput_readOnly_border_style);
+  border-width: var(--sds_numberInput_readOnly_border_width);
+  color: var(--sds_numberInput_readOnly_text);
+  &::placeholder {
+    color: var(--sds_numberInput_readOnly_text);
+  }
+}
+
+.sds_numberInput_input--showButtons {
+  border-radius: var(--sds_numberInput_border_radius) 0 0
+    var(--sds_numberInput_border_radius) !important;
+}
+
+.sds_numberInput_icon {
+  position: absolute;
+  right: sds-spc(12);
+  width: 16px;
+  height: 16px;
+  color: var(--sds_numberInput_readOnly_icon);
+}
+.sds_numberInput_icon--error {
+  color: var(--sds_numberInput_error_icon);
+}
+
+.sds_numberInput_minusBtn,
+.sds_numberInput_button--disabled {
+  border-radius: 0 !important;
+}
+.sds_numberInput_plusBtn,
+.sds_numberInput_button--disabled {
+  border-radius: 0 8px 8px 0 !important;
+}

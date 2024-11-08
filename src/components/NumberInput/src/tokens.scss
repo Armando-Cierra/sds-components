@@ -1,0 +1,126 @@
+body {
+  --sds_numberInput_background: var(
+    --sds_theme_control_background,
+    #{sds-color(white)}
+  );
+  --sds_numberInput_border_color: var(
+    --sds_theme_control_border,
+    #{sds-color(neutral, 30)}
+  );
+  --sds_numberInput_border_radius: var(--sds_theme_border_radius, 0.5rem);
+  --sds_numberInput_border_style: solid;
+  --sds_numberInput_border_width: 1px;
+  --sds_numberInput_placeholder: var(
+    --sds_theme_control_placeholder,
+    #{sds-color(neutral, 60)}
+  );
+  --sds_numberInput_text: var(--sds_theme_control_text, #{sds-color(black)});
+
+  --sds_numberInput_hover_background: var(
+    --sds_theme_control_hover_background,
+    #{sds-color(white)}
+  );
+  --sds_numberInput_hover_border_color: var(
+    --sds_theme_control_hover_border,
+    #{sds-color(neutral)}
+  );
+  --sds_numberInput_hover_border_radius: var(--sds_numberInput_border_radius);
+  --sds_numberInput_hover_border_style: var(--sds_numberInput_border_style);
+  --sds_numberInput_hover_border_width: var(--sds_numberInput_border_width);
+  --sds_numberInput_hover_placeholder: var(
+    --sds_theme_control_hover_placeholder,
+    #{sds-color(neutral, 60)}
+  );
+  --sds_numberInput_hover_text: var(
+    --sds_theme_control_hover_text,
+    #{sds-color(black)}
+  );
+
+  --sds_numberInput_focus_background: var(
+    --sds_theme_control_focus_background,
+    #{sds-color(white)}
+  );
+  --sds_numberInput_focus_border_color: var(
+    --sds_theme_focus_border,
+    #{sds-color(indigo, 60)}
+  );
+  --sds_numberInput_focus_border_radius: var(
+    --sds_numberInput_hover_border_radius
+  );
+  --sds_numberInput_focus_border_style: var(
+    --sds_numberInput_hover_border_style
+  );
+  --sds_numberInput_focus_border_width: 2px;
+  --sds_numberInput_focus_placeholder: var(
+    --sds_theme_control_focus_placeholder,
+    #{sds-color(neutral, 60)}
+  );
+  --sds_numberInput_focus_text: var(
+    --sds_theme_control_focus_text,
+    #{sds-color(black)}
+  );
+
+  --sds_numberInput_error_background: var(
+    --sds_theme_control_error_background,
+    #{sds-color(red, 05)}
+  );
+  --sds_numberInput_error_border_color: var(
+    --sds_theme_control_error_border,
+    #{sds-color(red, 60)}
+  );
+  --sds_numberInput_error_border_radius: var(--sds_numberInput_border_radius);
+  --sds_numberInput_error_border_style: var(--sds_numberInput_border_style);
+  --sds_numberInput_error_border_width: 2px;
+  --sds_numberInput_error_placeholder: var(
+    --sds_theme_control_error_placeholder,
+    #{sds-color(neutral, 60)}
+  );
+  --sds_numberInput_error_icon: var(
+    --sds_theme_control_error_icon,
+    #{sds-color(red, 70)}
+  );
+  --sds_numberInput_error_text: var(
+    --sds_theme_control_error_text,
+    #{sds-color(red, 70)}
+  );
+
+  --sds_numberInput_readOnly_background: var(
+    --sds_theme_background,
+    #{sds-color(neutral, 05)}
+  );
+  --sds_numberInput_readOnly_border_color: var(--sds_numberInput_border_color);
+  --sds_numberInput_readOnly_border_radius: var(
+    --sds_numberInput_border_radius
+  );
+  --sds_numberInput_readOnly_border_style: var(--sds_numberInput_border_style);
+  --sds_numberInput_readOnly_border_width: var(--sds_numberInput_border_width);
+  --sds_numberInput_readOnly_icon: var(
+    --sds_theme_control_icon,
+    #{sds-color(neutral, 40)}
+  );
+  --sds_numberInput_readOnly_placeholder: var(--sds_numberInput_placeholder);
+  --sds_numberInput_readOnly_text: var(--sds_numberInput_text);
+
+  --sds_numberInput_disabled_background: var(
+    --sds_theme_control_disabled_background,
+    #{sds-color(white)}
+  );
+  --sds_numberInput_disabled_border_color: var(
+    --sds_theme_control_disabled_border,
+    #{sds-color(neutral, 30)}
+  );
+  --sds_numberInput_disabled_border_radius: var(
+    --sds_numberInput_border_radius
+  );
+  --sds_numberInput_disabled_border_style: var(--sds_numberInput_border_style);
+  --sds_numberInput_disabled_border_width: var(--sds_numberInput_border_width);
+  --sds_numberInput_disabled_opacity: var(--sds_theme_disabled_opacity, 48%);
+  --sds_numberInput_disabled_placeholder: var(
+    --sds_theme_control_disabled_placeholder,
+    #{sds-color(neutral, 60)}
+  );
+  --sds_numberInput_disabled_text: var(
+    --sds_theme_control_disabled_text,
+    #{sds-color(black)}
+  );
+}

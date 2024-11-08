@@ -1,0 +1,108 @@
+@use 'node_modules/@sipster/core/tools' as *;
+@forward 'tokens';
+
+.sds_radio {
+  @include sds-inline-flex(flex-start, center, row);
+  gap: sds-spc(8);
+}
+.sds_radio--labelBefore {
+  flex-direction: row-reverse;
+}
+
+//label
+.sds_radio_label {
+  color: var(--sds_radio_text);
+  cursor: pointer;
+}
+.sds_radio_label--error {
+  color: var(--sds_radio_error_text);
+}
+.sds_radio_label--disabled {
+  color: var(--sds_theme_control_disabled_text);
+  opacity: var(--sds_radio_disabled_opacity);
+  cursor: not-allowed;
+}
+
+//Control
+.sds_radio_control {
+  position: relative;
+  @include sds-flex(center, center);
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  border-radius: var(--sds_radio_border_radius);
+  background: var(--sds_radio_background);
+  border-width: var(--sds_radio_border_width);
+  border-style: var(--sds_radio_border_style);
+  border-color: var(--sds_radio_border_color);
+  cursor: pointer;
+  &:hover {
+    background: var(--sds_radio_hover_background);
+    border-width: var(--sds_radio_hover_border_width);
+    border-color: var(--sds_radio_hover_border_color);
+    border-style: var(--sds_radio_hover_border_style);
+  }
+}
+.sds_radio_control--error {
+  background: var(--sds_radio_error_background);
+  border-color: var(--sds_radio_error_border_color);
+  border-width: var(--sds_radio_error_border_width);
+  border-style: var(--sds_radio_error_border_style);
+  &:hover {
+    background: var(--sds_radio_error_background);
+    border-width: var(--sds_radio_error_border_width);
+    border-color: var(--sds_radio_error_border_color);
+    border-style: var(--sds_radio_error_border_style);
+  }
+}
+.sds_radio_control--disabled {
+  background: var(--sds_radio_disabled_background);
+  border-color: var(--sds_radio_disabled_border_color);
+  border-width: var(--sds_radio_disabled_border_width);
+  border-style: var(--sds_radio_disabled_border_style);
+  opacity: var(--sds_radio_disabled_opacity);
+  cursor: not-allowed;
+  &:hover {
+    background: var(--sds_radio_disabled_background);
+    border-width: var(--sds_radio_disabled_border_width);
+    border-color: var(--sds_radio_disabled_border_color);
+    border-style: var(--sds_radio_disabled_border_style);
+  }
+}
+
+.sds_radio_input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  &:focus-visible + .sds_radio_control {
+    background: var(--sds_radio_focus_background);
+    border-color: var(--sds_radio_focus_border_color);
+    border-width: var(--sds_radio_focus_border_width);
+    border-style: var(--sds_radio_focus_border_style);
+    box-shadow: var(--sds_radio_focus_shadow);
+  }
+  &:focus-visible + .sds_radio_control--error {
+    background: var(--sds_radio_error_background);
+    border-color: var(--sds_radio_error_border_color);
+    border-width: var(--sds_radio_error_border_width);
+    border-style: var(--sds_radio_error_border_style);
+  }
+  &:checked + .sds_radio_control {
+    background: var(--sds_radio_checked_background);
+    border-color: var(--sds_radio_checked_border_color);
+    border-width: var(--sds_radio_checked_border_width);
+    border-style: var(--sds_radio_checked_border_style);
+    @include sds-flex(center, center);
+    &::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border: 1px solid sds-color(black);
+      background: var(--sds_radio_indicator);
+      border-radius: 50%;
+    }
+  }
+}

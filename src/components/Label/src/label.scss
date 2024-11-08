@@ -1,0 +1,23 @@
+@use 'node_modules/@sipster/core/tools' as *;
+@forward 'tokens';
+
+.sds_label {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: sds-spc(4);
+}
+
+.sds_label_text {
+  @include sds-typeset(body);
+  color: var(--sds_label_text);
+}
+
+.sds_label_indicator {
+  color: var(--sds_label_indicator);
+  margin-left: sds-spc(2);
+}
+
+.sds_telicon.sds_label_icon {
+  color: var(--sds_label_icon);
+}

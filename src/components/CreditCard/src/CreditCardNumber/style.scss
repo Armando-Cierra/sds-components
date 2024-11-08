@@ -1,0 +1,27 @@
+@use 'node_modules/@sipster/core/tools' as *;
+
+.sds_creditCardNumber {
+  width: 256px;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.sds_creditCard_label {
+  margin-bottom: sds-spc(4);
+}
+
+.sds_creditCardNumber_controlBox {
+  width: 100%;
+  position: relative;
+  @include sds-flex(center, center);
+  .sds_creditCard_icon {
+    position: absolute;
+    z-index: 1;
+  }
+  .sds_numberInput_input {
+    padding-right: 50px;
+    &.sds_numberInput--error {
+      padding-right: 82px;
+    }
+  }
+}

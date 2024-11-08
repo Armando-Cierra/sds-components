@@ -1,0 +1,197 @@
+body {
+  //sidebar
+  --sds_template_sidebar_background_color: var(
+    --sds_theme_background_high,
+    #{sds-color(white)}
+  );
+  --sds_template_sidebar_border_color: var(
+    --sds_theme_border,
+    #{sds-color(neutral, 30)}
+  );
+
+  --sds_template_sidebar_header_background_color: var(
+    --sds_template_sidebar_background_color
+  );
+  --sds_template_sidebar_header_border_color: var(
+    --sds_template_sidebar_border_color
+  );
+  --sds_template_sidebar_header_text: var(
+    --sds_theme_text,
+    #{sds-color(black)}
+  );
+  --sds_template_sidebar_header_button_icon: var(
+    --sds_theme_button_ghost_icon,
+    #{sds-color(neutral, 70)}
+  );
+  --sds_template_sidebar_header_button_interactive_background: var(
+    --sds_theme_button_ghost_interactive_background,
+    #{sds-color(neutral, 20)}
+  );
+  --sds_template_sidebar_header_button_interactive_icon: var(
+    --sds_theme_button_ghost_interactive_icon,
+    #{sds-color(black)}
+  );
+
+  --sds_template_sidebar_groupHeader_background_color: var(
+    --sds_template_sidebar_background_color
+  );
+  --sds_template_sidebar_groupHeader_expandIndicator: var(
+    --sds_theme_icon,
+    #{sds-color(neutral, 70)}
+  );
+  --sds_template_sidebar_groupHeader_text: var(
+    --sds_theme_text,
+    #{sds-color(black)}
+  );
+
+  --sds_template_sidebar_groupHeader_interactive_background_color: var(
+    --sds_theme_background,
+    #{sds-color(neutral, 05)}
+  );
+  --sds_template_sidebar_groupHeader_interactive_expandIndicator: var(
+    --sds_theme_icon_interactive,
+    #{sds-color(black)}
+  );
+  --sds_template_sidebar_groupHeader_interactive_text: var(
+    --sds_template_sidebar_groupHeader_text
+  );
+
+  --sds_template_sidebar_groupHeader_button_icon: var(
+    --sds_theme_button_ghost_icon,
+    #{sds-color(neutral, 70)}
+  );
+  --sds_template_sidebar_groupHeader_button_interactive_background: var(
+    --sds_theme_button_ghost_interactive_background,
+    #{sds-color(neutral, 20)}
+  );
+  --sds_template_sidebar_groupHeader_button_interactive_icon: var(
+    --sds_theme_button_ghost_interactive_icon,
+    #{sds-color(black)}
+  );
+
+  --sds_template_sidebar_divider: var(
+    --sds_theme_border,
+    #{sds-color(neutral, 30)}
+  );
+
+  --sds_template_sidebar_item_background_color: var(
+    --sds_template_sidebar_background_color
+  );
+  --sds_template_sidebar_item_text: var(--sds_theme_text, #{sds-color(black)});
+  --sds_template_sidebar_item_icon: var(
+    --sds_theme_icon,
+    #{sds-color(neutral, 70)}
+  );
+  --sds_template_sidebar_item_loader: var(
+    --sds_theme_icon,
+    #{sds-color(neutral, 70)}
+  );
+
+  --sds_template_sidebar_item_interactive_background_color: var(
+    --sds_theme_background,
+    #{sds-color(neutral, 05)}
+  );
+  --sds_template_sidebar_item_interactive_text: var(
+    --sds_template_sidebar_item_text
+  );
+  --sds_template_sidebar_item_interactive_icon: var(
+    --sds_theme_icon_interactive,
+    #{sds-color(black)}
+  );
+  --sds_template_sidebar_item_interactive_loader: var(
+    --sds_theme_icon_interactive,
+    #{sds-color(black)}
+  );
+
+  --sds_template_sidebar_item_selected_background_color: var(
+    --sds_template_sidebar_item_interactive_background_color
+  );
+  --sds_template_sidebar_item_selected_text: var(
+    --sds_theme_color_primary_text,
+    #{sds-color(indigo, 70)}
+  );
+  --sds_template_sidebar_item_selected_icon: var(
+    --sds_theme_color_primary,
+    #{sds-color(indigo, 60)}
+  );
+  --sds_template_sidebar_item_selected_loader: var(
+    --sds_theme_color_primary,
+    #{sds-color(indigo, 60)}
+  );
+
+  //page
+  --sds_template_pageContent_background_color: var(
+    --sds_theme_background,
+    #{sds-color(neutral, 05)}
+  );
+  --sds_template_pageHeader_background_color: var(
+    --sds_theme_background_high,
+    #{sds-color(white)}
+  );
+  --sds_template_pageHeader_border_color: var(
+    --sds_theme_border,
+    #{sds-color(neutral, 30)}
+  );
+  --sds_template_pageHeader_text: var(--sds_theme_text, #{sds-color(black)});
+
+  --sds_template_pageHeader_button_icon: var(
+    --sds_theme_button_ghost_icon,
+    #{sds-color(neutral, 70)}
+  );
+  --sds_template_pageHeader_button_interactive_background: var(
+    --sds_theme_button_ghost_interactive_background,
+    #{sds-color(neutral, 20)}
+  );
+  --sds_template_pageHeader_button_interactive_icon: var(
+    --sds_theme_button_ghost_interactive_icon,
+    #{sds-color(black)}
+  );
+
+  --sds_template_pageFooter_background_color: var(
+    --sds_theme_background_high,
+    #{sds-color(white)}
+  );
+  --sds_template_pageFooter_border_color: var(
+    --sds_theme_border,
+    #{sds-color(neutral, 30)}
+  );
+
+  //tabBar
+  --sds_template_tabBar_background_color: var(
+    --sds_theme_background_high,
+    #{sds-color(white)}
+  );
+  --sds_template_tabBar_border_color: var(
+    --sds_theme_border,
+    #{sds-color(neutral, 30)}
+  );
+
+  --sds_template_tabBar_item_background_color: var(
+    --sds_template_tabBar_background_color
+  );
+  --sds_template_tabBar_item_icon: var(
+    --sds_theme_icon,
+    #{sds-color(neutral, 70)}
+  );
+
+  --sds_template_tabBar_item_interactive_background_color: var(
+    --sds_theme_background,
+    #{sds-color(neutral, 10)}
+  );
+  --sds_template_tabBar_item_interactive_icon: var(
+    --sds_theme_icon_interactive,
+    #{sds-color(black)}
+  );
+
+  --sds_template_tabBar_item_selected_background_color: var(
+    --sds_template_tabBar_item_interactive_background_color
+  );
+  --sds_template_tabBar_item_selected_indicator: var(
+    --sds_theme_color_primary,
+    #{sds-color(indigo, 60)}
+  );
+  --sds_template_tabBar_item_selected_icon: var(
+    --sds_theme_color_primary,
+    #{sds-color(indigo, 60)}
+  );
+}

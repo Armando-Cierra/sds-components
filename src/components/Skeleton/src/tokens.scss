@@ -1,0 +1,5 @@
+body {
+  --sds_skeleton_background_color: var(--sds_theme_background_accent, #c7c7c7);
+  --sds_skeleton_border_radius: var(--sds_theme_border_radius_small, 0.25rem);
+  --sds_skeleton_blink_opacity: 0.48;
+}

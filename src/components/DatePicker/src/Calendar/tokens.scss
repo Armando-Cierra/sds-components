@@ -1,0 +1,165 @@
+@use 'node_modules/@sipster/core/tools' as *;
+
+body {
+  //Calendar Menu
+  --sds_datePicker_calendar_background: var(
+    --sds_theme_background_high,
+    #{sds-color(white)}
+  );
+  --sds_datePicker_calendar_border_color: var(
+    --sds_theme_border,
+    #{sds-color(neutral, 30)}
+  );
+
+  //Calendar Menu Content
+  --sds_datePicker_calendar_weekDaysRow_background: var(
+    --sds_theme_background_low,
+    #{sds-color(neutral, 10)}
+  );
+  --sds_datePicker_calendar_weekDaysRow_text: var(
+    --sds_theme_text,
+    #{sds-color(black)}
+  );
+
+  //Days Variants
+  --sds_datePicker_calendar_day_accentColor: var(
+    --sds_theme_color_primary,
+    #{sds-color(indigo, 60)}
+  );
+
+  --sds_datePicker_calendar_day_background: var(
+    --sds_theme_background_high,
+    #{sds-color(white)}
+  );
+  --sds_datePicker_calendar_day_text: var(
+    --sds_theme_text,
+    #{sds-color(black)}
+  );
+
+  --sds_datePicker_calendar_selectedDay_background: var(
+    --sds_theme_color_primary,
+    #{sds-color(indigo, 60)}
+  );
+  --sds_datePicker_calendar_selectedDay_text: var(
+    --sds_theme_text_inverted,
+    #{sds-color(white)}
+  );
+
+  --sds_datePicker_calendar_outOfMonthDay_background: var(
+    --sds_theme_background,
+    #{sds-color(neutral, 05)}
+  );
+  --sds_datePicker_calendar_outOfMonthDay_text: var(
+    --sds_theme_text_subtle,
+    #{sds-color(neutral, 60)}
+  );
+
+  --sds_datePicker_calendar_currentDay_background: var(
+    --sds_theme_background_high,
+    #{sds-color(white)}
+  );
+  --sds_datePicker_calendar_currentDay_borderAccentColor: var(
+    --sds_theme_color_primary,
+    #{sds-color(indigo, 60)}
+  );
+  --sds_datePicker_calendar_currentDay_text: var(
+    --sds_theme_color_primary_text,
+    #{sds-color(indigo, 60)}
+  );
+
+  --sds_datePicker_calendar_rangeInnerDay_background: var(
+    --sds_theme_color_primary_background_2,
+    #{sds-color(indigo, 20)}
+  );
+  --sds_datePicker_calendar_rangeInnerDay_text: var(
+    --sds_theme_text,
+    #{sds-color(black)}
+  );
+
+  //Calendar SubMenus Content
+  --sds_datePicker_calendar_month_background: var(
+    --sds_theme_background_high,
+    #{sds-color(white)}
+  );
+  --sds_datePicker_calendar_month_hover_background: var(
+    --sds_theme_background,
+    #{sds-color(neutral, 05)}
+  );
+  --sds_datePicker_calendar_month_selected_background: var(
+    --sds_theme_color_primary,
+    #{sds-color(indigo, 60)}
+  );
+  --sds_datePicker_calendar_month_text: var(
+    --sds_theme_text,
+    #{sds-color(black)}
+  );
+  --sds_datePicker_calendar_month_hover_text: var(
+    --sds_theme_text,
+    #{sds-color(black)}
+  );
+  --sds_datePicker_calendar_month_selected_text: var(
+    --sds_theme_text_inverted,
+    #{sds-color(white)}
+  );
+  --sds_datePicker_calendar_month_current_text: var(
+    --sds_theme_color_primary_text,
+    #{sds-color(indigo, 70)}
+  );
+
+  --sds_datePicker_calendar_year_background: var(
+    --sds_theme_background_high,
+    #{sds-color(white)}
+  );
+  --sds_datePicker_calendar_year_hover_background: var(
+    --sds_theme_background,
+    #{sds-color(neutral, 05)}
+  );
+  --sds_datePicker_calendar_year_selected_background: var(
+    --sds_theme_color_primary,
+    #{sds-color(indigo, 60)}
+  );
+  --sds_datePicker_calendar_year_text: var(
+    --sds_theme_text,
+    #{sds-color(black)}
+  );
+  --sds_datePicker_calendar_year_hover_text: var(
+    --sds_theme_text,
+    #{sds-color(black)}
+  );
+  --sds_datePicker_calendar_year_selected_text: var(
+    --sds_theme_text_inverted,
+    #{sds-color(white)}
+  );
+  --sds_datePicker_calendar_year_current_text: var(
+    --sds_theme_color_primary_text,
+    #{sds-color(indigo, 70)}
+  );
+
+  //Calendar Predefined Ranges SubMenu
+  --sds_datePicker_calendar_predefinedRangeItem_background: var(
+    --sds_theme_background_high,
+    #{sds-color(white)}
+  );
+  --sds_datePicker_calendar_predefinedRangeItem_text: var(
+    --sds_theme_text,
+    #{sds-color(black)}
+  );
+
+  --sds_datePicker_calendar_predefinedRangeItem_hover_background: var(
+    --sds_theme_background,
+    #{sds-color(neutral, 05)}
+  );
+  --sds_datePicker_calendar_predefinedRangeItem_hover_text: var(
+    --sds_theme_text,
+    #{sds-color(black)}
+  );
+
+  --sds_datePicker_calendar_predefinedRangeItem_selected_background: var(
+    --sds_theme_color_primary,
+    #{sds-color(indigo, 60)}
+  );
+  --sds_datePicker_calendar_predefinedRangeItem_selected_text: var(
+    --sds_theme_text_inverted,
+    #{sds-color(white)}
+  );
+}

@@ -1,0 +1,105 @@
+@use 'node_modules/@sipster/core/tools' as *;
+
+body {
+  --sds_dropdown_arrow: var(--sds_theme_icon, #{sds-color(neutral, 70)});
+  --sds_dropdown_background: var(
+    --sds_theme_control_background,
+    #{sds-color(white)}
+  );
+  --sds_dropdown_border_color: var(
+    --sds_theme_control_border,
+    #{sds-color(neutral, 30)}
+  );
+  --sds_dropdown_border_radius: var(--sds_theme_border_radius, 0.5rem);
+  --sds_dropdown_border_style: solid;
+  --sds_dropdown_border_width: 1px;
+  --sds_dropdown_text: var(--sds_theme_control_text);
+
+  --sds_dropdown_hover_arrow: var(--sds_dropdown_arrow);
+  --sds_dropdown_hover_background: var(
+    --sds_theme_control_hover_background,
+    #{sds-color(white)}
+  );
+  --sds_dropdown_hover_border_color: var(
+    --sds_theme_control_hover_border,
+    #{sds-color(neutral)}
+  );
+  --sds_dropdown_hover_border_radius: var(--sds_dropdown_border_radius);
+  --sds_dropdown_hover_border_style: var(--sds_dropdown_border_style);
+  --sds_dropdown_hover_border_width: var(--sds_dropdown_border_width);
+  --sds_dropdown_hover_text: var(
+    --sds_theme_control_hover_text,
+    #{sds-color(black)}
+  );
+
+  --sds_dropdown_focus_arrow: var(--sds_dropdown_hover_arrow);
+  --sds_dropdown_focus_background: var(
+    --sds_theme_control_focus_background,
+    #{sds-color(white)}
+  );
+  --sds_dropdown_focus_border_color: var(
+    --sds_theme_focus_border,
+    #{sds-color(indigo, 60)}
+  );
+  --sds_dropdown_focus_border_radius: var(--sds_dropdown_hover_border_radius);
+  --sds_dropdown_focus_border_style: var(--sds_dropdown_hover_border_style);
+  --sds_dropdown_focus_border_width: 2px;
+  --sds_dropdown_focus_text: var(
+    --sds_theme_control_focus_text,
+    #{sds-color(black)}
+  );
+
+  --sds_dropdown_error_arrow: var(--sds_dropdown_arrow);
+  --sds_dropdown_error_background: var(
+    --sds_theme_control_error_background,
+    #{sds-color(red, 05)}
+  );
+  --sds_dropdown_error_border_color: var(
+    --sds_theme_control_error_border,
+    #{sds-color(red, 60)}
+  );
+  --sds_dropdown_error_border_radius: var(--sds_dropdown_border_radius);
+  --sds_dropdown_error_border_style: var(--sds_dropdown_border_style);
+  --sds_dropdown_error_border_width: 2px;
+  --sds_dropdown_error_icon: var(
+    --sds_theme_control_error_icon,
+    #{sds-color(red, 60)}
+  );
+  --sds_dropdown_error_text: var(
+    --sds_theme_control_error_text,
+    #{sds-color(red, 70)}
+  );
+
+  --sds_dropdown_readOnly_arrow: var(--sds_dropdown_arrow);
+  --sds_dropdown_readOnly_background: var(
+    --sds_theme_background,
+    #{sds-color(neutral, 05)}
+  );
+  --sds_dropdown_readOnly_border_color: var(--sds_dropdown_border_color);
+  --sds_dropdown_readOnly_border_radius: var(--sds_dropdown_border_radius);
+  --sds_dropdown_readOnly_border_style: var(--sds_dropdown_border_style);
+  --sds_dropdown_readOnly_border_width: var(--sds_dropdown_border_width);
+  --sds_dropdown_readOnly_icon: var(
+    --sds_theme_control_icon,
+    #{sds-color(neutral, 40)}
+  );
+  --sds_dropdown_readOnly_text: var(--sds_dropdown_text);
+
+  --sds_dropdown_disabled_arrow: var(--sds_dropdown_arrow);
+  --sds_dropdown_disabled_background: var(
+    --sds_theme_control_disabled_background,
+    #{sds-color(white)}
+  );
+  --sds_dropdown_disabled_border_color: var(
+    --sds_theme_control_disabled_border,
+    #{sds-color(neutral, 30)}
+  );
+  --sds_dropdown_disabled_border_radius: var(--sds_dropdown_border_radius);
+  --sds_dropdown_disabled_border_style: var(--sds_dropdown_border_style);
+  --sds_dropdown_disabled_border_width: var(--sds_dropdown_border_width);
+  --sds_dropdown_disabled_opacity: var(--sds_theme_disabled_opacity, 48%);
+  --sds_dropdown_disabled_text: var(
+    --sds_theme_control_disabled_text,
+    #{sds-color(black)}
+  );
+}

@@ -1,0 +1,130 @@
+@use 'node_modules/@sipster/core/tools' as *;
+@forward 'tokens';
+
+//Wrapper
+.sds_checkbox {
+  @include sds-inline-flex(flex-start, center, row);
+  gap: sds-spc(8);
+}
+.sds_checkbox--labelBefore {
+  flex-direction: row-reverse;
+}
+
+//Label
+.sds_checkbox_label {
+  color: var(--sds_checkbox_text);
+  cursor: pointer;
+}
+.sds_checkbox_label--error {
+  color: var(--sds_checkbox_error_text);
+}
+.sds_checkbox_label--disabled {
+  color: var(--sds_theme_control_disabled_text);
+  opacity: var(--sds_checkbox_disabled_opacity);
+  cursor: not-allowed;
+}
+
+//Control
+.sds_checkbox_control {
+  @include sds-flex(center, center);
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  border-radius: var(--sds_checkbox_border_radius);
+  background: var(--sds_checkbox_background);
+  border-width: var(--sds_checkbox_border_width);
+  border-style: var(--sds_checkbox_border_style);
+  border-color: var(--sds_checkbox_border_color);
+  cursor: pointer;
+  &:hover {
+    background: var(--sds_checkbox_hover_background);
+    border-width: var(--sds_checkbox_hover_border_width);
+    border-style: var(--sds_checkbox_hover_border_style);
+    border-color: var(--sds_checkbox_hover_border_color);
+  }
+}
+.sds_checkbox_control--error {
+  background: var(--sds_checkbox_error_background);
+  border-color: var(--sds_checkbox_error_border_color);
+  border-style: var(--sds_checkbox_error_border_style);
+  border-width: var(--sds_checkbox_error_border_width);
+  &:hover {
+    background: var(--sds_checkbox_error_background);
+    border-color: var(--sds_checkbox_error_border_color);
+    border-style: var(--sds_checkbox_error_border_style);
+    border-width: var(--sds_checkbox_error_border_width);
+  }
+}
+.sds_checkbox_control--disabled {
+  background: var(--sds_checkbox_disabled_background);
+  border-color: var(--sds_checkbox_disabled_border_color);
+  border-width: var(--sds_checkbox_disabled_border_width);
+  border-style: var(--sds_checkbox_disabled_border_style);
+  opacity: var(--sds_checkbox_disabled_opacity);
+  cursor: not-allowed;
+  &:hover {
+    background: var(--sds_checkbox_disabled_background);
+    border-width: var(--sds_checkbox_disabled_border_width);
+    border-color: var(--sds_checkbox_disabled_border_color);
+    border-style: var(--sds_checkbox_disabled_border_style);
+  }
+}
+
+.sds_checkbox_input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  &:focus-visible + .sds_checkbox_control {
+    background: var(--sds_checkbox_focus_background);
+    border-color: var(--sds_checkbox_focus_border_color);
+    border-style: var(--sds_checkbox_focus_border_style);
+    border-width: var(--sds_checkbox_focus_border_width);
+    box-shadow: var(--sds_checkbox_focus_shadow);
+  }
+  &:focus-visible + .sds_checkbox_control--error {
+    background: var(--sds_checkbox_error_background);
+    border-style: var(--sds_checkbox_error_border_style);
+    border-color: var(--sds_checkbox_error_border_color);
+    border-width: var(--sds_checkbox_error_border_width);
+  }
+  &:checked + .sds_checkbox_control {
+    position: relative;
+    background: var(--sds_checkbox_checked_background);
+    border-color: var(--sds_checkbox_checked_border_color);
+    border-width: var(--sds_checkbox_checked_border_width);
+    border-style: var(--sds_checkbox_checked_border_style);
+    &::before {
+      content: '';
+      position: absolute;
+      width: 12px;
+      height: 8px;
+      border-left: 4px solid sds-color(black);
+      border-bottom: 4px solid sds-color(black);
+      transform: rotate(-45deg) translateY(-1px) translateX(1px);
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 6px;
+      border-left: 2px solid var(--sds_checkbox_indicator);
+      border-bottom: 2px solid var(--sds_checkbox_indicator);
+      transform: rotate(-45deg) translateY(-1px) translateX(1px);
+    }
+  }
+  &:checked + .sds_checkbox_control--indeterminate {
+    &::before {
+      display: none;
+    }
+    &::after {
+      content: '';
+      width: 11px;
+      height: 4px;
+      background: var(--sds_checkbox_indicator);
+      border: 1px solid sds-color(black);
+      transform: translateY(0) translateX(0);
+    }
+  }
+}

@@ -1,0 +1,138 @@
+@use 'node_modules/@sipster/core/tools' as *;
+
+body {
+  --sds_textInput_action: var(--sds_theme_icon, #{sds-color(neutral, 70)});
+  --sds_textInput_background: var(
+    --sds_theme_control_background,
+    #{sds-color(white)}
+  );
+  --sds_textInput_border_color: var(
+    --sds_theme_control_border,
+    #{sds-color(neutral, 30)}
+  );
+  --sds_textInput_border_radius: var(--sds_theme_border_radius, 0.5rem);
+  --sds_textInput_border_style: solid;
+  --sds_textInput_border_width: 1px;
+  --sds_textInput_baseIcon: var(
+    --sds_theme_control_icon,
+    #{sds-color(neutral, 40)}
+  );
+  --sds_textInput_placeholder: var(
+    --sds_theme_control_placeholder,
+    #{sds-color(neutral, 60)}
+  );
+  --sds_textInput_text: var(--sds_theme_control_text, #{sds-color(black)});
+
+  --sds_textInput_hover_action: var(--sds_textInput_action);
+  --sds_textInput_hover_background: var(
+    --sds_theme_control_hover_background,
+    #{sds-color(white)}
+  );
+  --sds_textInput_hover_border_color: var(
+    --sds_theme_control_hover_border,
+    #{sds-color(neutral)}
+  );
+  --sds_textInput_hover_border_radius: var(--sds_textInput_border_radius);
+  --sds_textInput_hover_border_style: var(--sds_textInput_border_style);
+  --sds_textInput_hover_border_width: var(--sds_textInput_border_width);
+  --sds_textInput_hover_baseIcon: var(
+    --sds_theme_control_hover_icon,
+    #{sds-color(neutral, 40)}
+  );
+  --sds_textInput_hover_placeholder: var(
+    --sds_theme_control_hover_placeholder,
+    #{sds-color(neutral, 60)}
+  );
+  --sds_textInput_hover_text: var(
+    --sds_theme_control_hover_text,
+    #{sds-color(black)}
+  );
+
+  --sds_textInput_focus_action: var(--sds_textInput_hover_action);
+  --sds_textInput_focus_background: var(
+    --sds_theme_control_focus_background,
+    #{sds-color(white)}
+  );
+  --sds_textInput_focus_border_color: var(
+    --sds_theme_focus_border,
+    #{sds-color(indigo, 60)}
+  );
+  --sds_textInput_focus_border_radius: var(--sds_textInput_hover_border_radius);
+  --sds_textInput_focus_border_style: var(--sds_textInput_hover_border_style);
+  --sds_textInput_focus_border_width: 2px;
+  --sds_textInput_focus_baseIcon: var(
+    --sds_theme_control_focus_icon,
+    #{sds-color(neutral, 40)}
+  );
+  --sds_textInput_focus_placeholder: var(
+    --sds_theme_control_focus_placeholder,
+    #{sds-color(neutral, 60)}
+  );
+  --sds_textInput_focus_text: var(
+    --sds_theme_control_focus_text,
+    #{sds-color(black)}
+  );
+
+  --sds_textInput_error_action: var(--sds_textInput_action);
+  --sds_textInput_error_background: var(
+    --sds_theme_control_error_background,
+    #{sds-color(red, 05)}
+  );
+  --sds_textInput_error_border_color: var(
+    --sds_theme_control_error_border,
+    #{sds-color(red, 60)}
+  );
+  --sds_textInput_error_border_radius: var(--sds_textInput_border_radius);
+  --sds_textInput_error_border_style: var(--sds_textInput_border_style);
+  --sds_textInput_error_border_width: 2px;
+  --sds_textInput_error_baseIcon: var(--sds_textInput_baseIcon);
+  --sds_textInput_error_icon: var(
+    --sds_theme_control_error_icon,
+    #{sds-color(red, 60)}
+  );
+  --sds_textInput_error_placeholder: var(
+    --sds_theme_control_error_placeholder,
+    #{sds-color(neutral, 60)}
+  );
+  --sds_textInput_error_text: var(
+    --sds_theme_control_error_text,
+    #{sds-color(red, 70)}
+  );
+
+  --sds_textInput_readOnly_background: var(
+    --sds_theme_background,
+    #{sds-color(neutral, 05)}
+  );
+  --sds_textInput_readOnly_border_color: var(--sds_textInput_border_color);
+  --sds_textInput_readOnly_border_radius: var(--sds_textInput_border_radius);
+  --sds_textInput_readOnly_border_style: var(--sds_textInput_border_style);
+  --sds_textInput_readOnly_border_width: var(--sds_textInput_border_width);
+  --sds_textInput_readOnly_baseIcon: var(--sds_textInput_baseIcon);
+  --sds_textInput_readOnly_icon: var(--sds_textInput_baseIcon);
+  --sds_textInput_readOnly_text: var(--sds_textInput_text);
+
+  --sds_textInput_disabled_background: var(
+    --sds_theme_control_disabled_background,
+    #{sds-color(white)}
+  );
+  --sds_textInput_disabled_border_color: var(
+    --sds_theme_control_disabled_border,
+    #{sds-color(neutral, 30)}
+  );
+  --sds_textInput_disabled_border_radius: var(--sds_textInput_border_radius);
+  --sds_textInput_disabled_border_style: var(--sds_textInput_border_style);
+  --sds_textInput_disabled_border_width: var(--sds_textInput_border_width);
+  --sds_textInput_disabled_baseIcon: var(
+    --sds_theme_control_disabled_icon,
+    #{sds-color(neutral, 40)}
+  );
+  --sds_textInput_disabled_opacity: var(--sds_theme_disabled_opacity, 48%);
+  --sds_textInput_disabled_placeholder: var(
+    --sds_theme_control_disabled_placeholder,
+    #{sds-color(neutral, 60)}
+  );
+  --sds_textInput_disabled_text: var(
+    --sds_theme_control_disabled_text,
+    #{sds-color(black)}
+  );
+}

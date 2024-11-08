@@ -1,0 +1,26 @@
+
+@use 'node_modules/@sipster/core/tools' as *;
+
+body {
+    --sds_colorPicker_border_color: var(--sds_theme_control_border);
+    --sds_colorPicker_border_radius:var(--sds_theme_border_radius);
+    --sds_colorPicker_border_style: solid;
+    --sds_colorPicker_border_width: 1px;
+
+    --sds_colorPicker_hover_border_color: var(--sds_colorPicker_border_color);
+    --sds_colorPicker_hover_border_radius: var(--sds_colorPicker_border_radius);
+    --sds_colorPicker_hover_border_style: var(--sds_colorPicker_border_style)
+    --sds_colorPicker_hover_border_width: var(--sds_colorPicker_border_width);
+    
+    --sds_colorPicker_focus_border_color: var(--sds_theme_control_focus_border);
+    --sds_colorPicker_focus_border_radius: var(--sds_colorPicker_hover_border_radius);
+    --sds_colorPicker_focus_border_style: var(--sds_colorPicker_hover_border_style);
+    --sds_colorPicker_focus_border_width: var(--sds_colorPicker_hover_border_width);
+    --sds_colorPicker_focus_shadow: var(--sds_theme_focus_shadow);
+    
+    --sds_colorPicker_disabled_border_color:var(--sds_theme_control_disabled_border);
+    --sds_colorPicker_disabled_border_radius: var(--sds_colorPicker_border_radius);
+    --sds_colorPicker_disabled_border_style: var(--sds_colorPicker_border_style);
+    --sds_colorPicker_disabled_border_width: var(--sds_colorPicker_border_width);
+    --sds_colorPicker_disabled_opacity: var(--sds_theme_disabled_opacity);
+}

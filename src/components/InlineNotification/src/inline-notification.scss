@@ -1,0 +1,68 @@
+@use 'node_modules/@sipster/core/tools' as *;
+@forward 'tokens';
+
+.sds_inlineNotification {
+  display: inline-flex;
+  gap: sds-spc(12);
+  padding: sds-spc(16);
+  background: var(--sds_inlineNotification_background_color);
+  border-radius: var(--sds_inlineNotification_border_radius);
+}
+.sds_inlineNotification--success {
+  border-color: sds-color(green, 60);
+  --sds_inlineNotification_background_color: var(
+    --sds_theme_color_success_background_2,
+    #{sds-color(green, 20)}
+  );
+  --sds_inlineNotification_icon: var(
+    --sds_theme_color_success,
+    #{sds-color(green)}
+  );
+}
+.sds_inlineNotification--warning {
+  --sds_inlineNotification_background_color: var(
+    --sds_theme_color_warning_background_2,
+    #{sds-color(yellow, 20)}
+  );
+  --sds_inlineNotification_icon: var(
+    --sds_theme_color_warning,
+    #{sds-color(yellow, 60)}
+  );
+}
+.sds_inlineNotification--danger {
+  --sds_inlineNotification_background_color: var(
+    --sds_theme_color_danger_background_2,
+    #{sds-color(red, 20)}
+  );
+  --sds_inlineNotification_icon: var(
+    --sds_theme_color_danger,
+    #{sds-color(red, 60)}
+  );
+}
+
+.sds_telicon.sds_inlineNotification_icon {
+  width: sds-spc(16);
+  color: var(--sds_inlineNotification_icon);
+  margin-top: 2px;
+}
+
+.sds_inlineNotification_contentBox {
+  width: calc(100% - 16px);
+}
+
+.sds_inlineNotification_title {
+  @include sds-typeset(body, semi);
+  color: var(--sds_inlineNotification_title);
+  margin-bottom: sds-spc(4);
+}
+
+.sds_inlineNotification_content {
+  width: 100%;
+  color: var(--sds_inlineNotification_text);
+}
+
+.sds_inlineNotification_actions {
+  @include sds-flex(flex-start, center);
+  margin-top: sds-spc(16);
+  gap: sds-spc(4);
+}

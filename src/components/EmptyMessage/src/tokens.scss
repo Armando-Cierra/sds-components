@@ -1,0 +1,12 @@
+body {
+  --sds_emptyMessage_header_text: var(--sds_theme_text, #{sds-color(black)});
+  --sds_emptyMessage_description_text: var(
+    --sds_theme_text_subtle,
+    #{sds-color(neutral, 60)}
+  );
+  --sds_emptyMessage_background_contrast: var(
+    --sds_theme_background_low,
+    #{sds-color(neutral, 10)}
+  );
+  --sds_emptyMessage_icon: var(--sds_theme_icon, #{sds-color(neutral, 70)});
+}
